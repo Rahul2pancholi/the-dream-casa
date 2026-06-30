@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Playfair_Display } from "next/font/google";
+import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -7,45 +7,59 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
 });
+
+const pageTitle = `${siteConfig.name} | Premium Interior Design Studio India`;
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Premium Interior Design`,
+    default: pageTitle,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
-  authors: [{ name: siteConfig.name }],
+  authors: [{ name: siteConfig.designer }, { name: siteConfig.name }],
   creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "Interior Design",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | Premium Interior Design`,
+    title: pageTitle,
     description: siteConfig.description,
+    countryName: "India",
     images: [
       {
-        url: "/images/logo.png",
-        width: 1200,
-        height: 630,
-        alt: `${siteConfig.name} — Interior Design`,
+        url: "/images/logo-icon.png",
+        width: 512,
+        height: 512,
+        alt: `${siteConfig.name} — Premium Interior Design in India`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Premium Interior Design`,
+    title: pageTitle,
     description: siteConfig.description,
-    images: ["/images/logo.png"],
+    images: ["/images/logo-icon.png"],
   },
   robots: {
     index: true,
@@ -60,6 +74,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
+  other: {
+    "geo.region": `IN-${siteConfig.location.state}`,
+    "geo.placename": siteConfig.location.city,
+    "geo.position": "23.0225;72.5714",
+    ICBM: "23.0225, 72.5714",
+  },
 };
 
 export default function RootLayout({
@@ -71,17 +91,59 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "InteriorDesigner",
     name: siteConfig.name,
-    description: siteConfig.description,
+    description: siteConfig.longDescription,
     url: siteConfig.url,
     slogan: siteConfig.tagline,
+    image: `${siteConfig.url}/images/logo-icon.png`,
     sameAs: [siteConfig.instagram.url],
-    image: `${siteConfig.url}/images/logo.png`,
+    founder: {
+      "@type": "Person",
+      name: siteConfig.designer,
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: siteConfig.location.city,
+      addressRegion: siteConfig.location.state,
+      addressCountry: siteConfig.location.countryCode,
+    },
+    areaServed: [
+      {
+        "@type": "Country",
+        name: siteConfig.location.country,
+      },
+      ...siteConfig.serviceAreas.map((city) => ({
+        "@type": "City",
+        name: city,
+        containedInPlace: {
+          "@type": "Country",
+          name: siteConfig.location.country,
+        },
+      })),
+    ],
+    knowsAbout: [
+      "Residential interior design",
+      "Luxury home interiors",
+      "Modular kitchen design",
+      "Wardrobe design",
+      "3D interior visualisation",
+      "Apartment interior design",
+      "Villa interior design",
+    ],
+    serviceType: [
+      "Full home interior design",
+      "3BHK interior design",
+      "2BHK interior design",
+      "Kitchen design",
+      "Bedroom design",
+      "Living room design",
+    ],
   };
 
   return (
     <html
-      lang="en"
-      className={`${montserrat.variable} ${playfair.variable} h-full antialiased`}
+      lang="en-IN"
+      style={{ colorScheme: "light" }}
+      className={`${montserrat.variable} ${cormorant.variable} h-full antialiased`}
     >
       <head>
         <script

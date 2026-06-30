@@ -1,129 +1,205 @@
 import Image from "next/image";
+import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
+import { InstagramConnect } from "@/components/InstagramConnect";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { Ornament, SectionLabel, SectionTitle } from "@/components/ui";
+import { portfolioProjects } from "@/lib/portfolio";
 import { siteConfig } from "@/lib/site";
-
-function InstagramIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="h-5 w-5"
-      aria-hidden="true"
-    >
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-    </svg>
-  );
-}
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black px-6 py-16">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-30"
-        aria-hidden="true"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(212,175,55,0.15) 0%, transparent 70%)",
-        }}
-      />
+    <>
+      <SiteHeader />
 
-      <main className="relative z-10 flex w-full max-w-lg flex-col items-center text-center">
-        <div className="animate-fade-up mb-10">
-          <Image
-            src="/images/logo.png"
-            alt={`${siteConfig.name} — Interior Design`}
-            width={400}
-            height={400}
-            priority
-            className="h-auto w-full max-w-xs sm:max-w-sm"
-          />
-        </div>
+      <main>
+        {/* Hero */}
+        <section className="page-safe border-b border-border/50 px-5 pb-20 pt-12 sm:px-8 sm:pb-24 sm:pt-16 lg:pt-20">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="sr-only">
+              {siteConfig.name} — Premium Interior Design Studio, India
+            </h1>
 
-        <div
-          className="animate-fade-up mb-6 h-px w-48 gold-divider"
-          style={{ animationDelay: "0.2s" }}
-        />
+            <div className="animate-load animate-load-d1 mb-10 flex justify-center">
+              <BrandLogo variant="hero" />
+            </div>
 
-        <p
-          className="animate-fade-up mb-2 font-serif text-sm tracking-[0.35em] text-gold uppercase"
-          style={{ animationDelay: "0.3s" }}
-        >
-          Website Under Construction
-        </p>
+            <SectionLabel className="animate-load animate-load-d2 mb-8">
+              {siteConfig.location.city}, India
+            </SectionLabel>
 
-        <h1
-          className="animate-fade-up mb-4 font-serif text-2xl font-medium text-white sm:text-3xl"
-          style={{ animationDelay: "0.4s" }}
-        >
-          Something Beautiful Is Coming
-        </h1>
+            <blockquote className="animate-load animate-load-d2 mb-10 font-serif text-xl font-normal italic text-foreground-soft sm:text-2xl lg:text-[1.75rem] lg:leading-[1.55]">
+              &ldquo;{siteConfig.philosophy[0]}&rdquo;
+            </blockquote>
 
-        <p
-          className="animate-fade-up mb-10 max-w-md text-sm leading-relaxed text-white/70 sm:text-base"
-          style={{ animationDelay: "0.5s" }}
-        >
-          We&apos;re crafting an experience as refined as our interiors.
-          In the meantime, follow us on Instagram for design inspiration and
-          behind-the-scenes updates.
-        </p>
+            <Ornament className="animate-load animate-load-d3 mx-auto mb-10 w-44 sm:w-52" />
 
-        <div
-          className="animate-fade-up mb-8 flex flex-col items-center gap-5"
-          style={{ animationDelay: "0.6s" }}
-        >
-          <a
-            href={siteConfig.instagram.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-3 rounded-full border border-gold/40 bg-gold/5 px-8 py-3.5 text-gold transition-all duration-300 hover:border-gold hover:bg-gold/15 hover:shadow-[0_0_24px_rgba(212,175,55,0.2)]"
-            aria-label={`Follow ${siteConfig.name} on Instagram`}
-          >
-            <InstagramIcon />
-            <span className="text-sm font-medium tracking-wider">
-              {siteConfig.instagram.handle}
-            </span>
-          </a>
+            <p className="animate-load animate-load-d3 font-serif text-4xl font-medium text-foreground sm:text-5xl lg:text-[3.75rem] lg:leading-[1.1]">
+              {siteConfig.about.subheadline}
+            </p>
+            <p className="animate-load animate-load-d4 mb-8 mt-3 text-sm font-semibold tracking-[0.28em] text-gold uppercase">
+              Into Reality
+            </p>
 
-          <Image
-            src="/images/instagram-qr.png"
-            alt="Scan to follow The Dream Casa on Instagram"
-            width={180}
-            height={180}
-            className="rounded-2xl border border-white/10 shadow-lg"
-          />
-        </div>
+            <p className="animate-load animate-load-d5 mx-auto max-w-xl text-base leading-relaxed text-muted sm:text-[17px]">
+              {siteConfig.about.headline} — crafting bespoke homes across India.
+              Our full website is on its way.
+            </p>
+          </div>
+        </section>
 
-        <div
-          className="animate-fade-up mb-6 h-px w-32 gold-divider"
-          style={{ animationDelay: "0.7s" }}
-        />
+        {/* About */}
+        <section id="about" className="page-safe bg-surface px-5 py-20 sm:px-8 sm:py-24 lg:py-28">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-20">
+              <ScrollReveal variant="left">
+                <SectionLabel className="mb-5">About Us</SectionLabel>
+                <SectionTitle className="mb-6">{siteConfig.about.headline}</SectionTitle>
+                <Ornament className="mb-8 w-36" />
+                <p className="mb-5 text-base leading-relaxed text-foreground-soft sm:text-[17px]">
+                  {siteConfig.about.body}
+                </p>
+                <p className="text-base leading-relaxed text-muted sm:text-[17px]">
+                  {siteConfig.about.extended}
+                </p>
+              </ScrollReveal>
 
-        <p
-          className="animate-fade-up font-serif text-sm italic text-gold/80"
-          style={{ animationDelay: "0.8s" }}
-        >
-          {siteConfig.tagline}
-        </p>
+              <ScrollReveal variant="right" className="relative aspect-[4/5] overflow-hidden sm:aspect-[5/6] lg:aspect-auto lg:min-h-[520px]">
+                <Image
+                  src="/images/eklavya/image-21-1.jpg"
+                  alt="The Dream Casa — master bedroom interior design"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
 
-        <div
-          className="animate-fade-up mt-10 flex items-center gap-2"
-          style={{ animationDelay: "0.9s" }}
-        >
-          <span className="h-1.5 w-1.5 animate-shimmer rounded-full bg-gold" />
-          <span
-            className="h-1.5 w-1.5 animate-shimmer rounded-full bg-gold"
-            style={{ animationDelay: "0.3s" }}
-          />
-          <span
-            className="h-1.5 w-1.5 animate-shimmer rounded-full bg-gold"
-            style={{ animationDelay: "0.6s" }}
-          />
-        </div>
+        {/* Philosophy */}
+        <section className="page-safe border-y border-border/50 bg-foreground px-5 py-12 sm:px-8">
+          <div className="mx-auto max-w-6xl">
+            <ScrollReveal>
+              <div className="grid gap-8 sm:grid-cols-3 sm:gap-6">
+                {siteConfig.philosophy.slice(1).map((quote, i) => (
+                  <p
+                    key={i}
+                    className="font-serif text-[15px] italic leading-relaxed text-white/75 sm:border-l sm:border-white/15 sm:pl-6 sm:text-base"
+                  >
+                    &ldquo;{quote}&rdquo;
+                  </p>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Why Us */}
+        <section id="why-us" className="page-safe px-5 py-20 sm:px-8 sm:py-24 lg:py-28">
+          <div className="mx-auto max-w-6xl">
+            <ScrollReveal className="mb-14 text-center">
+              <SectionLabel className="mb-5">Why Us</SectionLabel>
+              <SectionTitle>What Sets Us Apart</SectionTitle>
+            </ScrollReveal>
+
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+              {siteConfig.whyUs.map((item, i) => (
+                <ScrollReveal key={item.title} variant="up" delay={(i + 1) as 1 | 2 | 3}>
+                  <article className="card-hover h-full border border-border bg-card p-7 sm:p-8">
+                    <div className="mb-5 h-0.5 w-10 bg-gold-light" />
+                    <h3 className="mb-4 font-serif text-xl font-medium text-foreground sm:text-2xl">
+                      {item.title}
+                    </h3>
+                    <p className="text-[15px] leading-relaxed text-muted sm:text-base">
+                      {item.description}
+                    </p>
+                  </article>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Glimpses */}
+        <section id="projects" className="page-safe bg-surface px-5 py-20 sm:px-8 sm:py-24 lg:py-28">
+          <div className="mx-auto max-w-6xl">
+            <ScrollReveal>
+              <div className="mb-14 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <SectionLabel className="mb-5">Glimpses</SectionLabel>
+                  <SectionTitle>Selected Work</SectionTitle>
+                </div>
+                <Link
+                  href="/portfolio"
+                  className="text-xs font-semibold tracking-[0.2em] text-gold uppercase transition-opacity hover:opacity-70"
+                >
+                  View Portfolio →
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:gap-8">
+              {portfolioProjects.map((project, i) => (
+                <ScrollReveal key={project.slug} variant="scale" delay={(i + 1) as 1 | 2}>
+                  <Link
+                    href={`/portfolio/${project.slug}`}
+                    className="card-hover group block overflow-hidden border border-border bg-card"
+                  >
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image
+                        src={project.coverImage}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                      />
+                    </div>
+                    <div className="p-6 sm:p-7">
+                      <p className="mb-2 text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+                        {project.type}
+                      </p>
+                      <h3 className="mb-2 font-serif text-2xl font-medium text-foreground">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-muted">
+                        {project.location} · {project.client}
+                      </p>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Connect */}
+        <section id="contact" className="page-safe px-5 py-20 sm:px-8 sm:py-24 lg:py-28">
+          <div className="mx-auto max-w-2xl text-center">
+            <ScrollReveal>
+              <SectionLabel className="mb-5">Connect</SectionLabel>
+              <SectionTitle className="mb-6">Let&apos;s Stay in Touch</SectionTitle>
+              <p className="mx-auto mb-12 max-w-md text-base leading-relaxed text-muted sm:text-[17px]">
+                {siteConfig.contact.note}
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={2} className="flex justify-center">
+              <InstagramConnect />
+            </ScrollReveal>
+
+            <ScrollReveal delay={3}>
+              <p className="mt-12 font-serif text-base italic text-gold">
+                {siteConfig.tagline}
+              </p>
+            </ScrollReveal>
+          </div>
+        </section>
       </main>
 
-      <footer className="relative z-10 mt-16 text-center text-xs tracking-widest text-white/30 uppercase">
-        &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
-      </footer>
-    </div>
+      <SiteFooter />
+    </>
   );
 }
