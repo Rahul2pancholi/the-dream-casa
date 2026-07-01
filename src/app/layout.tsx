@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Montserrat } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import { siteConfig } from "@/lib/site";
+import { Analytics } from "@/components/Analytics";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import "./globals.css";
 
-const montserrat = Montserrat({
+const inter = Inter({
   variable: "--font-montserrat",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   variable: "--font-cormorant",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600"],
+  weight: ["500", "600", "700"],
   style: ["normal", "italic"],
 });
 
@@ -48,9 +50,9 @@ export const metadata: Metadata = {
     countryName: "India",
     images: [
       {
-        url: "/images/logo-icon.png",
-        width: 512,
-        height: 512,
+        url: "/images/eklavya/image-21-1.jpg",
+        width: 1200,
+        height: 630,
         alt: `${siteConfig.name} — Premium Interior Design in India`,
       },
     ],
@@ -59,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: siteConfig.description,
-    images: ["/images/logo-icon.png"],
+    images: ["/images/eklavya/image-21-1.jpg"],
   },
   robots: {
     index: true,
@@ -94,56 +96,28 @@ export default function RootLayout({
     description: siteConfig.longDescription,
     url: siteConfig.url,
     slogan: siteConfig.tagline,
-    image: `${siteConfig.url}/images/logo-icon.png`,
+    image: `${siteConfig.url}/images/eklavya/image-21-1.jpg`,
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
     sameAs: [siteConfig.instagram.url],
-    founder: {
-      "@type": "Person",
-      name: siteConfig.designer,
-    },
+    founder: { "@type": "Person", name: siteConfig.designer },
     address: {
       "@type": "PostalAddress",
       addressLocality: siteConfig.location.city,
       addressRegion: siteConfig.location.state,
       addressCountry: siteConfig.location.countryCode,
     },
-    areaServed: [
-      {
-        "@type": "Country",
-        name: siteConfig.location.country,
-      },
-      ...siteConfig.serviceAreas.map((city) => ({
-        "@type": "City",
-        name: city,
-        containedInPlace: {
-          "@type": "Country",
-          name: siteConfig.location.country,
-        },
-      })),
-    ],
-    knowsAbout: [
-      "Residential interior design",
-      "Luxury home interiors",
-      "Modular kitchen design",
-      "Wardrobe design",
-      "3D interior visualisation",
-      "Apartment interior design",
-      "Villa interior design",
-    ],
-    serviceType: [
-      "Full home interior design",
-      "3BHK interior design",
-      "2BHK interior design",
-      "Kitchen design",
-      "Bedroom design",
-      "Living room design",
-    ],
+    areaServed: siteConfig.serviceAreas.map((city) => ({
+      "@type": "City",
+      name: city,
+    })),
   };
 
   return (
     <html
       lang="en-IN"
       style={{ colorScheme: "light" }}
-      className={`${montserrat.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <head>
         <script
@@ -151,7 +125,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full font-sans">{children}</body>
+      <body className="min-h-full font-sans">
+        {children}
+        <WhatsAppButton />
+        <Analytics />
+      </body>
     </html>
   );
 }

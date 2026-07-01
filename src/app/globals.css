@@ -46,6 +46,8 @@ body {
   line-height: 1.7;
 }
 
+@layer components {
+
 .page-safe {
   padding-left: max(0px, env(safe-area-inset-left));
   padding-right: max(0px, env(safe-area-inset-right));
@@ -136,4 +138,86 @@ body {
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 56px -12px rgba(44, 40, 36, 0.13);
+}
+
+/* ── Buttons ── */
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.5rem;
+  text-align: center;
+  transition: background 0.25s, transform 0.2s;
+}
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+.btn-outline-gold {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.875rem 2.5rem;
+  text-align: center;
+  transition: background 0.25s, color 0.25s, transform 0.2s;
+}
+.btn-outline-gold:hover { background: var(--gold); color: #fff; transform: translateY(-1px); }
+
+/* ── Form Elements ── */
+.form-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.875rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.form-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(138, 109, 66, 0.12);
+}
+.form-input::placeholder { color: var(--muted-light); }
+
+/* ── Stats ── */
+.stat-number {
+  font-family: var(--font-cormorant), serif;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--gold);
+}
+
+/* ── Process Step ── */
+.process-step-line {
+  position: absolute;
+  top: 1.25rem;
+  left: calc(50% + 1.25rem);
+  right: calc(-50% + 1.25rem);
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-light), var(--border));
+}
+
 }
