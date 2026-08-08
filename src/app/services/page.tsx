@@ -34,7 +34,7 @@ const fullServices = [
     id: "commercial",
     title: "Commercial Interiors",
     tagline: "Corporate Offices & Retail Outlets",
-    image: "/images/projects/living-kitchen-04.jpg",
+    image: "/images/services/commercial-office.png",
     Icon: Building2,
     description:
       "High-impact corporate office environments, executive director cabins, and retail spaces designed to boost productivity and impress clients.",
@@ -50,7 +50,7 @@ const fullServices = [
     id: "turnkey",
     title: "Turnkey Project Execution",
     tagline: "Design-to-Handover End-to-End Delivery",
-    image: "/images/projects/living-kitchen-11.jpg",
+    image: "/images/eklavya/image-29-1.png",
     Icon: ClipboardCheck,
     description:
       "Complete hassle-free turnkey site execution. Founder Poorti Jain and our site engineers manage every worker, material, and timeline.",
@@ -67,7 +67,7 @@ const fullServices = [
     id: "hospitality",
     title: "Hospitality & Boutique Interiors",
     tagline: "Hotels, Lounges & Fine Dining",
-    image: "/images/projects/master-bedroom-01.jpg",
+    image: "/images/services/hospitality-lounge.png",
     Icon: BedDouble,
     description:
       "Captivating boutique hotel suites, fine dining restaurants, and lounge bars that create unforgettable guest experiences.",
