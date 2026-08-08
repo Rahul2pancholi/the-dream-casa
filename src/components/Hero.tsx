@@ -75,18 +75,18 @@ export default function Hero() {
         <div className="flex max-w-xl flex-col justify-center gap-5 sm:gap-6 text-left">
           {/* Location Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-xs font-semibold tracking-wider text-gold uppercase backdrop-blur w-fit">
-            <Award className="h-4 w-4" /> Premium Interior Studio &bull; Indore
+            <Award className="h-4 w-4" /> Top Rated Interior Designer &bull; Indore
           </div>
 
           {/* Heading */}
           <h1 className="font-serif text-3xl font-bold leading-tight text-white lg:text-ink sm:text-5xl lg:text-6xl">
-            Luxury Interiors.{" "}
+            Best Interior Designer in Indore.{" "}
             <span className="text-gold italic font-normal block sm:inline">Turnkey Execution.</span>
           </h1>
 
           {/* Description */}
           <p className="max-w-md text-sm leading-relaxed text-neutral-200 lg:text-muted sm:text-base">
-            From 3D photorealistic architectural renders to complete turnkey site execution, we transform homes and offices across Indore into timeless sanctuaries.
+            As Indore&apos;s leading interior design studio led by Founder Poorti Jain, we deliver 3D photorealistic architectural renders &amp; 100% turnkey site execution for luxury homes and offices.
           </p>
 
           {/* Action CTAs */}
