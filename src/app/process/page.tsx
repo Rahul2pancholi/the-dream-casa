@@ -7,10 +7,21 @@ import CtaBanner from "@/components/CtaBanner";
 import SiteFooter from "@/components/SiteFooter";
 import { MessageSquare, Sparkles, FileText, Factory, HardHat, Key, ArrowRight, CheckCircle2 } from "lucide-react";
 
-export const metadata = {
-  title: "Turnkey Execution Process | The Dream Casa Indore",
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "6-Step Turnkey Interior Execution Process | The Dream Casa Indore",
   description:
-    "Explore our 6-step luxury interior design and turnkey execution process led by Founder Poorti Jain in Indore.",
+    "Our proven 6-step turnkey interior design methodology: Site audit, 100% photorealistic 3D renders, transparent BOQ, factory sourcing, on-site supervision, and final handover in Indore.",
+  alternates: {
+    canonical: "https://thedreamcasa.in/process",
+  },
+  openGraph: {
+    title: "6-Step Turnkey Interior Execution Process | The Dream Casa Indore",
+    description:
+      "Our proven 6-step turnkey interior design methodology: Site audit, 100% photorealistic 3D renders, transparent BOQ, factory sourcing, on-site supervision, and final handover in Indore.",
+    url: "https://thedreamcasa.in/process",
+  },
 };
 
 const steps = [

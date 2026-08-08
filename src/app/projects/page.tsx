@@ -7,10 +7,21 @@ import CtaBanner from "@/components/CtaBanner";
 import SiteFooter from "@/components/SiteFooter";
 import { Sparkles, Layers, CheckCircle2, Film } from "lucide-react";
 
-export const metadata = {
-  title: "Projects & Live Video Walkthroughs | The Dream Casa",
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio & Live Site Video Reels | The Dream Casa Indore",
   description:
-    "Watch live on-site video walkthroughs, 3D architectural renders, and completed turnkey interior design executions by Poorti Jain & The Dream Casa in Indore.",
+    "Explore photorealistic 3D interior design concepts, 8+ raw on-site video walkthrough reels, and finished luxury residence fit-outs in Indore by Poorti Jain.",
+  alternates: {
+    canonical: "https://thedreamcasa.in/projects",
+  },
+  openGraph: {
+    title: "Portfolio & Live Site Video Reels | The Dream Casa Indore",
+    description:
+      "Explore photorealistic 3D interior design concepts, 8+ raw on-site video walkthrough reels, and finished luxury residence fit-outs in Indore by Poorti Jain.",
+    url: "https://thedreamcasa.in/projects",
+  },
 };
 
 export default function ProjectsPage() {

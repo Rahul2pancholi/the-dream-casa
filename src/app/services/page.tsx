@@ -6,10 +6,21 @@ import CtaBanner from "@/components/CtaBanner";
 import SiteFooter from "@/components/SiteFooter";
 import { Home, Building2, ClipboardCheck, BedDouble, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
 
-export const metadata = {
-  title: "Services | The Dream Casa | Turnkey Interiors Indore",
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Interior Design Services & Turnkey Fit-Outs | The Dream Casa Indore",
   description:
-    "Explore residential, commercial, turnkey, and hospitality interior design services by Poorti Jain & The Dream Casa in Indore.",
+    "Comprehensive interior design services in Indore: Residential homes, commercial offices, modular kitchens, boutique hospitality, and 100% turnkey site execution by Poorti Jain.",
+  alternates: {
+    canonical: "https://thedreamcasa.in/services",
+  },
+  openGraph: {
+    title: "Interior Design Services & Turnkey Fit-Outs | The Dream Casa Indore",
+    description:
+      "Comprehensive interior design services in Indore: Residential homes, commercial offices, modular kitchens, boutique hospitality, and 100% turnkey site execution by Poorti Jain.",
+    url: "https://thedreamcasa.in/services",
+  },
 };
 
 const fullServices = [

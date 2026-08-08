@@ -1,15 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import StatsBar from "@/components/StatsBar";
 import CtaBanner from "@/components/CtaBanner";
 import SiteFooter from "@/components/SiteFooter";
 import { Sparkles, Award, ShieldCheck, HeartHandshake, CheckCircle2, ArrowRight } from "lucide-react";
 
-export const metadata = {
-  title: "About Us | The Dream Casa | Interior Studio Indore",
+export const metadata: Metadata = {
+  title: "About Founder Poorti Jain & Studio | The Dream Casa Indore",
   description:
-    "Learn about The Dream Casa, founded by Poorti Jain in Indore. Premium residential, commercial, and turnkey interior solutions.",
+    "Learn about Founder Poorti Jain and The Dream Casa studio based on Yeshwant Niwas Rd, Indore. 100+ luxury residential and commercial turnkey interior projects delivered.",
+  alternates: {
+    canonical: "https://thedreamcasa.in/about",
+  },
+  openGraph: {
+    title: "About Founder Poorti Jain & Studio | The Dream Casa Indore",
+    description:
+      "Learn about Founder Poorti Jain and The Dream Casa studio based on Yeshwant Niwas Rd, Indore. 100+ luxury residential and commercial turnkey interior projects delivered.",
+    url: "https://thedreamcasa.in/about",
+  },
 };
 
 const values = [
