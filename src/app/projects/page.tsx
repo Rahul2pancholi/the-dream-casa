@@ -19,11 +19,11 @@ export default function ProjectsPage() {
       <SiteHeader />
       <main className="flex flex-1 flex-col">
         {/* Projects Hero Header */}
-        <section className="relative overflow-hidden bg-[#161412] py-20 text-white sm:py-24 lg:py-28">
+        <section className="relative overflow-hidden bg-[#161412] py-20 text-white sm:py-24 lg:py-28 px-6 sm:px-10 lg:px-16">
           <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-gold/15 blur-3xl" />
           <div className="pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
 
-          <div className="relative mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+          <div className="relative mx-auto max-w-7xl">
             <div className="flex max-w-3xl flex-col gap-5">
               <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-gold uppercase">
                 <span className="h-px w-8 bg-gold" />

@@ -61,22 +61,21 @@ export default function BeforeAfterSlider() {
     <section className="bg-cream px-6 py-20 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="flex flex-col items-center gap-3 text-center">
+        <div className="flex max-w-2xl flex-col items-start gap-3 text-left">
           <div className="flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-gold uppercase">
             <span className="h-px w-8 bg-gold" />
             3D vs Real Execution
-            <span className="h-px w-8 bg-gold" />
           </div>
           <h2 className="font-serif text-3xl font-bold leading-tight text-ink sm:text-4xl">
             What We Promise Is What We Deliver
           </h2>
-          <p className="max-w-2xl text-sm leading-relaxed text-muted">
+          <p className="text-sm leading-relaxed text-muted">
             Drag the interactive slider below to compare our 3D photorealistic design renders side-by-side with our real turnkey site executions.
           </p>
         </div>
 
         {/* Room Switcher Tabs */}
-        <div className="mt-8 flex justify-center gap-3">
+        <div className="mt-8 flex justify-start gap-3">
           {comparisons.map((item) => (
             <button
               key={item.id}
