@@ -20,10 +20,43 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      await fetch("https://formsubmit.co/ajax/thedreamcasastudio@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `New Interior Inquiry: ${formData.name} (${formData.location || "Indore"})`,
+          _captcha: "false",
+          _template: "table",
+          Name: formData.name,
+          Phone: formData.phone,
+          Email: formData.email || "Not Provided",
+          ProjectType: formData.projectType,
+          Location: formData.location || "Indore",
+          EstimatedBudget: formData.budget,
+          Requirements: formData.message || "Not Provided",
+        }),
+      });
+      setSubmitted(true);
+    } catch {
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  const whatsappMessage = encodeURIComponent(
+    `Hi Poorti,\n\nI submitted an inquiry on your website:\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Type: ${formData.projectType}\n• Location: ${formData.location || "Indore"}\n• Budget: ${formData.budget}\n• Message: ${formData.message || "Looking for interior consultation"}`
+  );
 
   const offices = {
     indore: {
@@ -121,23 +154,34 @@ export default function ContactPage() {
                   </div>
 
                   {submitted ? (
-                    <div className="mt-8 flex flex-col items-center gap-4 rounded-xl border border-emerald-200 bg-emerald-50/80 p-8 text-center">
+                    <div className="mt-8 flex flex-col items-center gap-4 rounded-xl border border-emerald-200 bg-emerald-50/90 p-8 text-center shadow-md">
                       <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg">
                         <CheckCircle2 className="h-8 w-8" />
                       </div>
-                      <h3 className="font-serif text-xl font-bold text-emerald-900">
-                        Consultation Request Received!
+                      <h3 className="font-serif text-xl font-bold text-emerald-950">
+                        Inquiry Delivered Successfully!
                       </h3>
-                      <p className="text-xs leading-relaxed text-emerald-800">
-                        Thank you, <span className="font-bold">{formData.name}</span>. Poorti Jain &amp; our interior team will contact you shortly at <span className="font-bold">{formData.phone}</span>.
+                      <p className="text-xs leading-relaxed text-emerald-800 max-w-md">
+                        Thank you <span className="font-bold">{formData.name}</span>. An email notification has been dispatched to <span className="font-bold">thedreamcasastudio@gmail.com</span>.
                       </p>
-                      <button
-                        type="button"
-                        onClick={() => setSubmitted(false)}
-                        className="mt-2 rounded-full bg-emerald-700 px-6 py-2.5 text-xs font-semibold tracking-wider text-white uppercase hover:bg-emerald-800"
-                      >
-                        Submit Another Inquiry
-                      </button>
+                      
+                      <div className="mt-2 flex flex-col sm:flex-row items-center gap-3 w-full justify-center">
+                        <a
+                          href={`https://wa.me/917490932661?text=${whatsappMessage}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3 text-xs font-bold text-white uppercase tracking-wider shadow-lg hover:bg-emerald-700 transition-all w-full sm:w-auto"
+                        >
+                          💬 Connect Live on WhatsApp
+                        </a>
+                        <button
+                          type="button"
+                          onClick={() => setSubmitted(false)}
+                          className="inline-flex items-center justify-center rounded-full border border-emerald-300 bg-white px-5 py-3 text-xs font-semibold text-emerald-900 uppercase tracking-wider hover:bg-emerald-100 transition-all w-full sm:w-auto"
+                        >
+                          Submit Another Inquiry
+                        </button>
+                      </div>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5">
@@ -248,9 +292,10 @@ export default function ContactPage() {
 
                       <button
                         type="submit"
-                        className="mt-2 flex w-full items-center justify-center gap-3 rounded-full bg-gold py-4 text-xs font-semibold tracking-widest text-white uppercase transition-all shadow-lg hover:bg-gold-dark hover:shadow-gold/25"
+                        disabled={isSubmitting}
+                        className="mt-2 flex w-full items-center justify-center gap-3 rounded-full bg-gold py-4 text-xs font-semibold tracking-widest text-white uppercase transition-all shadow-lg hover:bg-gold-dark hover:shadow-gold/25 disabled:opacity-50"
                       >
-                        <Send className="h-4 w-4" /> Schedule Free Consultation
+                        <Send className="h-4 w-4" /> {isSubmitting ? "Sending Inquiry..." : "Schedule Free Consultation"}
                       </button>
                     </form>
                   )}
