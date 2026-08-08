@@ -46,16 +46,15 @@ export default function ServicesSection() {
     <section className="bg-white px-6 py-24 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="flex flex-col items-center gap-3 text-center">
+        <div className="flex max-w-2xl flex-col items-start gap-3 text-left">
           <div className="flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-gold uppercase">
             <span className="h-px w-8 bg-gold" />
             Our Expertise
-            <span className="h-px w-8 bg-gold" />
           </div>
           <h2 className="font-serif text-3xl font-bold leading-tight text-ink sm:text-4xl lg:text-5xl">
             Tailored Interior Solutions
           </h2>
-          <p className="max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+          <p className="text-sm leading-relaxed text-muted sm:text-base">
             From concept 3D planning to full site execution, we deliver end-to-end interior excellence across Indore.
           </p>
         </div>

@@ -30,22 +30,21 @@ export default function ProjectsSection({ limit, showViewAllCTA = true }: Projec
     <section className="bg-[#faf8f5] px-6 py-24 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="flex flex-col items-center gap-3 text-center">
+        <div className="flex max-w-2xl flex-col items-start gap-3 text-left">
           <div className="flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-gold uppercase">
             <span className="h-px w-8 bg-gold" />
-            Our Portfolio & Renders
-            <span className="h-px w-8 bg-gold" />
+            Our Portfolio &amp; Renders
           </div>
           <h2 className="font-serif text-3xl font-bold leading-tight text-ink sm:text-4xl lg:text-5xl">
-            Architectural Concepts & Turnkey Executions
+            Architectural Concepts &amp; Turnkey Executions
           </h2>
-          <p className="max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
+          <p className="text-sm leading-relaxed text-muted sm:text-base">
             Filter through photorealistic 3D interior renders, live site walkthrough videos, and completed luxury apartment transformations.
           </p>
         </div>
 
         {/* Filter Navigation Tabs */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+        <div className="mt-10 flex flex-wrap items-center justify-start gap-2 sm:gap-3">
           {ROOM_CATEGORIES.map((cat) => {
             const isActive = selectedTab === cat.id;
             return (
