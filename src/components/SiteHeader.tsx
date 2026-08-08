@@ -87,7 +87,7 @@ export default function SiteHeader() {
 
       {/* Mobile Drawer Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-x-0 top-[73px] bottom-0 z-40 flex flex-col justify-between bg-white/98 p-6 backdrop-blur-xl lg:hidden">
+        <div className="fixed inset-x-0 top-[70px] bottom-0 z-50 flex flex-col justify-between bg-white px-6 py-6 shadow-2xl overflow-y-auto lg:hidden">
           <nav className="flex flex-col gap-5 pt-2">
             {navLinks.map((link) => {
               const isActive =
