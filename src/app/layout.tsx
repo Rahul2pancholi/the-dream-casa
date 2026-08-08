@@ -143,7 +143,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${playfair.variable} ${inter.variable} h-full antialiased`}
     >
       <head>
-        {/* Google Analytics (gtag.js) */}
+        {/* Google Tag & Analytics (gtag.js) */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-2WBRLX5L44"
@@ -157,6 +157,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               gtag('config', 'G-2WBRLX5L44', {
                 page_path: window.location.pathname,
               });
+              gtag('config', '15404262009');
             `,
           }}
         />
