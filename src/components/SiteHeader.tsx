@@ -42,6 +42,7 @@ export default function SiteHeader() {
               src="/images/logo-icon.png"
               alt="The Dream Casa Studio Indore"
               fill
+              priority
               className="object-cover"
             />
           </div>
