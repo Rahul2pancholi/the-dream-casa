@@ -14,15 +14,23 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-3 lg:px-10">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/images/hero/brand-lockup.jpg"
-            alt="The Dream Casa — Interior Design & Turnkey Projects"
-            width={1368}
-            height={405}
-            className="h-12 w-auto rounded-md sm:h-14"
+            src="/images/logo-icon.png"
+            alt="The Dream Casa"
+            width={48}
+            height={48}
+            className="h-11 w-11 rounded-md object-cover sm:h-12 sm:w-12"
             priority
           />
+          <span className="flex flex-col leading-tight">
+            <span className="font-serif text-xl text-ink sm:text-2xl">
+              The Dream Casa
+            </span>
+            <span className="text-[10px] font-medium tracking-[0.2em] text-muted uppercase">
+              Interior Design &middot; Turnkey Projects
+            </span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
