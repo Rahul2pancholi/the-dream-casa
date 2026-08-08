@@ -61,24 +61,24 @@ export default function ContactPage() {
   const offices = {
     indore: {
       city: "Indore, Madhya Pradesh",
-      badge: "Head Office",
+      badge: "New Studio Office",
       address: "The View, 305, Yeshwant Niwas Rd, Nehru Park 2, Lad Colony, Indore, Madhya Pradesh 452003",
-      mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.3701201538356!2d75.8778!3d22.7231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQzJzIzLjIiTiA3NcKwNTInNDAuMSJF!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin",
-      directionsUrl: "https://maps.google.com/?q=The+View+305+Yeshwant+Niwas+Rd+Indore",
+      mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.3701201538356!2d75.8737501!3d22.7217489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fdb24e943af9%3A0x4fe265bccbdb548e!2sThe%20View%2C%20305%2C%20Yeshwant%20Niwas%20Rd%2C%20Nehru%20Park%202%2C%20Lad%20Colony%2C%20Indore%2C%20Madhya%20Pradesh%20452003!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+      directionsUrl: "https://www.google.com/maps/place/Intelyhood+Technologies+Pvt+Ltd/@22.7217489,75.8737501,870m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3962fdb24e943af9:0x4fe265bccbdb548e!8m2!3d22.7217489!4d75.8737501!16s%2Fg%2F11yjyt4bfw",
     },
     ahmedabad: {
       city: "Ahmedabad, Gujarat",
       badge: "Regional Studio",
       address: "The Dream Casa Studio, SG Highway, Bodakdev, Ahmedabad, Gujarat 380054",
-      mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.697926177579!2d72.5085!3d23.0375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjCsMDInMTUuMCJOIDcywrAzMCczMC42IkU!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin",
+      mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.697926177579!2d72.5085!3d23.0375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjCsMDInMTUuMCJOIDcywrAzMCczMC46IkU!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin",
       directionsUrl: "https://maps.google.com/?q=Bodakdev+SG+Highway+Ahmedabad",
     },
   };
 
   const faqs = [
     {
-      q: "Where are your studio offices located?",
-      a: "Our Head Office is located at The View, 305, Yeshwant Niwas Rd, Indore, MP 452003. We also have a Regional Studio on SG Highway, Bodakdev, Ahmedabad, Gujarat 380054.",
+      q: "Where is your interior design studio located in Indore?",
+      a: "Our New Studio Office is located at The View, 305, Yeshwant Niwas Rd, Nehru Park 2, Lad Colony, Indore, MP 452003.",
     },
     {
       q: "Do you handle complete turnkey site execution?",
