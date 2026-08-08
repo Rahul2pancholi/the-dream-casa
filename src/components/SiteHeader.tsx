@@ -6,13 +6,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, Phone } from "lucide-react";
 
-const navLinks = [
+const desktopNavLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "Process", href: "/process" },
   { label: "Journal", href: "/blog" },
+];
+
+const mobileNavLinks = [
+  ...desktopNavLinks,
   { label: "Contact", href: "/contact" },
 ];
 
@@ -26,13 +30,13 @@ export default function SiteHeader() {
         mobileMenuOpen ? "bg-white" : "bg-white/95 backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-8 lg:px-12 py-3.5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-10 lg:px-16 py-3.5">
         {/* Brand Logo */}
         <Link
           href="/"
           className="flex items-center gap-3 transition-opacity hover:opacity-90 shrink-0"
         >
-          <div className="relative h-10 w-10 overflow-hidden rounded-lg border border-gold/30 shadow-sm">
+          <div className="relative h-10 w-10 overflow-hidden rounded-lg border border-gold/30 shadow-sm shrink-0">
             <Image
               src="/images/logo-icon.png"
               alt="The Dream Casa Studio Indore"
@@ -51,8 +55,8 @@ export default function SiteHeader() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-3.5 sm:gap-5 xl:gap-7 lg:flex">
-          {navLinks.map((link) => {
+        <nav className="hidden items-center gap-6 xl:gap-8 lg:flex">
+          {desktopNavLinks.map((link) => {
             const isActive =
               pathname === link.href ||
               (link.href !== "/" && pathname?.startsWith(link.href));
@@ -60,7 +64,7 @@ export default function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[11px] xl:text-xs font-semibold tracking-wider uppercase transition-colors hover:text-gold whitespace-nowrap ${
+                className={`text-xs font-semibold tracking-widest uppercase transition-colors hover:text-gold whitespace-nowrap ${
                   isActive ? "text-gold font-bold" : "text-ink/80"
                 }`}
               >
@@ -71,16 +75,17 @@ export default function SiteHeader() {
         </nav>
 
         {/* Desktop Action CTA */}
-        <div className="hidden items-center gap-3 xl:gap-4 lg:flex shrink-0">
+        <div className="hidden items-center gap-4 lg:flex shrink-0">
           <a
             href="tel:+917490932661"
-            className="flex items-center gap-1.5 text-[11px] xl:text-xs font-semibold text-ink hover:text-gold transition-colors whitespace-nowrap"
+            className="flex items-center gap-1.5 text-xs font-semibold text-ink hover:text-gold transition-colors whitespace-nowrap"
           >
             <Phone className="h-3.5 w-3.5 text-gold shrink-0" /> +91 7490 932 661
           </a>
+          <span className="h-4 w-px bg-gold/20" />
           <Link
             href="/contact"
-            className="inline-flex items-center gap-1.5 rounded-full bg-gold px-4 py-2 xl:px-5 xl:py-2.5 text-[11px] xl:text-xs font-semibold tracking-widest text-white uppercase transition-all shadow-md hover:bg-gold-dark whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 rounded-full bg-gold px-5 py-2.5 text-xs font-semibold tracking-widest text-white uppercase transition-all shadow-md hover:bg-gold-dark hover:shadow-gold/20 whitespace-nowrap"
           >
             Let&apos;s Connect <ArrowRight className="h-3.5 w-3.5" />
           </Link>
@@ -101,7 +106,7 @@ export default function SiteHeader() {
       {mobileMenuOpen && (
         <div className="fixed inset-x-0 top-[65px] bottom-0 z-50 flex flex-col justify-between bg-white px-6 py-6 shadow-2xl overflow-y-auto lg:hidden border-t border-gold/10">
           <nav className="flex flex-col gap-5 pt-2">
-            {navLinks.map((link) => {
+            {mobileNavLinks.map((link) => {
               const isActive =
                 pathname === link.href ||
                 (link.href !== "/" && pathname?.startsWith(link.href));
