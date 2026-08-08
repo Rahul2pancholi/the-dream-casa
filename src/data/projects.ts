@@ -1,5 +1,6 @@
 export type ProjectType = "3d_render" | "completed_site" | "video_walkthrough";
 export type RoomCategory = "living_kitchen" | "master_bedroom" | "present_room" | "turnkey_site" | "walkthrough";
+export type ServiceCategory = "residential" | "commercial" | "turnkey" | "hospitality";
 
 export interface ProjectItem {
   id: string;
@@ -9,6 +10,7 @@ export interface ProjectItem {
   type: ProjectType;
   typeLabel: string;
   roomCategory: RoomCategory;
+  serviceCategory: ServiceCategory;
   image: string;
   videoUrl?: string;
   isPopularVideo?: boolean;
@@ -24,12 +26,12 @@ export interface ProjectItem {
 
 export const ROOM_CATEGORIES = [
   { id: "all", label: "All Portfolio" },
+  { id: "residential", label: "Residential Interiors" },
+  { id: "commercial", label: "Commercial Interiors" },
+  { id: "turnkey", label: "Turnkey Executions" },
+  { id: "hospitality", label: "Hospitality & Lounges" },
   { id: "videos", label: "🎥 Video Walkthroughs" },
-  { id: "3d_renders", label: "3D Renders & Concepts" },
-  { id: "completed_sites", label: "Completed Execution" },
-  { id: "living_kitchen", label: "Living & Kitchen" },
-  { id: "master_bedroom", label: "Master Bedroom" },
-  { id: "present_room", label: "Parents Room" },
+  { id: "3d_renders", label: "3D Renders" },
 ] as const;
 
 export const videoWalkthroughs = [
@@ -124,6 +126,7 @@ export const projectsData: ProjectItem[] = [
     type: "video_walkthrough",
     typeLabel: "Live Site Video",
     roomCategory: "walkthrough",
+    serviceCategory: "turnkey",
     image: "/images/eklavya/image-29-1.png",
     videoUrl: "/videos/site-walkthrough-6.mp4",
     isPopularVideo: true,
@@ -143,13 +146,54 @@ export const projectsData: ProjectItem[] = [
     },
   },
   {
-    id: "living-kitchen-3d-concept",
-    title: "Contemporary Living & Modular Kitchen",
-    subtitle: "3D Architectural Visualization & Design Plan",
-    category: "Living & Kitchen",
+    id: "commercial-office-suite",
+    title: "Globex Corporate Executive Office",
+    subtitle: "Ergonomic Corporate Office & Foyer",
+    category: "Commercial Interiors",
     type: "3d_render",
     typeLabel: "3D Design Concept",
     roomCategory: "living_kitchen",
+    serviceCategory: "commercial",
+    image: "/images/services/commercial-office.png",
+    gallery: ["/images/services/commercial-office.png"],
+    description:
+      "High-impact corporate office environment featuring warm marble wall paneling, brass accent strips, fluted timber woodwork, executive desk, and reception lounge designed for productivity.",
+    specs: {
+      location: "Super Corridor, Indore",
+      style: "Corporate Luxury",
+      area: "2,500 sq.ft",
+      timeline: "Design Phase",
+    },
+  },
+  {
+    id: "hospitality-lounge-suite",
+    title: "Boutique Hotel Suite & Lounge Bar",
+    subtitle: "Luxury Hospitality & Mood Lighting",
+    category: "Hospitality Interiors",
+    type: "3d_render",
+    typeLabel: "3D Design Concept",
+    roomCategory: "master_bedroom",
+    serviceCategory: "hospitality",
+    image: "/images/services/hospitality-lounge.png",
+    gallery: ["/images/services/hospitality-lounge.png"],
+    description:
+      "Captivating boutique hotel suite and lounge bar featuring statement crystal chandeliers, plush green velvet lounge sofas, and polished brass display bar cabinets.",
+    specs: {
+      location: "Vijay Nagar, Indore",
+      style: "Boutique Hospitality",
+      area: "1,600 sq.ft",
+      timeline: "Design Phase",
+    },
+  },
+  {
+    id: "living-kitchen-3d-concept",
+    title: "Contemporary Living & Modular Kitchen",
+    subtitle: "3D Architectural Visualization & Design Plan",
+    category: "Residential Interiors",
+    type: "3d_render",
+    typeLabel: "3D Design Concept",
+    roomCategory: "living_kitchen",
+    serviceCategory: "residential",
     image: "/images/projects/living-kitchen-01.jpg",
     gallery: [
       "/images/projects/living-kitchen-01.jpg",
@@ -177,10 +221,11 @@ export const projectsData: ProjectItem[] = [
     id: "master-bedroom-3d-concept",
     title: "Luxury Master Bedroom Suite",
     subtitle: "3D Interior Design Concept & Lighting Plan",
-    category: "Master Bedroom",
+    category: "Residential Interiors",
     type: "3d_render",
     typeLabel: "3D Design Concept",
     roomCategory: "master_bedroom",
+    serviceCategory: "residential",
     image: "/images/projects/master-bedroom-01.jpg",
     gallery: [
       "/images/projects/master-bedroom-01.jpg",
@@ -200,10 +245,11 @@ export const projectsData: ProjectItem[] = [
     id: "present-room-3d-concept",
     title: "Parents Suite & Restful Haven",
     subtitle: "3D Concept Render & Material Palette",
-    category: "Parents Room",
+    category: "Residential Interiors",
     type: "3d_render",
     typeLabel: "3D Design Concept",
     roomCategory: "present_room",
+    serviceCategory: "residential",
     image: "/images/projects/present-room-01.jpg",
     gallery: [
       "/images/projects/present-room-01.jpg",
@@ -223,10 +269,11 @@ export const projectsData: ProjectItem[] = [
     id: "eklavya-residence-execution",
     title: "Eklavya Luxury Residence",
     subtitle: "Turnkey Interior Site Execution & Fit-out",
-    category: "Completed Execution",
+    category: "Turnkey Projects",
     type: "completed_site",
     typeLabel: "Completed Turnkey Site",
     roomCategory: "turnkey_site",
+    serviceCategory: "turnkey",
     image: "/images/eklavya/image-1-1.png",
     videoUrl: "/videos/site-walkthrough-4.mp4",
     gallery: [
@@ -259,10 +306,11 @@ export const projectsData: ProjectItem[] = [
     id: "living-lounge-render",
     title: "Statement Living Lounge",
     subtitle: "Curved Seating & Accent Lighting 3D Concept",
-    category: "Living & Kitchen",
+    category: "Residential Interiors",
     type: "3d_render",
     typeLabel: "3D Design Concept",
     roomCategory: "living_kitchen",
+    serviceCategory: "residential",
     image: "/images/projects/living-kitchen-02.jpg",
     gallery: [
       "/images/projects/living-kitchen-02.jpg",
@@ -282,10 +330,11 @@ export const projectsData: ProjectItem[] = [
     id: "master-bedroom-vanity-render",
     title: "Executive Master Bedroom Suite",
     subtitle: "Wood Fluted Panelling & Wardrobe Detail",
-    category: "Master Bedroom",
+    category: "Residential Interiors",
     type: "3d_render",
     typeLabel: "3D Design Concept",
     roomCategory: "master_bedroom",
+    serviceCategory: "residential",
     image: "/images/projects/master-bedroom-02.jpg",
     gallery: [
       "/images/projects/master-bedroom-02.jpg",
@@ -305,10 +354,11 @@ export const projectsData: ProjectItem[] = [
     id: "eklavya-living-execution",
     title: "Eklavya Site Execution - Living Space",
     subtitle: "Real On-Site Finishing & Custom Millwork",
-    category: "Completed Execution",
+    category: "Turnkey Projects",
     type: "completed_site",
     typeLabel: "Real Site Photo & Video",
     roomCategory: "turnkey_site",
+    serviceCategory: "turnkey",
     image: "/images/eklavya/image-11-1.jpg",
     videoUrl: "/videos/site-walkthrough-1.mp4",
     gallery: [
@@ -330,10 +380,11 @@ export const projectsData: ProjectItem[] = [
     id: "parents-bedroom-view-02",
     title: "Parents Bedroom Accent Wall",
     subtitle: "Soft Fabric Wall Panels & Bedside Lighting",
-    category: "Parents Room",
+    category: "Residential Interiors",
     type: "3d_render",
     typeLabel: "3D Design Concept",
     roomCategory: "present_room",
+    serviceCategory: "residential",
     image: "/images/projects/present-room-02.jpg",
     gallery: [
       "/images/projects/present-room-02.jpg",

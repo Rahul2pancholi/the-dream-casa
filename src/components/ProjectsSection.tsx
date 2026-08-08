@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { ArrowRight, Eye, Sparkles, Box, CheckCircle2, Play, Film } from "lucide-react";
 import { ProjectItem, projectsData, ROOM_CATEGORIES } from "@/data/projects";
 import ProjectLightboxModal from "./ProjectLightboxModal";
@@ -12,22 +13,35 @@ interface ProjectsSectionProps {
   showViewAllCTA?: boolean;
 }
 
-export default function ProjectsSection({ limit, showViewAllCTA = true }: ProjectsSectionProps) {
-  const [selectedTab, setSelectedTab] = useState<string>("all");
+function ProjectsSectionContent({ limit, showViewAllCTA = true }: ProjectsSectionProps) {
+  const searchParams = useSearchParams();
+  const initialCat = searchParams.get("cat") || "all";
+  const [selectedTab, setSelectedTab] = useState<string>(initialCat);
   const [activeProject, setActiveProject] = useState<ProjectItem | null>(null);
+
+  useEffect(() => {
+    const cat = searchParams.get("cat");
+    if (cat) {
+      setSelectedTab(cat);
+    }
+  }, [searchParams]);
 
   const filteredProjects = projectsData.filter((project) => {
     if (selectedTab === "all") return true;
     if (selectedTab === "videos") return !!project.videoUrl;
     if (selectedTab === "3d_renders") return project.type === "3d_render";
     if (selectedTab === "completed_sites") return project.type === "completed_site";
+    if (selectedTab === "residential") return project.serviceCategory === "residential";
+    if (selectedTab === "commercial") return project.serviceCategory === "commercial";
+    if (selectedTab === "turnkey") return project.serviceCategory === "turnkey" || project.type === "completed_site";
+    if (selectedTab === "hospitality") return project.serviceCategory === "hospitality";
     return project.roomCategory === selectedTab;
   });
 
   const displayedProjects = limit ? filteredProjects.slice(0, limit) : filteredProjects;
 
   return (
-    <section className="bg-[#faf8f5] px-6 py-24 sm:px-10 lg:px-16">
+    <section className="bg-[#faf8f5] px-6 py-24 sm:px-10 lg:px-16" id="portfolio">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="flex max-w-2xl flex-col items-start gap-3 text-left">
@@ -114,7 +128,7 @@ export default function ProjectsSection({ limit, showViewAllCTA = true }: Projec
                   <span className="inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-2.5 text-xs font-semibold tracking-widest text-ink uppercase shadow-xl backdrop-blur transition-transform duration-300 group-hover:scale-105">
                     {project.videoUrl ? (
                       <>
-                        <Play className="h-4 w-4 fill-gold text-gold" /> Watch Video & Photos
+                        <Play className="h-4 w-4 fill-gold text-gold" /> Watch Video &amp; Photos
                       </>
                     ) : (
                       <>
@@ -160,7 +174,7 @@ export default function ProjectsSection({ limit, showViewAllCTA = true }: Projec
               className="inline-flex items-center gap-3 rounded-full bg-gold px-9 py-4 text-xs font-semibold tracking-[0.15em] text-white uppercase transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-gold/20"
             >
               <Sparkles className="h-4 w-4" />
-              Explore All Projects & Walkthroughs
+              Explore All Projects &amp; Walkthroughs
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -173,5 +187,13 @@ export default function ProjectsSection({ limit, showViewAllCTA = true }: Projec
         onClose={() => setActiveProject(null)}
       />
     </section>
+  );
+}
+
+export default function ProjectsSection(props: ProjectsSectionProps) {
+  return (
+    <Suspense fallback={<div className="py-12 text-center text-muted">Loading portfolio...</div>}>
+      <ProjectsSectionContent {...props} />
+    </Suspense>
   );
 }

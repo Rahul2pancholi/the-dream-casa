@@ -9,7 +9,7 @@ const services = [
     description: "Personalized luxury living rooms, master suites, modular kitchens, and custom furniture tailored to your lifestyle.",
     image: "/images/projects/living-kitchen-01.jpg",
     Icon: Home,
-    href: "/services#residential",
+    href: "/projects?cat=residential",
     features: ["Living & Dining Halls", "Modular Kitchens", "Master Suites"],
   },
   {
@@ -18,7 +18,7 @@ const services = [
     description: "Ergonomic, inspiring corporate offices, executive cabins, and high-impact retail spaces built for productivity.",
     image: "/images/services/commercial-office.png",
     Icon: Building2,
-    href: "/services#commercial",
+    href: "/projects?cat=commercial",
     features: ["Corporate Cabins", "Reception Foyers", "Conference Rooms"],
   },
   {
@@ -27,7 +27,7 @@ const services = [
     description: "Complete design-to-handover management including civil works, woodwork, electrical, ceiling, and quality control.",
     image: "/images/eklavya/image-29-1.png",
     Icon: ClipboardCheck,
-    href: "/services#turnkey",
+    href: "/projects?cat=turnkey",
     features: ["100% On-Time Delivery", "Material Sourcing", "On-Site Supervision"],
   },
   {
@@ -36,7 +36,7 @@ const services = [
     description: "Memorable boutique hotel suites, lounge bars, and luxury dining spaces designed to captivate guests.",
     image: "/images/services/hospitality-lounge.png",
     Icon: BedDouble,
-    href: "/services#hospitality",
+    href: "/projects?cat=hospitality",
     features: ["Boutique Suites", "Lounge Bars", "Ambient Lighting"],
   },
 ];
