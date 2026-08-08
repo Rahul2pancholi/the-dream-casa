@@ -176,13 +176,18 @@ export default function ServicesPage() {
                       {service.description}
                     </p>
 
-                    <div className="mt-2 flex flex-col gap-2 border-t border-gold/10 pt-4">
-                      <span className="text-xs font-bold tracking-wider text-ink uppercase">What We Deliver:</span>
-                      <div className="grid gap-2 sm:grid-cols-2">
+                    <div className="mt-4 rounded-2xl border border-gold/20 bg-cream/60 p-5 sm:p-6 shadow-sm">
+                      <div className="flex items-center gap-2 text-xs font-bold tracking-[0.15em] text-gold uppercase">
+                        <CheckCircle2 className="h-4 w-4 text-gold" />
+                        What We Deliver
+                      </div>
+                      <div className="mt-4 grid gap-3 sm:grid-cols-2">
                         {service.deliverables.map((item) => (
-                          <div key={item} className="flex items-start gap-2 text-xs text-ink/80">
-                            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                            <span>{item}</span>
+                          <div key={item} className="flex items-start gap-2.5 text-xs font-medium text-ink">
+                            <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold font-bold text-[10px] mt-0.5">
+                              ✓
+                            </span>
+                            <span className="leading-snug">{item}</span>
                           </div>
                         ))}
                       </div>
