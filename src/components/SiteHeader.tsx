@@ -69,9 +69,9 @@ export default function SiteHeader() {
         <div className="hidden lg:flex items-center gap-4">
           <Link
             href="/contact"
-            className="rounded-full bg-gold px-6 py-3 text-xs font-semibold tracking-[0.1em] text-white uppercase transition-all shadow-md hover:bg-gold-dark hover:shadow-gold/20"
+            className="whitespace-nowrap inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-xs font-semibold tracking-[0.1em] text-white uppercase transition-all shadow-md hover:bg-gold-dark hover:shadow-gold/20 hover:scale-105"
           >
-            Let&apos;s Connect
+            Let&apos;s Connect <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
 
@@ -89,7 +89,7 @@ export default function SiteHeader() {
       {/* Mobile Drawer Overlay */}
       {mobileMenuOpen && (
         <div className="fixed inset-x-0 top-[73px] bottom-0 z-40 flex flex-col justify-between bg-white/98 p-6 backdrop-blur-xl lg:hidden">
-          <nav className="flex flex-col gap-6 pt-4">
+          <nav className="flex flex-col gap-5 pt-2">
             {navLinks.map((link) => {
               const isActive =
                 pathname === link.href ||
@@ -99,30 +99,30 @@ export default function SiteHeader() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between border-b border-gold/10 pb-3 text-sm font-semibold tracking-[0.15em] uppercase ${
+                  className={`flex items-center justify-between border-b border-gold/10 pb-2.5 text-xs font-semibold tracking-[0.15em] uppercase ${
                     isActive ? "text-gold font-bold" : "text-ink/90"
                   }`}
                 >
                   <span>{link.label}</span>
-                  <ArrowRight className="h-4 w-4 text-gold" />
+                  <ArrowRight className="h-3.5 w-3.5 text-gold" />
                 </Link>
               );
             })}
           </nav>
 
-          <div className="flex flex-col gap-4 border-t border-gold/20 pt-6 pb-6">
+          <div className="flex flex-col gap-3 border-t border-gold/20 pt-4 pb-4">
             <a
-              href="tel:+917400932661"
+              href="tel:+917490932661"
               className="flex items-center justify-center gap-2 text-xs font-semibold text-ink"
             >
-              <Phone className="h-4 w-4 text-gold" /> +91 7400 932 661
+              <Phone className="h-4 w-4 text-gold" /> +91 7490 932 661
             </a>
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex w-full items-center justify-center rounded-full bg-gold py-3.5 text-center text-xs font-semibold tracking-widest text-white uppercase shadow-md hover:bg-gold-dark"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-gold py-3 text-center text-xs font-semibold tracking-widest text-white uppercase shadow-md hover:bg-gold-dark"
             >
-              Let&apos;s Connect
+              Let&apos;s Connect <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>
