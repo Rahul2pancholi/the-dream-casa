@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, Globe, MapPin } from "lucide-react";
+import { Phone, Mail, Globe, MapPin, User } from "lucide-react";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -8,7 +8,6 @@ const quickLinks = [
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "Process", href: "/process" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -22,7 +21,7 @@ const services = [
 const socialLinks = [
   {
     label: "Instagram",
-    href: "https://www.instagram.com/the.dream.casa/",
+    href: "https://www.instagram.com/the.dream.casa?utm_source=qr&igsh=a2UyNXgwNnhobW04",
     path: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z",
   },
   {
@@ -44,8 +43,8 @@ const socialLinks = [
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-ink text-white/70">
-      <div className="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-16">
+    <footer className="bg-ink text-white/70 px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-7xl py-14">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3">
@@ -66,8 +65,7 @@ export default function SiteFooter() {
               </span>
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
-              Designing aesthetic, functional and timeless spaces for a
-              better tomorrow.
+              Designing aesthetic, functional and timeless spaces in Indore &amp; beyond. Founded by Poorti Jain.
             </p>
             <div className="mt-6 flex items-center gap-3">
               {socialLinks.map((social) => (
@@ -122,12 +120,16 @@ export default function SiteFooter() {
               Contact Info
             </h4>
             <div className="flex flex-col gap-4 text-sm text-white/55">
+              <div className="flex items-center gap-3">
+                <User className="h-4 w-4 shrink-0 text-gold" />
+                <span>Poorti Jain (Founder)</span>
+              </div>
               <a
-                href="tel:+917400932661"
+                href="tel:+917490932661"
                 className="flex items-center gap-3 hover:text-gold"
               >
                 <Phone className="h-4 w-4 shrink-0 text-gold" />
-                +91 7400 932 661
+                +91 7490 932 661
               </a>
               <a
                 href="mailto:thedreamcasastudio@gmail.com"
@@ -137,7 +139,7 @@ export default function SiteFooter() {
                 thedreamcasastudio@gmail.com
               </a>
               <a
-                href="https://thedreamcasa.in"
+                href="https://thedreamcasa.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 hover:text-gold"
@@ -148,8 +150,7 @@ export default function SiteFooter() {
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <span>
-                  The View, 365, Yeshwant Niwas Rd, Nehru Park 2, Lad
-                  Colony, Indore, Madhya Pradesh 452003
+                  The View, 305, Yeshwant Niwas Rd, Nehru Park 2, Lad Colony, Indore, Madhya Pradesh 452003
                 </span>
               </div>
             </div>
@@ -158,8 +159,7 @@ export default function SiteFooter() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 text-center sm:flex-row sm:text-left">
           <p className="text-[11px] tracking-[0.2em] text-white/30 uppercase">
-            &copy; {new Date().getFullYear()} The Dream Casa. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} The Dream Casa. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-[11px] tracking-[0.2em] text-white/30 uppercase">
             <Link href="/privacy-policy" className="hover:text-gold">

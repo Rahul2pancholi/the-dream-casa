@@ -13,9 +13,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "The Dream Casa | Interior Design & Turnkey Projects",
+  title: "The Dream Casa | Interior Design & Turnkey Projects by Poorti Jain",
   description:
-    "The Dream Casa is a premium interior design and turnkey solutions company based in Indore, crafting aesthetic, functional, and timeless spaces.",
+    "The Dream Casa is a premium interior design and turnkey solutions company based in Indore, founded by Poorti Jain, crafting aesthetic, functional, and timeless spaces.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

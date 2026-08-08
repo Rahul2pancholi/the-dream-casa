@@ -38,7 +38,7 @@ export default function AboutSection() {
           </h2>
           <p className="max-w-lg text-sm leading-relaxed text-muted">
             The Dream Casa is a premium interior design and turnkey
-            solutions company based in Indore. We specialize in creating
+            solutions company based in Indore, founded by Poorti Jain. We specialize in creating
             aesthetic, functional, and timeless spaces for residential,
             commercial, and hospitality projects.
           </p>

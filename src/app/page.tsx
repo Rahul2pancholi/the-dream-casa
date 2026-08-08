@@ -2,6 +2,9 @@ import SiteHeader from "@/components/SiteHeader";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
+import VideoWalkthroughSection from "@/components/VideoWalkthroughSection";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import ProjectsSection from "@/components/ProjectsSection";
 import StatsBar from "@/components/StatsBar";
 import CtaBanner from "@/components/CtaBanner";
 import SiteFooter from "@/components/SiteFooter";
@@ -14,6 +17,9 @@ export default function Home() {
         <Hero />
         <AboutSection />
         <ServicesSection />
+        <VideoWalkthroughSection />
+        <BeforeAfterSlider />
+        <ProjectsSection limit={6} showViewAllCTA={true} />
         <StatsBar />
         <CtaBanner />
       </main>
