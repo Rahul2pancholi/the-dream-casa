@@ -104,21 +104,21 @@ export default function Hero() {
               Our Services <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-        </div>
 
-        {/* Slide Navigation Dots */}
-        <div className="mt-8 lg:absolute lg:bottom-4 lg:left-0 flex items-center gap-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              aria-label={`Show slide ${index + 1}`}
-              onClick={() => setActive(index)}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                index === active ? "w-8 bg-gold" : "w-2.5 bg-white/40 lg:bg-ink/25 hover:bg-gold"
-              }`}
-            />
-          ))}
+          {/* Slide Navigation Dots */}
+          <div className="flex items-center gap-2.5 pt-3 sm:pt-4">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                aria-label={`Show slide ${index + 1}`}
+                onClick={() => setActive(index)}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  index === active ? "w-8 bg-gold" : "w-2.5 bg-white/40 lg:bg-ink/25 hover:bg-gold"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
