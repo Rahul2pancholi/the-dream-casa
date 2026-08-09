@@ -40,6 +40,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Poorti Jain", url: "https://thedreamcasa.in" }],
   creator: "Poorti Jain",
   publisher: "The Dream Casa",
+  alternates: {
+    canonical: "./",
+  },
   robots: {
     index: true,
     follow: true,
@@ -87,66 +90,78 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "InteriorDesigner",
-  "name": "The Dream Casa - Best Interior Designer in Indore",
-  "description": "Premier interior architecture studio and best interior designer in Indore led by Founder Poorti Jain. Specializing in luxury residential interiors, 3D architectural renders, and 100% turnkey site execution.",
-  "image": "https://thedreamcasa.in/images/logo-icon.png",
-  "@id": "https://thedreamcasa.in/#studio",
-  "url": "https://thedreamcasa.in",
-  "telephone": "+917490932661",
-  "email": "thedreamcasastudio@gmail.com",
-  "priceRange": "₹₹₹",
-  "knowsAbout": [
-    "Interior Designer in Indore",
-    "Luxury Residential Interiors",
-    "Turnkey Site Execution",
-    "3D Photorealistic Renders",
-    "Modular Kitchen Design",
-    "Commercial Office Interiors"
-  ],
-  "founder": {
-    "@type": "Person",
-    "name": "Poorti Jain",
-    "jobTitle": "Founder & Principal Designer"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "The View, 305, Yeshwant Niwas Rd, Nehru Park 2, Lad Colony",
-    "addressLocality": "Indore",
-    "addressRegion": "Madhya Pradesh",
-    "postalCode": "452003",
-    "addressCountry": "IN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 22.7217489,
-    "longitude": 75.8737501
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ],
-    "opens": "10:00",
-    "closes": "19:30"
-  },
-  "sameAs": [
-    "https://www.instagram.com/the.dream.casa"
-  ],
-  "areaServed": [
-    "Indore",
-    "Palasia",
-    "Vijay Nagar",
-    "Super Corridor",
-    "Yeshwant Niwas Rd",
-    "Bicholi Mardana",
-    "Saket Nagar",
-    "Madhya Pradesh"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://thedreamcasa.in/#website",
+      "url": "https://thedreamcasa.in",
+      "name": "The Dream Casa",
+      "description": "Luxury Interior Design Studio & Turnkey Projects in Indore",
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "InteriorDesigner",
+      "name": "The Dream Casa - Best Interior Designer in Indore",
+      "description": "Premier interior architecture studio and best interior designer in Indore led by Founder Poorti Jain. Specializing in luxury residential interiors, 3D architectural renders, and 100% turnkey site execution.",
+      "image": "https://thedreamcasa.in/images/logo-icon.png",
+      "@id": "https://thedreamcasa.in/#studio",
+      "url": "https://thedreamcasa.in",
+      "telephone": "+917490932661",
+      "email": "thedreamcasastudio@gmail.com",
+      "priceRange": "₹₹₹",
+      "knowsAbout": [
+        "Interior Designer in Indore",
+        "Luxury Residential Interiors",
+        "Turnkey Site Execution",
+        "3D Photorealistic Renders",
+        "Modular Kitchen Design",
+        "Commercial Office Interiors"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Poorti Jain",
+        "jobTitle": "Founder & Principal Designer"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "The View, 305, Yeshwant Niwas Rd, Nehru Park 2, Lad Colony",
+        "addressLocality": "Indore",
+        "addressRegion": "Madhya Pradesh",
+        "postalCode": "452003",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 22.7217489,
+        "longitude": 75.8737501
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "10:00",
+        "closes": "19:30"
+      },
+      "sameAs": [
+        "https://www.instagram.com/the.dream.casa"
+      ],
+      "areaServed": [
+        "Indore",
+        "Palasia",
+        "Vijay Nagar",
+        "Super Corridor",
+        "Yeshwant Niwas Rd",
+        "Bicholi Mardana",
+        "Saket Nagar",
+        "Madhya Pradesh"
+      ]
+    }
   ]
 };
 
