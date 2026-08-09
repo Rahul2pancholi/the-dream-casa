@@ -37,13 +37,13 @@ export default function SiteHeader() {
           href="/"
           className="flex items-center gap-3 transition-opacity hover:opacity-90 shrink-0"
         >
-          <div className="relative h-10 w-10 overflow-hidden rounded-lg border border-gold/30 shadow-sm shrink-0">
+          <div className="relative h-10 w-10 shrink-0">
             <Image
               src="/images/logo-icon.png"
               alt="The Dream Casa Studio Indore"
               fill
               priority
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <div className="flex flex-col">

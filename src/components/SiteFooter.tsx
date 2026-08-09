@@ -54,7 +54,7 @@ export default function SiteFooter() {
                 alt="The Dream Casa"
                 width={44}
                 height={44}
-                className="h-11 w-11 rounded-md object-cover"
+                className="h-11 w-11 object-contain"
               />
               <span className="flex flex-col leading-tight">
                 <span className="font-serif text-lg text-white">
