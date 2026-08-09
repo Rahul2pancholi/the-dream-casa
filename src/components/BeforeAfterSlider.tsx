@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef, ReactNode } from "react";
+import { useState, useRef, useEffect, ReactNode } from "react";
 import Image from "next/image";
-import { Sparkles, MoveHorizontal } from "lucide-react";
+import { Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface BeforeAfterItem {
   id: string;
@@ -36,7 +36,15 @@ export default function BeforeAfterSlider() {
   const [activeItem, setActiveItem] = useState(comparisons[0]);
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [showHint, setShowHint] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+    const timer = setTimeout(() => setShowHint(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleMove = (clientX: number) => {
     if (!containerRef.current) return;
@@ -48,13 +56,19 @@ export default function BeforeAfterSlider() {
     setSliderPosition(percentage);
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    handleMove(e.touches[0].clientX);
+  const handlePointerDown = (e: React.PointerEvent) => {
+    e.currentTarget.setPointerCapture(e.pointerId);
+    setIsDragging(true);
+    setShowHint(false);
   };
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handlePointerMove = (e: React.PointerEvent) => {
     if (!isDragging) return;
     handleMove(e.clientX);
+  };
+
+  const handlePointerUp = () => {
+    setIsDragging(false);
   };
 
   return (
@@ -99,12 +113,11 @@ export default function BeforeAfterSlider() {
         <div className="mt-10 overflow-hidden rounded-2xl border border-gold/20 bg-white p-4 shadow-xl sm:p-6 lg:p-8">
           <div
             ref={containerRef}
-            className="relative aspect-[16/10] w-full overflow-hidden rounded-xl select-none cursor-ew-resize min-h-[320px] sm:min-h-[480px]"
-            onMouseDown={() => setIsDragging(true)}
-            onMouseUp={() => setIsDragging(false)}
-            onMouseLeave={() => setIsDragging(false)}
-            onMouseMove={handleMouseMove}
-            onTouchMove={handleTouchMove}
+            className="relative aspect-[16/10] w-full overflow-hidden rounded-xl select-none touch-none cursor-ew-resize min-h-[320px] sm:min-h-[480px]"
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerLeave={handlePointerUp}
           >
             {/* After (Real Site Photo) - Base Background */}
             <Image
@@ -115,13 +128,19 @@ export default function BeforeAfterSlider() {
               className="object-cover"
               priority
             />
-            <div className="absolute right-4 top-4 z-10 rounded-full bg-emerald-700/90 px-4 py-1.5 text-xs font-semibold tracking-wider text-white shadow backdrop-blur">
-              Real Site Execution
+            <div
+              className={`absolute right-4 top-4 z-10 rounded-full bg-black/60 px-4 py-1.5 text-xs font-semibold tracking-wider text-white shadow backdrop-blur transition-opacity duration-700 ${
+                mounted ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              Real Execution
             </div>
 
             {/* Before (3D Render Concept) - Clipped Overlay */}
             <div
-              className="absolute inset-y-0 left-0 overflow-hidden"
+              className={`absolute inset-y-0 left-0 overflow-hidden ${
+                !isDragging ? "transition-[width] duration-300 ease-out" : ""
+              }`}
               style={{ width: `${sliderPosition}%` }}
             >
               <div className="relative h-full w-full min-w-[320px] sm:min-w-[600px] lg:min-w-[1000px]">
@@ -134,20 +153,36 @@ export default function BeforeAfterSlider() {
                   priority
                 />
               </div>
-              <div className="absolute left-4 top-4 z-10 rounded-full bg-gold/90 px-4 py-1.5 text-xs font-semibold tracking-wider text-ink shadow backdrop-blur">
-                3D Render Concept
+              <div
+                className={`absolute left-4 top-4 z-10 rounded-full bg-black/60 px-4 py-1.5 text-xs font-semibold tracking-wider text-white shadow backdrop-blur transition-opacity duration-700 ${
+                  mounted ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                3D Render
               </div>
             </div>
 
             {/* Slider Divider Bar */}
             <div
-              className="absolute inset-y-0 z-20 w-1 bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+              className={`absolute inset-y-0 z-20 w-0.5 bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] ${
+                !isDragging ? "transition-[left] duration-300 ease-out" : ""
+              }`}
               style={{ left: `${sliderPosition}%` }}
             >
-              <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-gold text-ink shadow-2xl border-2 border-white backdrop-blur">
-                <MoveHorizontal className="h-6 w-6" />
+              <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold bg-white shadow-xl">
+                <ChevronLeft className="h-4 w-4 text-gold" />
+                <ChevronRight className="h-4 w-4 text-gold" />
               </div>
             </div>
+          </div>
+
+          {/* Drag Hint */}
+          <div
+            className={`mt-3 flex items-center justify-center gap-2 text-xs text-muted transition-opacity duration-500 ${
+              showHint ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <span aria-hidden="true">↔</span> Drag to compare
           </div>
 
           <div className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-center sm:text-left">

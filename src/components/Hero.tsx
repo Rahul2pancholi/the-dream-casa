@@ -75,18 +75,18 @@ export default function Hero() {
         <div className="flex max-w-xl flex-col justify-center gap-5 sm:gap-6 text-left">
           {/* Location Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-xs font-semibold tracking-wider text-gold uppercase backdrop-blur w-fit">
-            <Award className="h-4 w-4" /> Top Rated Interior Designer &bull; Indore
+            <Award className="h-4 w-4" /> Premium Interior Studio &bull; Indore
           </div>
 
           {/* Heading */}
           <h1 className="font-serif text-3xl font-bold leading-tight text-white lg:text-ink sm:text-5xl lg:text-6xl">
-            Best Interior Designer in Indore.{" "}
-            <span className="text-gold italic font-normal block sm:inline">Turnkey Execution.</span>
+            Designed Around You.{" "}
+            <span className="text-gold italic font-normal block sm:inline">Built to Last.</span>
           </h1>
 
           {/* Description */}
           <p className="max-w-md text-sm leading-relaxed text-neutral-200 lg:text-muted sm:text-base">
-            As Indore&apos;s leading interior design studio led by Founder Poorti Jain, we deliver 3D photorealistic architectural renders &amp; 100% turnkey site execution for luxury homes and offices.
+            From your first idea to the final walkthrough — The Dream Casa handles design, materials, and execution so you don&apos;t have to.
           </p>
 
           {/* Action CTAs */}
@@ -95,13 +95,13 @@ export default function Hero() {
               href="/projects"
               className="inline-flex items-center gap-2 rounded-full bg-gold px-6 sm:px-8 py-3.5 text-xs font-semibold tracking-[0.15em] text-white uppercase transition-all shadow-xl hover:bg-gold-dark hover:shadow-gold/25 hover:scale-105"
             >
-              <Sparkles className="h-4 w-4" /> Explore Projects
+              <Sparkles className="h-4 w-4" /> See Our Work
             </Link>
             <Link
-              href="/services"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full border border-white/30 lg:border-ink/20 bg-white/10 lg:bg-white/60 px-6 sm:px-8 py-3.5 text-xs font-semibold tracking-[0.15em] text-white lg:text-ink uppercase backdrop-blur transition-all hover:border-gold hover:text-gold hover:bg-white"
             >
-              Our Services <ArrowRight className="h-4 w-4" />
+              Book a Consultation <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
