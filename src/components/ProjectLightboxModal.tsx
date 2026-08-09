@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { X, ChevronLeft, ChevronRight, MapPin, Calendar, Maximize2, Layers, Play, Film } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, MapPin, Calendar, Maximize2, Layers, Play, Film, Share2, Check } from "lucide-react";
 import { ProjectItem } from "@/data/projects";
 
 interface LightboxProps {
@@ -13,11 +13,24 @@ interface LightboxProps {
 export default function ProjectLightboxModal({ project, onClose }: LightboxProps) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
+  const [entered, setEntered] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     setActiveImageIndex(0);
     setShowVideo(false);
+    setCopied(false);
   }, [project]);
+
+  useEffect(() => {
+    if (!project) {
+      setEntered(false);
+      return;
+    }
+    setEntered(false);
+    const raf = requestAnimationFrame(() => setEntered(true));
+    return () => cancelAnimationFrame(raf);
+  }, [project?.id]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -49,6 +62,17 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
     setActiveImageIndex((prev) => (prev - 1 + project.gallery.length) % project.gallery.length);
   };
 
+  const handleShare = async () => {
+    const url = `${window.location.origin}${window.location.pathname}?project=${project.id}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // clipboard access denied or unavailable — silently ignore
+    }
+  };
+
   return (
     <div
       aria-modal="true"
@@ -57,21 +81,43 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
       onClick={onClose}
     >
       <div
-        className="relative flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden rounded-2xl bg-neutral-900 border border-gold/20 shadow-2xl lg:flex-row lg:max-h-[85vh]"
+        className={`relative flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden rounded-2xl bg-neutral-900 border border-gold/20 shadow-2xl transition-all duration-200 ease-out lg:flex-row lg:max-h-[85vh] ${
+          entered ? "scale-100 opacity-100" : "scale-[0.96] opacity-0"
+        }`}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close Lightbox"
-          className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-white transition-all hover:bg-gold hover:text-ink"
-        >
-          <X className="h-5 w-5" />
-        </button>
+        {/* Top Right Action Buttons */}
+        <div className="absolute right-4 top-4 z-20 flex items-center gap-2">
+          {/* Share Button */}
+          <div className="relative">
+            <button
+              type="button"
+              onClick={handleShare}
+              aria-label="Copy share link"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-white transition-all hover:bg-gold hover:text-ink"
+            >
+              {copied ? <Check className="h-5 w-5" /> : <Share2 className="h-5 w-5" />}
+            </button>
+            {copied && (
+              <span className="absolute right-0 top-12 whitespace-nowrap rounded-md bg-black/85 px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+                Link copied!
+              </span>
+            )}
+          </div>
+
+          {/* Close Button */}
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close Lightbox"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-white transition-all hover:bg-gold hover:text-ink"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
 
         {/* Main Viewport */}
-        <div className="relative flex flex-1 flex-col justify-between bg-black/95 p-4 lg:p-6">
+        <div className="relative flex min-w-0 flex-1 flex-col justify-between bg-black/95 p-4 lg:p-6">
           <div className="relative flex flex-1 items-center justify-center min-h-[320px] sm:min-h-[460px]">
             {showVideo && project.videoUrl ? (
               <video
@@ -160,8 +206,8 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
         </div>
 
         {/* Side Detail Sidebar */}
-        <div className="flex w-full flex-col justify-between overflow-y-auto bg-cream-light p-6 lg:w-96 lg:p-8">
-          <div className="flex flex-col gap-4">
+        <div className="flex w-full shrink-0 flex-col justify-between overflow-y-auto bg-cream-light p-6 pt-8 lg:w-96 lg:p-8 lg:pt-12">
+          <div className="flex flex-col gap-5">
             <div className="flex items-center gap-2">
               <span className="rounded-full bg-gold/15 px-3 py-1 text-[11px] font-semibold tracking-wider text-gold uppercase">
                 {project.typeLabel}
@@ -171,9 +217,14 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
               </span>
             </div>
 
-            <h3 className="font-serif text-2xl font-bold text-ink leading-tight">
-              {project.title}
-            </h3>
+            <div className="flex flex-wrap items-center gap-2.5">
+              <h3 className="font-serif text-2xl font-bold text-ink leading-tight">
+                {project.title}
+              </h3>
+              <span className="rounded-full bg-gold px-2.5 py-1 text-[10px] font-semibold tracking-wider text-white uppercase">
+                {project.category}
+              </span>
+            </div>
             <p className="text-xs font-medium tracking-wide text-gold">
               {project.subtitle}
             </p>
@@ -227,6 +278,45 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
                 </div>
               )}
             </div>
+
+            {/* Scope of Work */}
+            {project.scopeOfWork && project.scopeOfWork.length > 0 && (
+              <div className="mt-2 flex flex-col gap-3">
+                <h4 className="font-serif text-base font-bold text-ink">
+                  Scope of Work
+                </h4>
+                <ul className="flex flex-col gap-2">
+                  {project.scopeOfWork.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-xs text-ink/80">
+                      <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-gold" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Challenge & Solution */}
+            {project.challenge && project.solution && (
+              <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div className="flex flex-col gap-1.5 rounded-xl border border-gold/15 bg-white p-4 shadow-sm">
+                  <h5 className="text-[11px] font-semibold tracking-wider text-gold uppercase">
+                    The Challenge
+                  </h5>
+                  <p className="text-xs leading-relaxed text-muted">
+                    {project.challenge}
+                  </p>
+                </div>
+                <div className="flex flex-col gap-1.5 rounded-xl border border-gold/15 bg-white p-4 shadow-sm">
+                  <h5 className="text-[11px] font-semibold tracking-wider text-gold uppercase">
+                    Our Approach
+                  </h5>
+                  <p className="text-xs leading-relaxed text-muted">
+                    {project.solution}
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="mt-8 flex flex-col gap-3">

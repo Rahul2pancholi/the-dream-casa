@@ -22,6 +22,9 @@ export interface ProjectItem {
     area?: string;
     timeline?: string;
   };
+  scopeOfWork?: string[];
+  challenge?: string;
+  solution?: string;
 }
 
 export const ROOM_CATEGORIES = [
@@ -164,6 +167,18 @@ export const projectsData: ProjectItem[] = [
       area: "2,500 sq.ft",
       timeline: "Design Phase",
     },
+    scopeOfWork: [
+      "Reception & foyer design",
+      "Executive cabin interiors",
+      "Conference room",
+      "Lighting & electrical",
+      "Flooring",
+      "Branding integration",
+    ],
+    challenge:
+      "Creating a corporate environment that felt premium and professional while remaining warm and welcoming for clients visiting the office.",
+    solution:
+      "Marble wall panels paired with brass accents and warm timber woodwork created a balance between corporate authority and approachable luxury.",
   },
   {
     id: "hospitality-lounge-suite",
@@ -301,6 +316,19 @@ export const projectsData: ProjectItem[] = [
       area: "2,400 sq.ft",
       timeline: "Delivered in 90 Days",
     },
+    scopeOfWork: [
+      "False ceiling & lighting design",
+      "Custom veneer wall paneling",
+      "Modular kitchen execution",
+      "Electrical & switchgear",
+      "Custom furniture & wardrobes",
+      "Flooring & tile work",
+      "Décor & styling",
+    ],
+    challenge:
+      "The client wanted an open, airy layout that felt luxurious without being overwhelming — practical for a family of four but visually impressive.",
+    solution:
+      "We designed a warm contemporary palette anchored by custom veneer panels and layered lighting. Every storage solution was integrated invisibly into the design so the space felt uncluttered and spacious.",
   },
   {
     id: "living-lounge-render",
@@ -375,6 +403,18 @@ export const projectsData: ProjectItem[] = [
       area: "750 sq.ft",
       timeline: "Completed",
     },
+    scopeOfWork: [
+      "Living & dining interior",
+      "Master bedroom suite",
+      "False ceiling throughout",
+      "Custom wardrobe units",
+      "Lighting design",
+      "Paint & finish selection",
+    ],
+    challenge:
+      "Balancing a modern aesthetic with the client's preference for warm, homely materials in a compact 3BHK layout.",
+    solution:
+      "Layered warm tones with selective use of wood veneer and integrated storage to maximize the sense of space without sacrificing comfort.",
   },
   {
     id: "parents-bedroom-view-02",
