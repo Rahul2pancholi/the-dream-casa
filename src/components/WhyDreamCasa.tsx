@@ -11,7 +11,7 @@ import {
   CheckCircle2,
   Phone,
   MessageSquare,
-  ShieldAlert,
+  XCircle,
 } from "lucide-react";
 
 const reasons = [
@@ -90,30 +90,25 @@ const comparisons = [
 
 export default function WhyDreamCasa() {
   return (
-    <section className="relative overflow-hidden bg-[#141210] py-24 sm:py-28 lg:py-32 px-6 sm:px-10 lg:px-16 text-white">
-      {/* Ambient Lighting Accents */}
-      <div className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-gold/15 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-32 bottom-10 h-96 w-96 rounded-full bg-gold/10 blur-[120px]" />
-      <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-gold/5 blur-[160px]" />
-
+    <section className="relative bg-[#faf8f5] py-24 sm:py-28 lg:py-32 px-6 sm:px-10 lg:px-16 text-ink border-y border-gold/15">
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="flex flex-col items-center gap-4 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-semibold tracking-[0.2em] text-gold uppercase shadow-inner">
-            <Sparkles className="h-3.5 w-3.5" />
+        <div className="flex flex-col items-center gap-3.5 text-center max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-semibold tracking-[0.2em] text-gold uppercase shadow-sm">
+            <Sparkles className="h-3.5 w-3.5 text-gold" />
             Our Difference &bull; The Dream Casa
           </div>
-          
-          <h2 className="font-serif text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+
+          <h2 className="font-serif text-3xl font-bold leading-tight text-ink sm:text-4xl lg:text-5xl">
             Why Homeowners in Indore Trust Us
           </h2>
-          
-          <p className="text-sm leading-relaxed text-neutral-300 sm:text-base max-w-2xl">
+
+          <p className="text-sm leading-relaxed text-muted sm:text-base max-w-2xl">
             Experience the peace of mind of 100% turnkey interior execution. From 3D photorealistic architectural renders to flawless key handover.
           </p>
 
           {/* Quick Stats Badges */}
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-6 border-t border-white/10 pt-6 text-xs font-semibold text-neutral-300">
+          <div className="mt-2 flex flex-wrap justify-center items-center gap-6 border-t border-gold/15 pt-6 text-xs font-semibold text-ink/80">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-gold" />
               <span>100+ Homes Handed Over</span>
@@ -134,18 +129,15 @@ export default function WhyDreamCasa() {
           {reasons.map(({ number, Icon, title, tagline, text, highlight }) => (
             <div
               key={title}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:p-8 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-gold/40 hover:bg-white/[0.07] hover:shadow-[0_20px_50px_rgba(212,175,55,0.12)]"
+              className="group relative flex flex-col justify-between rounded-3xl border border-gold/20 bg-white p-7 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-gold/50 hover:shadow-xl"
             >
-              {/* Subtle Corner Glow on Hover */}
-              <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-gold/0 blur-2xl transition-all duration-500 group-hover:bg-gold/20" />
-
               <div>
                 {/* Card Top Row: Icon & Step Number */}
-                <div className="flex items-center justify-between border-b border-white/10 pb-5">
-                  <div className="flex h-13 w-13 items-center justify-center rounded-2xl border border-gold/30 bg-gold/10 text-gold shadow-md group-hover:border-gold group-hover:bg-gold group-hover:text-white transition-all duration-300">
+                <div className="flex items-center justify-between border-b border-gold/15 pb-5">
+                  <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-gold/10 text-gold border border-gold/25 group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm">
                     <Icon strokeWidth={1.75} className="h-6 w-6" />
                   </div>
-                  <span className="font-serif text-3xl font-bold tracking-tight text-white/20 group-hover:text-gold/80 transition-colors">
+                  <span className="font-serif text-3xl font-bold tracking-tight text-gold/30 group-hover:text-gold transition-colors">
                     {number}
                   </span>
                 </div>
@@ -155,19 +147,19 @@ export default function WhyDreamCasa() {
                   <span className="text-[11px] font-bold tracking-widest text-gold uppercase">
                     {tagline}
                   </span>
-                  <h3 className="font-serif text-xl font-bold leading-snug text-white group-hover:text-gold transition-colors">
+                  <h3 className="font-serif text-xl font-bold leading-snug text-ink group-hover:text-gold transition-colors">
                     {title}
                   </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-neutral-300 sm:text-sm">
+                  <p className="mt-2 text-xs leading-relaxed text-muted sm:text-sm">
                     {text}
                   </p>
                 </div>
               </div>
 
               {/* Card Footer Tag */}
-              <div className="mt-6 border-t border-white/10 pt-4">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-gold/25 bg-gold/10 px-3.5 py-1 text-[11px] font-semibold text-gold">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-gold" />
+              <div className="mt-6 border-t border-gold/15 pt-4">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-gold/25 bg-cream/70 px-3.5 py-1 text-[11px] font-semibold text-ink">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
                   {highlight}
                 </span>
               </div>
@@ -175,50 +167,50 @@ export default function WhyDreamCasa() {
           ))}
         </div>
 
-        {/* Interactive Comparison Card: Turnkey vs Traditional Contractors */}
-        <div className="mt-20 overflow-hidden rounded-3xl border border-gold/25 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-8 sm:p-12 backdrop-blur-xl shadow-2xl">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/10 pb-8">
+        {/* Light Contrast Comparison Matrix */}
+        <div className="mt-20 overflow-hidden rounded-3xl border border-gold/25 bg-white p-8 sm:p-12 shadow-xl">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-gold/15 pb-8">
             <div>
               <span className="text-xs font-bold tracking-[0.2em] text-gold uppercase">
                 The Execution Contrast
               </span>
-              <h3 className="mt-2 font-serif text-2xl font-bold text-white sm:text-3xl">
+              <h3 className="mt-2 font-serif text-2xl font-bold text-ink sm:text-3xl">
                 The Dream Casa vs Local Carpenters &amp; Contractors
               </h3>
-              <p className="mt-1 text-xs sm:text-sm text-neutral-300">
+              <p className="mt-1 text-xs sm:text-sm text-muted">
                 Why luxury residences across Indore choose our end-to-end design studio over unorganized workers.
               </p>
             </div>
-            
+
             <a
               href="https://wa.me/917490932661?text=Hi%20Poorti,%20I%20want%20to%20discuss%20my%20interior%20project%20in%20Indore."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-lg hover:bg-emerald-700 transition-all shrink-0"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-md hover:bg-emerald-700 transition-all shrink-0"
             >
               <MessageSquare className="h-4 w-4" /> Ask Poorti on WhatsApp
             </a>
           </div>
 
-          {/* Comparison Table Grid */}
+          {/* Comparison Table Rows */}
           <div className="mt-8 grid gap-4">
-            {comparisons.map((item, idx) => (
+            {comparisons.map((item) => (
               <div
                 key={item.aspect}
-                className="grid gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-5 md:grid-cols-12 md:items-center transition-colors hover:bg-white/[0.04]"
+                className="grid gap-4 rounded-2xl border border-gold/15 bg-[#faf8f5]/60 p-5 md:grid-cols-12 md:items-center transition-colors hover:bg-cream/40"
               >
-                <div className="md:col-span-3 font-serif text-sm font-bold text-white">
+                <div className="md:col-span-3 font-serif text-sm font-bold text-ink">
                   {item.aspect}
                 </div>
 
-                <div className="md:col-span-4 flex items-start gap-2.5 rounded-xl bg-rose-950/20 p-3.5 border border-rose-500/20 text-xs text-rose-200">
-                  <ShieldAlert className="h-4 w-4 shrink-0 text-rose-400 mt-0.5" />
-                  <span><strong className="text-rose-300 font-semibold">Local Contractors:</strong> {item.contractor}</span>
+                <div className="md:col-span-4 flex items-start gap-2.5 rounded-xl bg-rose-50 p-3.5 border border-rose-200 text-xs text-rose-900">
+                  <XCircle className="h-4 w-4 shrink-0 text-rose-500 mt-0.5" />
+                  <span><strong className="text-rose-950 font-semibold">Local Contractors:</strong> {item.contractor}</span>
                 </div>
 
-                <div className="md:col-span-5 flex items-start gap-2.5 rounded-xl bg-emerald-950/30 p-3.5 border border-emerald-500/30 text-xs text-emerald-100 font-medium">
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400 mt-0.5" />
-                  <span><strong className="text-gold font-bold">The Dream Casa:</strong> {item.dreamCasa}</span>
+                <div className="md:col-span-5 flex items-start gap-2.5 rounded-xl bg-emerald-50 p-3.5 border border-emerald-200 text-xs text-emerald-950 font-medium">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-600 mt-0.5" />
+                  <span><strong className="text-emerald-900 font-bold">The Dream Casa:</strong> {item.dreamCasa}</span>
                 </div>
               </div>
             ))}
@@ -229,13 +221,13 @@ export default function WhyDreamCasa() {
         <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2.5 rounded-full bg-gold px-9 py-4 text-xs font-bold tracking-[0.15em] text-white uppercase transition-all shadow-xl hover:bg-gold-dark hover:shadow-gold/30 hover:scale-105"
+            className="inline-flex items-center gap-2.5 rounded-full bg-gold px-9 py-4 text-xs font-bold tracking-[0.15em] text-white uppercase transition-all shadow-xl hover:bg-gold-dark hover:shadow-gold/25 hover:scale-105"
           >
             Schedule Studio Visit <ArrowRight className="h-4 w-4" />
           </Link>
           <a
             href="tel:+917490932661"
-            className="inline-flex items-center gap-2.5 rounded-full border border-gold/40 bg-white/5 px-8 py-4 text-xs font-semibold tracking-[0.15em] text-white uppercase backdrop-blur-md transition-all hover:bg-white/10 hover:border-gold"
+            className="inline-flex items-center gap-2.5 rounded-full border border-gold/40 bg-white px-8 py-4 text-xs font-semibold tracking-[0.15em] text-ink uppercase shadow-sm transition-all hover:bg-cream-dark hover:border-gold"
           >
             <Phone className="h-4 w-4 text-gold" /> Call +91 7490 932 661
           </a>
