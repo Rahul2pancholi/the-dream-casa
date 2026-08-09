@@ -68,7 +68,7 @@ export default function TestimonialsSection() {
               ))}
             </div>
             <span className="text-sm font-bold text-ink">4.9/5</span>
-            <span className="text-xs text-muted">— Based on Google Reviews</span>
+            <span className="text-xs text-muted">&bull; Based on Google Reviews</span>
           </div>
         </div>
 
@@ -107,10 +107,6 @@ export default function TestimonialsSection() {
             </div>
           ))}
         </div>
-
-        <p className="mt-8 text-center text-xs text-muted">
-          * Testimonials are representative. Real client reviews available on Google.
-        </p>
       </div>
     </section>
   );
