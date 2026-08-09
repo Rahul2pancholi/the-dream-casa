@@ -82,8 +82,12 @@ export const metadata: Metadata = {
     images: ["/images/hero/living-room.jpg"],
   },
   icons: {
-    icon: "/images/logo-icon.png",
-    shortcut: "/images/logo-icon.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/images/logo-icon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
     apple: "/images/logo-icon.png",
   },
 };
