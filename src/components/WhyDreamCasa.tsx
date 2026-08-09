@@ -10,8 +10,9 @@ import {
   Sparkles,
   CheckCircle2,
   Phone,
-  MessageSquare,
-  XCircle,
+  Award,
+  Shield,
+  Clock,
 } from "lucide-react";
 
 const reasons = [
@@ -65,32 +66,27 @@ const reasons = [
   },
 ];
 
-const comparisons = [
+const guarantees = [
   {
-    aspect: "3D Visualization",
-    contractor: "2D sketches or vague verbal ideas",
-    dreamCasa: "100% Photorealistic 3D renders before work starts",
+    Icon: Award,
+    title: "1:1 Render Guarantee",
+    desc: "What you see and approve in photorealistic 3D is precisely what we build on site.",
   },
   {
-    aspect: "Budget & BOQ",
-    contractor: "Unquoted materials & 30-40% cost overruns",
-    dreamCasa: "Itemized line-item BOQ with zero hidden fees",
+    Icon: Shield,
+    title: "Zero Cost Escalation",
+    desc: "Line-item BOQ signed before construction starts. Zero hidden fees or mid-work additions.",
   },
   {
-    aspect: "Site Management",
-    contractor: "Managing 5+ separate unorganized labor teams",
-    dreamCasa: "Single turnkey point of contact led by Poorti Jain",
-  },
-  {
-    aspect: "Handover Timeline",
-    contractor: "Unpredictable delays & extended deadlines",
-    dreamCasa: "Guaranteed delivery date with committed site schedule",
+    Icon: Clock,
+    title: "Committed Handover",
+    desc: "Rigorous daily site supervision under Poorti Jain to ensure on-time delivery.",
   },
 ];
 
 export default function WhyDreamCasa() {
   return (
-    <section className="relative bg-[#faf8f5] py-24 sm:py-28 lg:py-32 px-6 sm:px-10 lg:px-16 text-ink border-y border-gold/15">
+    <section className="relative bg-[#faf8f5] py-20 sm:py-24 lg:py-28 px-6 sm:px-10 lg:px-16 text-ink border-y border-gold/15">
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="flex flex-col items-center gap-3.5 text-center max-w-3xl mx-auto">
@@ -167,70 +163,47 @@ export default function WhyDreamCasa() {
           ))}
         </div>
 
-        {/* Light Contrast Comparison Matrix */}
-        <div className="mt-20 overflow-hidden rounded-3xl border border-gold/25 bg-white p-8 sm:p-12 shadow-xl">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-gold/15 pb-8">
-            <div>
-              <span className="text-xs font-bold tracking-[0.2em] text-gold uppercase">
-                The Execution Contrast
-              </span>
-              <h3 className="mt-2 font-serif text-2xl font-bold text-ink sm:text-3xl">
-                The Dream Casa vs Local Carpenters &amp; Contractors
-              </h3>
-              <p className="mt-1 text-xs sm:text-sm text-muted">
-                Why luxury residences across Indore choose our end-to-end design studio over unorganized workers.
-              </p>
-            </div>
-
-            <a
-              href="https://wa.me/917490932661?text=Hi%20Poorti,%20I%20want%20to%20discuss%20my%20interior%20project%20in%20Indore."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-md hover:bg-emerald-700 transition-all shrink-0"
-            >
-              <MessageSquare className="h-4 w-4" /> Ask Poorti on WhatsApp
-            </a>
+        {/* Elegant Studio Guarantees Banner */}
+        <div className="mt-16 rounded-3xl border border-gold/20 bg-white p-8 sm:p-12 shadow-lg">
+          <div className="flex flex-col items-center text-center max-w-xl mx-auto gap-2">
+            <span className="text-xs font-bold tracking-[0.2em] text-gold uppercase">
+              The Dream Casa Promise
+            </span>
+            <h3 className="font-serif text-2xl font-bold text-ink sm:text-3xl">
+              Our Core Execution Principles
+            </h3>
+            <p className="text-xs sm:text-sm text-muted">
+              Built on transparency, quality craftsmanship, and Founder Poorti Jain&apos;s direct oversight.
+            </p>
           </div>
 
-          {/* Comparison Table Rows */}
-          <div className="mt-8 grid gap-4">
-            {comparisons.map((item) => (
-              <div
-                key={item.aspect}
-                className="grid gap-4 rounded-2xl border border-gold/15 bg-[#faf8f5]/60 p-5 md:grid-cols-12 md:items-center transition-colors hover:bg-cream/40"
-              >
-                <div className="md:col-span-3 font-serif text-sm font-bold text-ink">
-                  {item.aspect}
+          <div className="mt-10 grid gap-6 md:grid-cols-3 border-t border-gold/15 pt-8">
+            {guarantees.map(({ Icon, title, desc }) => (
+              <div key={title} className="flex flex-col items-center text-center gap-3 p-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/10 text-gold border border-gold/25 shadow-sm">
+                  <Icon className="h-6 w-6" />
                 </div>
-
-                <div className="md:col-span-4 flex items-start gap-2.5 rounded-xl bg-rose-50 p-3.5 border border-rose-200 text-xs text-rose-900">
-                  <XCircle className="h-4 w-4 shrink-0 text-rose-500 mt-0.5" />
-                  <span><strong className="text-rose-950 font-semibold">Local Contractors:</strong> {item.contractor}</span>
-                </div>
-
-                <div className="md:col-span-5 flex items-start gap-2.5 rounded-xl bg-emerald-50 p-3.5 border border-emerald-200 text-xs text-emerald-950 font-medium">
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-600 mt-0.5" />
-                  <span><strong className="text-emerald-900 font-bold">The Dream Casa:</strong> {item.dreamCasa}</span>
-                </div>
+                <h4 className="font-serif text-base font-bold text-ink">{title}</h4>
+                <p className="text-xs leading-relaxed text-muted max-w-xs">{desc}</p>
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Bottom CTA Action Bar */}
-        <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2.5 rounded-full bg-gold px-9 py-4 text-xs font-bold tracking-[0.15em] text-white uppercase transition-all shadow-xl hover:bg-gold-dark hover:shadow-gold/25 hover:scale-105"
-          >
-            Schedule Studio Visit <ArrowRight className="h-4 w-4" />
-          </Link>
-          <a
-            href="tel:+917490932661"
-            className="inline-flex items-center gap-2.5 rounded-full border border-gold/40 bg-white px-8 py-4 text-xs font-semibold tracking-[0.15em] text-ink uppercase shadow-sm transition-all hover:bg-cream-dark hover:border-gold"
-          >
-            <Phone className="h-4 w-4 text-gold" /> Call +91 7490 932 661
-          </a>
+          {/* Bottom Action CTA */}
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center border-t border-gold/15 pt-8">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2.5 rounded-full bg-gold px-8 py-3.5 text-xs font-bold tracking-[0.15em] text-white uppercase transition-all shadow-md hover:bg-gold-dark hover:shadow-gold/25 hover:scale-105"
+            >
+              Schedule Studio Visit <ArrowRight className="h-4 w-4" />
+            </Link>
+            <a
+              href="tel:+917490932661"
+              className="inline-flex items-center gap-2.5 rounded-full border border-gold/40 bg-cream/50 px-7 py-3.5 text-xs font-semibold tracking-[0.15em] text-ink uppercase shadow-sm transition-all hover:bg-white hover:border-gold"
+            >
+              <Phone className="h-4 w-4 text-gold" /> Call +91 7490 932 661
+            </a>
+          </div>
         </div>
       </div>
     </section>
