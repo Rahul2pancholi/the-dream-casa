@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Playfair_Display, Inter } from "next/font/google";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ConsultationModal from "@/components/ConsultationModal";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -246,6 +247,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col bg-white">
         {children}
         <WhatsAppButton />
+        <ConsultationModal />
         <GoogleAnalytics gaId="G-2WBRLX5L44" />
       </body>
     </html>

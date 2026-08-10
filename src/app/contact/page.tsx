@@ -27,7 +27,8 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      await fetch("https://formsubmit.co/ajax/thedreamcasastudio@gmail.com", {
+      // 1. Send FormSubmit Email
+      fetch("https://formsubmit.co/ajax/thedreamcasastudio@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +46,32 @@ export default function ContactPage() {
           EstimatedBudget: formData.budget,
           Requirements: formData.message || "Not Provided",
         }),
+      }).catch((err) => console.error("FormSubmit error:", err));
+
+      // 2. Send Telegram Group Alert
+      const telegramText = `
+🏆 <b>New Lead - Contact Page Inquiry</b>
+
+👤 <b>Name:</b> ${formData.name}
+📱 <b>Phone:</b> ${formData.phone}
+📧 <b>Email:</b> ${formData.email || "Not Provided"}
+🏙️ <b>City:</b> ${formData.location || "Indore"}
+🏠 <b>Project:</b> ${formData.projectType}
+💰 <b>Budget:</b> ${formData.budget}
+💬 <b>Message:</b> ${formData.message || "Looking for interior consultation"}
+⏰ <b>Time:</b> ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}
+`;
+
+      await fetch("https://api.telegram.org/bot8265709809:AAFBke_wP7NcXe2aDX4p_Aiua5unwUAS4ac/sendMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: "-5477674889",
+          text: telegramText,
+          parse_mode: "HTML",
+        }),
       });
+
       setSubmitted(true);
     } catch {
       setSubmitted(true);
