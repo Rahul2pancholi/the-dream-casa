@@ -73,18 +73,18 @@ export default function Hero() {
         <div className="flex max-w-xl flex-col justify-center gap-5 sm:gap-6 text-left">
           {/* Location & SEO Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-xs font-semibold tracking-wider text-gold uppercase backdrop-blur w-fit">
-            <Award className="h-4 w-4" /> Best Interior Designer in Indore &bull; Yeshwant Niwas Rd
+            <Award className="h-4 w-4" /> Best Interior Designer in Indore &amp; Ahmedabad
           </div>
 
           {/* Primary Target H1 Heading */}
           <h1 className="font-serif text-3xl font-bold leading-tight text-white lg:text-ink sm:text-5xl lg:text-6xl">
-            Best Interior Designer in Indore.{" "}
+            Best Interior Designer in Indore &amp; Ahmedabad.{" "}
             <span className="text-gold italic font-normal block sm:inline">Turnkey Luxury Homes.</span>
           </h1>
 
           {/* Target Description */}
           <p className="max-w-md text-sm leading-relaxed text-neutral-200 lg:text-muted sm:text-base">
-            Founder Poorti Jain &amp; The Dream Casa deliver 3D photorealistic architectural renders &amp; 100% turnkey site execution for luxury residences &amp; offices across Indore.
+            Founder Poorti Jain &amp; The Dream Casa deliver 3D photorealistic architectural renders &amp; 100% turnkey site execution for luxury residences &amp; offices across Indore &amp; Ahmedabad.
           </p>
 
           {/* Action CTAs */}

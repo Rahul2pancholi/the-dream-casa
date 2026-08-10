@@ -150,9 +150,10 @@ export default function SiteFooter() {
               </a>
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <span>
-                  The View, 305, Yeshwant Niwas Rd, Nehru Park 2, Lad Colony, Indore, Madhya Pradesh 452003
-                </span>
+                <div className="flex flex-col gap-1 text-xs">
+                  <span><strong className="text-white">Indore:</strong> The View, 305, Yeshwant Niwas Rd, Nehru Park 2, MP 452003</span>
+                  <span><strong className="text-white">Ahmedabad:</strong> The Dream Casa Studio, Bodakdev, SG Highway, GJ 380054</span>
+                </div>
               </div>
             </div>
           </div>
