@@ -14,16 +14,16 @@ import CtaBanner from "@/components/CtaBanner";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "The Dream Casa | Luxury Interior Design & Turnkey Projects in Indore",
+  title: "The Dream Casa | Best Interior Designer in Indore & Ahmedabad | Turnkey Projects",
   description:
-    "Explore luxury residential interiors, 3D architectural renders, live site video reels, and 100% turnkey site execution by Founder Poorti Jain in Indore, MP.",
+    "Explore luxury residential interiors, 3D architectural renders, live site video reels, and 100% turnkey site execution by Founder Poorti Jain in Indore & Ahmedabad.",
   alternates: {
     canonical: "https://thedreamcasa.in",
   },
   openGraph: {
-    title: "The Dream Casa | Luxury Interior Design & Turnkey Projects in Indore",
+    title: "The Dream Casa | Best Interior Designer in Indore & Ahmedabad",
     description:
-      "Explore luxury residential interiors, 3D architectural renders, live site video reels, and 100% turnkey site execution by Founder Poorti Jain in Indore, MP.",
+      "Explore luxury residential interiors, 3D architectural renders, live site video reels, and 100% turnkey site execution by Founder Poorti Jain in Indore & Ahmedabad.",
     url: "https://thedreamcasa.in",
   },
 };
