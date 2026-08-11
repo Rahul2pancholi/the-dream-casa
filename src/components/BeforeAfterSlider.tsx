@@ -10,17 +10,31 @@ interface BeforeAfterItem {
   room: string;
   before3d: string;
   afterReal: string;
+  beforeLabel?: string;
+  afterLabel?: string;
   description: string;
 }
 
 const comparisons: BeforeAfterItem[] = [
   {
-    id: "comp-living-1",
-    title: "Living Room Accent Wall & Curved Sofa",
-    room: "Living Room",
-    before3d: "/images/projects/living-kitchen-01.jpg",
-    afterReal: "/images/eklavya/image-11-1.jpg",
-    description: "Slide left and right to compare our 3D photorealistic render with the actual completed site execution.",
+    id: "comp-tv-unit-3d",
+    title: "Living Room TV Unit & Fluted Wall Panel",
+    room: "TV Unit 3D vs Real",
+    before3d: "/images/before-after/tv-unit-3d.jpg",
+    afterReal: "/images/before-after/tv-unit-after.jpg",
+    beforeLabel: "3D Render Concept",
+    afterLabel: "Real Site Execution",
+    description: "Slide left and right to compare our 3D photorealistic design render with the actual completed living room execution.",
+  },
+  {
+    id: "comp-tv-unit-site",
+    title: "Living Room TV Unit Carpentry & Finishing",
+    room: "On-Site Carpentry vs Finished",
+    before3d: "/images/before-after/tv-unit-before.jpg",
+    afterReal: "/images/before-after/tv-unit-after.jpg",
+    beforeLabel: "Raw Site Execution",
+    afterLabel: "Finished Luxury Result",
+    description: "Slide left and right to compare raw on-site woodwork & wall paneling with the final luxury living room outcome.",
   },
   {
     id: "comp-bedroom-1",
@@ -28,6 +42,8 @@ const comparisons: BeforeAfterItem[] = [
     room: "Master Bedroom",
     before3d: "/images/projects/master-bedroom-01.jpg",
     afterReal: "/images/eklavya/image-15-1.jpg",
+    beforeLabel: "3D Render Concept",
+    afterLabel: "Real Site Execution",
     description: "Flawless execution of acoustic fabric panels, warm LED cove lighting, and luxury veneer wardrobes.",
   },
 ];
@@ -133,7 +149,7 @@ export default function BeforeAfterSlider() {
                 mounted ? "opacity-100" : "opacity-0"
               }`}
             >
-              Real Execution
+              {activeItem.afterLabel || "Real Execution"}
             </div>
 
             {/* Before (3D Render Concept) - Clipped Overlay */}
@@ -158,7 +174,7 @@ export default function BeforeAfterSlider() {
                   mounted ? "opacity-100" : "opacity-0"
                 }`}
               >
-                3D Render
+                {activeItem.beforeLabel || "3D Render"}
               </div>
             </div>
 
