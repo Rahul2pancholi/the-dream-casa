@@ -177,25 +177,32 @@ export default function ProcessOverview() {
           {/* Right Column Stage Detail Showcase Card */}
           <div className="lg:col-span-8 flex flex-col justify-between rounded-2xl border border-[#E8E2D8] bg-white shadow-sm overflow-hidden min-h-[380px]">
             {/* Top Details Area */}
-            <div className="relative p-5 sm:p-7 z-10 flex-1 flex flex-col justify-between">
+            <div
+              key={activePhase.id}
+              className="relative p-5 sm:p-7 z-10 flex-1 flex flex-col justify-between transition-all duration-500 animate-in fade-in slide-in-from-bottom-2 duration-300"
+            >
               {/* Giant Background Watermark Number */}
-              <span className="absolute right-6 top-2 font-serif text-7xl sm:text-8xl font-light text-[#a46f47]/12 select-none pointer-events-none">
+              <span className="absolute right-6 top-2 font-serif text-7xl sm:text-8xl font-light text-[#a46f47]/12 select-none pointer-events-none transition-transform duration-700 hover:scale-105">
                 {activePhase.number}
               </span>
 
               <div>
                 {/* Stage Badge */}
-                <span className="text-[10px] font-semibold tracking-widest text-[#a46f47] uppercase">
-                  STAGE {activePhase.number}
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] font-semibold tracking-widest text-[#a46f47] uppercase">
+                    STAGE {activePhase.number}
+                  </span>
+                  <span className="h-1 w-1 rounded-full bg-[#a46f47]" />
+                  <span className="text-[10px] font-medium text-[#6B7280]">Phase Overview</span>
+                </div>
 
                 {/* Main Stage Header */}
-                <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#0F1A24] leading-tight mt-0.5">
+                <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#0F1A24] leading-tight mt-1">
                   {activePhase.mainHeader}
                 </h3>
 
-                {/* Short Gold Underline */}
-                <div className="h-0.5 w-10 bg-[#a46f47] mt-2 mb-2.5" />
+                {/* Animated Expanding Short Gold Underline */}
+                <div className="h-0.5 w-12 bg-[#a46f47] mt-2 mb-2.5 transition-all duration-500 origin-left" />
 
                 {/* Description */}
                 <p className="text-xs sm:text-sm leading-relaxed text-[#4B5563] max-w-2xl">
@@ -212,8 +219,11 @@ export default function ProcessOverview() {
                   </h4>
                   <div className="flex flex-col gap-2">
                     {activePhase.deliverables.map(({ text, Icon }, i) => (
-                      <div key={i} className="flex items-center gap-2.5 text-xs text-[#374151]">
-                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#E8E2D8] bg-[#FAF7F2] text-[#a46f47]">
+                      <div
+                        key={i}
+                        className="flex items-center gap-2.5 text-xs text-[#374151] group/item transition-transform duration-300 hover:translate-x-1"
+                      >
+                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#E8E2D8] bg-[#FAF7F2] text-[#a46f47] transition-colors group-hover/item:border-[#a46f47] group-hover/item:bg-[#a46f47] group-hover/item:text-white shadow-xs">
                           <Icon className="h-3.5 w-3.5 stroke-[1.5]" />
                         </div>
                         <span className="leading-snug">{text}</span>
@@ -227,8 +237,8 @@ export default function ProcessOverview() {
                   <h4 className="text-[10px] font-semibold tracking-widest text-[#a46f47] uppercase mb-2.5">
                     PRIMARY OUTPUT
                   </h4>
-                  <div className="flex items-start gap-2.5">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-[#E8E2D8] bg-[#FAF7F2] text-[#a46f47]">
+                  <div className="flex items-start gap-2.5 group/out transition-transform duration-300 hover:translate-x-0.5">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-[#a46f47]/30 bg-[#a46f47]/10 text-[#a46f47] shadow-xs">
                       <FileText className="h-4 w-4 stroke-[1.5]" />
                     </div>
                     <div>
@@ -242,12 +252,15 @@ export default function ProcessOverview() {
             </div>
 
             {/* Bottom Full-Width Architectural Rendering Photograph */}
-            <div className="relative w-full h-44 sm:h-52 overflow-hidden border-t border-[#E8E2D8]">
+            <div
+              key={`img-${activePhase.id}`}
+              className="relative w-full h-44 sm:h-52 overflow-hidden border-t border-[#E8E2D8] group/img"
+            >
               <Image
                 src={activePhase.image}
                 alt={activePhase.title}
                 fill
-                className="object-cover transition-all duration-700 hover:scale-105"
+                className="object-cover transition-all duration-700 ease-out group-hover/img:scale-105"
               />
             </div>
           </div>
