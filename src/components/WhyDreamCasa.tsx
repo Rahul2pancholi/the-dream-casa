@@ -2,12 +2,10 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { Box, FileText, UserCheck, Key } from "lucide-react";
 
 const steps = [
   {
     number: "01",
-    Icon: Box,
     title: "3D Renders First",
     subtitle: "3D PRE-VISUALIZATION",
     desc: "Visualize your entire home in 3D photorealistic detail before any physical work begins.",
@@ -15,7 +13,6 @@ const steps = [
   },
   {
     number: "02",
-    Icon: FileText,
     title: "Transparent Costing",
     subtitle: "FIXED ITEMIZED BOQ",
     desc: "One comprehensive, itemized Bill of Quantities upfront with fixed material rates. Zero surprise bills.",
@@ -23,7 +20,6 @@ const steps = [
   },
   {
     number: "03",
-    Icon: UserCheck,
     title: "One Contact Lead",
     subtitle: "SINGLE ACCOUNTABILITY",
     desc: "A single accountable project lead coordinates civil work, carpentry, electrical & final finishing.",
@@ -31,7 +27,6 @@ const steps = [
   },
   {
     number: "04",
-    Icon: Key,
     title: "Supervised Handover",
     subtitle: "CLEANED & INSPECTED",
     desc: "Regular site updates, multi-tier quality checks, and a deep-cleaned home ready for immediate living.",
@@ -50,7 +45,6 @@ export default function WhyDreamCasa() {
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Start highlighting when top of section enters 80% down viewport
       const startPoint = windowHeight * 0.8;
       const endPoint = -rect.height * 0.2;
 
@@ -70,7 +64,7 @@ export default function WhyDreamCasa() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const waveHighlightOffset = Math.max(15, Math.round(scrollProgress * 100));
+  const lineProgressPercent = Math.max(10, Math.round(scrollProgress * 100));
 
   return (
     <section
@@ -105,100 +99,45 @@ export default function WhyDreamCasa() {
           </p>
         </div>
 
-        {/* Wavy Timeline Section */}
-        <div className="relative mt-10 sm:mt-14">
-          {/* Desktop SVG Wave Path & Watermark Numbers */}
-          <div className="relative hidden lg:block pb-4">
-            {/* Watermark Giant Numbers Row - Positioned Above Nodes */}
-            <div className="grid grid-cols-4 gap-6 text-center select-none pointer-events-none mb-1">
+        {/* Clean 4-Step Stepper Timeline (01 -> 02 -> 03 -> 04) */}
+        <div className="relative mt-12 sm:mt-16">
+          {/* Desktop Straight Horizontal Connecting Line */}
+          <div className="relative hidden lg:block h-20">
+            {/* Base Hairline */}
+            <div className="absolute top-1/2 left-12 right-12 h-0.5 -translate-y-1/2 bg-[#a46f47]/30 z-0" />
+
+            {/* Scroll-Driven Dynamic Gold Fill Hairline */}
+            <div
+              className="absolute top-1/2 left-12 h-0.5 -translate-y-1/2 bg-[#a46f47] z-0 transition-all duration-300"
+              style={{ width: `calc(${lineProgressPercent}% - 3rem)` }}
+            />
+
+            {/* 4 Step Number Circles (01, 02, 03, 04) */}
+            <div className="grid grid-cols-4 gap-6 w-full relative z-10 items-center h-full">
               {steps.map(({ number }, idx) => {
                 const isActive = idx <= activeIndex;
+                const isCurrent = idx === activeIndex;
+
                 return (
-                  <span
-                    key={number}
-                    className={`font-serif text-6xl sm:text-7xl font-light transition-colors duration-500 ${
-                      isActive ? "text-[#a46f47]/35" : "text-[#a46f47]/15"
-                    }`}
-                  >
-                    {number}
-                  </span>
+                  <div key={number} className="flex justify-center">
+                    <div
+                      className={`relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 font-serif text-xl sm:text-2xl font-normal transition-all duration-500 ${
+                        isCurrent
+                          ? "border-[#a46f47] bg-[#a46f47] text-white shadow-xl scale-110 ring-4 ring-[#a46f47]/20"
+                          : isActive
+                          ? "border-[#a46f47] bg-[#a46f47] text-white shadow-md"
+                          : "border-[#a46f47]/40 bg-[#FAF7F2] text-[#a46f47]"
+                      }`}
+                    >
+                      {/* Active Ping Effect */}
+                      {isCurrent && (
+                        <span className="absolute inset-0 rounded-full bg-[#a46f47]/30 animate-ping pointer-events-none" />
+                      )}
+                      {number}
+                    </div>
+                  </div>
                 );
               })}
-            </div>
-
-            {/* Continuous SVG Wave Line & Node Container */}
-            <div className="relative h-20 flex items-center">
-              <svg
-                className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-16 pointer-events-none z-10 overflow-visible"
-                viewBox="0 0 1200 100"
-                fill="none"
-                preserveAspectRatio="none"
-              >
-                {/* Left End Flourish Dot */}
-                <circle cx="30" cy="50" r="3" fill="#a46f47" opacity="0.6" />
-                <line x1="30" y1="50" x2="60" y2="50" stroke="#a46f47" strokeWidth="1.5" opacity="0.6" />
-
-                {/* Right End Flourish Dot */}
-                <circle cx="1170" cy="50" r="3" fill="#a46f47" opacity="0.6" />
-                <line x1="1140" y1="50" x2="1170" y2="50" stroke="#a46f47" strokeWidth="1.5" opacity="0.6" />
-
-                {/* Base Wave Curve */}
-                <path
-                  d="M 60,50 C 180,20 320,80 450,50 C 580,20 720,80 850,50 C 980,20 1100,50 1140,50"
-                  stroke="#a46f47"
-                  strokeWidth="1.5"
-                  strokeOpacity="0.4"
-                />
-
-                {/* Scroll-Driven Dynamic Glow Wave Line */}
-                <path
-                  d="M 60,50 C 180,20 320,80 450,50 C 580,20 720,80 850,50 C 980,20 1100,50 1140,50"
-                  stroke="url(#ref-wave-gold-gradient)"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  className="transition-all duration-300"
-                />
-                <defs>
-                  <linearGradient id="ref-wave-gold-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#a46f47" stopOpacity="1" />
-                    <stop offset={`${waveHighlightOffset}%`} stopColor="#a46f47" stopOpacity="1" />
-                    <stop
-                      offset={`${Math.min(100, waveHighlightOffset + 8)}%`}
-                      stopColor="#a46f47"
-                      stopOpacity="0.2"
-                    />
-                    <stop offset="100%" stopColor="#a46f47" stopOpacity="0.2" />
-                  </linearGradient>
-                </defs>
-              </svg>
-
-              {/* 4 Circular Nodes directly ON the Wave Line */}
-              <div className="grid grid-cols-4 gap-6 w-full relative z-20 items-center">
-                {steps.map(({ Icon }, idx) => {
-                  const isActive = idx <= activeIndex;
-                  const isCurrent = idx === activeIndex;
-
-                  return (
-                    <div key={idx} className="flex justify-center">
-                      <div
-                        className={`relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 transition-all duration-500 ${
-                          isCurrent
-                            ? "border-[#a46f47] bg-[#FAF7F2] text-[#a46f47] shadow-xl scale-110 ring-4 ring-[#a46f47]/20"
-                            : isActive
-                            ? "border-[#a46f47] bg-[#FAF7F2] text-[#a46f47] shadow-md"
-                            : "border-[#a46f47]/40 bg-[#FAF7F2] text-[#a46f47]/60"
-                        }`}
-                      >
-                        {/* Active Ping Effect */}
-                        {isCurrent && (
-                          <span className="absolute inset-0 rounded-full bg-[#a46f47]/20 animate-ping pointer-events-none" />
-                        )}
-                        <Icon className="h-5 w-5 sm:h-6 sm:w-6 stroke-[1.5]" />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
             </div>
           </div>
 
