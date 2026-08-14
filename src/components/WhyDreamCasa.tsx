@@ -8,7 +8,7 @@ const steps = [
     title: "3D Renders First",
     subtitle: "Photorealistic Concept",
     desc: "Visualize your entire home in 3D photorealistic detail before site work starts.",
-    sketch: "/images/sketches/sketch-01-living-room.png",
+    image: "/images/projects/living-kitchen-01.jpg",
     position: "top",
   },
   {
@@ -17,7 +17,7 @@ const steps = [
     title: "Transparent BOQ",
     subtitle: "Fixed Itemized Cost",
     desc: "Fixed itemized material costing upfront. Zero surprise charges later.",
-    sketch: "/images/sketches/sketch-02-blueprint.png",
+    image: "/images/projects/living-kitchen-04.jpg",
     position: "bottom",
   },
   {
@@ -26,7 +26,7 @@ const steps = [
     title: "One Contact Lead",
     subtitle: "Single Accountability",
     desc: "A single dedicated project lead manages civil, carpentry, electrical & finishing.",
-    sketch: "/images/sketches/sketch-03-team.png",
+    image: "/images/projects/master-bedroom-01.jpg",
     position: "top",
   },
   {
@@ -35,7 +35,7 @@ const steps = [
     title: "On-Time Handover",
     subtitle: "Deep Cleaned & Inspected",
     desc: "Supervised milestone checks and a pristine, deep-cleaned home ready to live.",
-    sketch: "/images/sketches/sketch-04-furniture.png",
+    image: "/images/before-after/tv-unit-after.jpg",
     position: "bottom",
   },
 ];
@@ -95,7 +95,7 @@ export default function WhyDreamCasa() {
 
           {/* 4 Steps Positioned Along the Wave */}
           <div className="grid grid-cols-4 gap-6 relative z-10 items-center h-full">
-            {steps.map(({ number, Icon, title, subtitle, desc, sketch, position }, idx) => (
+            {steps.map(({ number, Icon, title, subtitle, desc, image, position }, idx) => (
               <div
                 key={title}
                 className={`flex flex-col items-center text-center ${
@@ -109,13 +109,13 @@ export default function WhyDreamCasa() {
                       Step {number}
                     </span>
 
-                    {/* High-Visibility Crisp Image Container */}
-                    <div className="relative mb-3 mt-1 h-28 sm:h-32 w-full overflow-hidden rounded-xl bg-white p-2 border border-gold/20 shadow-inner group-hover:border-gold/40 transition-colors">
+                    {/* Real Project Photo Container */}
+                    <div className="relative mb-3 mt-1 h-32 w-full overflow-hidden rounded-xl bg-ink border border-gold/20 shadow-inner group-hover:border-gold/50 transition-colors">
                       <Image
-                        src={sketch}
+                        src={image}
                         alt={title}
                         fill
-                        className="object-contain p-1.5 opacity-100 transition-all duration-300 group-hover:scale-105"
+                        className="object-cover opacity-95 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
                       />
                     </div>
 
@@ -152,13 +152,13 @@ export default function WhyDreamCasa() {
                       Step {number}
                     </span>
 
-                    {/* High-Visibility Crisp Image Container */}
-                    <div className="relative mb-3 mt-1 h-28 sm:h-32 w-full overflow-hidden rounded-xl bg-white p-2 border border-gold/20 shadow-inner group-hover:border-gold/40 transition-colors">
+                    {/* Real Project Photo Container */}
+                    <div className="relative mb-3 mt-1 h-32 w-full overflow-hidden rounded-xl bg-ink border border-gold/20 shadow-inner group-hover:border-gold/50 transition-colors">
                       <Image
-                        src={sketch}
+                        src={image}
                         alt={title}
                         fill
-                        className="object-contain p-1.5 opacity-100 transition-all duration-300 group-hover:scale-105"
+                        className="object-cover opacity-95 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
                       />
                     </div>
 
@@ -184,7 +184,7 @@ export default function WhyDreamCasa() {
           <div className="absolute left-6 top-6 bottom-6 w-0.5 bg-gradient-to-b from-gold/20 via-gold to-gold/20" />
 
           <div className="flex flex-col gap-8">
-            {steps.map(({ number, Icon, title, subtitle, desc, sketch }) => (
+            {steps.map(({ number, Icon, title, subtitle, desc, image }) => (
               <div key={title} className="relative flex items-start gap-5 pl-14">
                 {/* Node Icon Circle */}
                 <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold bg-gold text-white shadow-md">
@@ -202,13 +202,13 @@ export default function WhyDreamCasa() {
                     </span>
                   </div>
 
-                  {/* High-Visibility Mobile Image Container */}
-                  <div className="relative my-3 h-28 w-full overflow-hidden rounded-xl bg-white p-2 border border-gold/20 shadow-inner">
+                  {/* Real Project Photo Container */}
+                  <div className="relative my-3 h-32 w-full overflow-hidden rounded-xl bg-ink border border-gold/20 shadow-inner">
                     <Image
-                      src={sketch}
+                      src={image}
                       alt={title}
                       fill
-                      className="object-contain p-1 opacity-100"
+                      className="object-cover opacity-95"
                     />
                   </div>
 
