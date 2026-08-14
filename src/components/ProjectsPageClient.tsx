@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import SiteHeader from "@/components/SiteHeader";
-import PageHero from "@/components/PageHero";
+import UnevenCollageHero from "@/components/UnevenCollageHero";
 import ProjectsCarouselCollage from "@/components/ProjectsCarouselCollage";
 import VideoWalkthroughSection from "@/components/VideoWalkthroughSection";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
@@ -23,13 +23,8 @@ export default function ProjectsPageClient() {
       <SiteHeader onOpenInquiryModal={handleOpenModal} />
 
       <main className="flex flex-1 flex-col">
-        {/* Projects Hero Header */}
-        <PageHero
-          eyebrow="Selected Work"
-          title="Design Concepts, Live Videos & Real Sites"
-          description="A mix of 3D design concepts and completed residences — each clearly labeled with its true status. Watch on-site video walkthroughs of finished homes across Indore."
-          meta={["3D Design Concepts", "On-Site Video Walkthroughs", "Completed Residences"]}
-        />
+        {/* Uneven Collage Top Showcase (Work & Videos Visible Above Fold) */}
+        <UnevenCollageHero onOpenInquiryModal={handleOpenModal} />
 
         {/* Interactive Multi-Card & Video Collage Carousel */}
         <ProjectsCarouselCollage onOpenInquiryModal={handleOpenModal} />
