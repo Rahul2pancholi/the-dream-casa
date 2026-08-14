@@ -2,11 +2,9 @@
 
 import { useState } from "react";
 import SiteHeader from "@/components/SiteHeader";
-import UnevenCollageHero from "@/components/UnevenCollageHero";
-import ProjectsCarouselCollage from "@/components/ProjectsCarouselCollage";
+import CleanProjectsShowcase from "@/components/CleanProjectsShowcase";
 import VideoWalkthroughSection from "@/components/VideoWalkthroughSection";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import ProjectsSection from "@/components/ProjectsSection";
 import StatsBar from "@/components/StatsBar";
 import CtaBanner from "@/components/CtaBanner";
 import SiteFooter from "@/components/SiteFooter";
@@ -23,20 +21,14 @@ export default function ProjectsPageClient() {
       <SiteHeader onOpenInquiryModal={handleOpenModal} />
 
       <main className="flex flex-1 flex-col">
-        {/* Uneven Collage Top Showcase (Work & Videos Visible Above Fold) */}
-        <UnevenCollageHero onOpenInquiryModal={handleOpenModal} />
-
-        {/* Interactive Multi-Card & Video Collage Carousel */}
-        <ProjectsCarouselCollage onOpenInquiryModal={handleOpenModal} />
+        {/* Crystal-Clear Featured Video + Clean 3-Column Portfolio Showcase */}
+        <CleanProjectsShowcase onOpenInquiryModal={handleOpenModal} />
 
         {/* Video Walkthrough Section */}
         <VideoWalkthroughSection />
 
         {/* Before / After Comparison Slider */}
         <BeforeAfterSlider />
-
-        {/* Portfolio Grid Section */}
-        <ProjectsSection showViewAllCTA={false} />
 
         <StatsBar />
         <CtaBanner onOpenInquiryModal={handleOpenModal} />
