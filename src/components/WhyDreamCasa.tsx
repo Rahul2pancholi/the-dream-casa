@@ -33,7 +33,7 @@ const steps = [
 
 export default function WhyDreamCasa() {
   return (
-    <section className="relative bg-[#FAF7F2] py-14 sm:py-20 px-6 sm:px-10 lg:px-16 text-[#1C2630] border-y border-[#E8E2D8] overflow-hidden">
+    <section className="relative bg-[#FAF7F2] py-10 sm:py-16 px-6 sm:px-10 lg:px-16 text-[#1C2630] border-y border-[#E8E2D8] overflow-hidden">
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="flex max-w-3xl flex-col items-center gap-2 text-center mx-auto">
@@ -63,7 +63,7 @@ export default function WhyDreamCasa() {
         </div>
 
         {/* Clean 4-Step Stepper Timeline (01 -> 02 -> 03 -> 04) */}
-        <div className="relative mt-12 sm:mt-16">
+        <div className="relative mt-8 sm:mt-12">
           {/* Desktop Straight Horizontal Connecting Line */}
           <div className="relative hidden lg:block h-20">
             {/* Connecting Line */}
@@ -113,24 +113,6 @@ export default function WhyDreamCasa() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Bottom Decorative Brand Arch Emblem Divider */}
-        <div className="mt-10 sm:mt-14 flex items-center justify-center gap-4 text-[#a46f47]">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#a46f47]/30 to-[#a46f47]/30" />
-
-          {/* Arch Icon Logo Lockup */}
-          <div className="flex h-9 w-6.5 items-center justify-center rounded-t-full border-2 border-[#a46f47] p-1 shadow-sm bg-[#FAF7F2]">
-            <div className="flex flex-col items-center gap-0.5">
-              <div className="h-1.5 w-1.5 rounded-sm bg-[#a46f47]" />
-              <div className="flex gap-0.5">
-                <div className="h-1 w-1 bg-[#a46f47]" />
-                <div className="h-1 w-1 bg-[#a46f47]" />
-              </div>
-            </div>
-          </div>
-
-          <div className="h-px flex-1 bg-gradient-to-r from-[#a46f47]/30 via-[#a46f47]/30 to-transparent" />
         </div>
       </div>
     </section>
