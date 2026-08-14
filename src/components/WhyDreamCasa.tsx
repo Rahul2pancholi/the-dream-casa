@@ -34,7 +34,7 @@ const pillars = [
 
 export default function WhyDreamCasa() {
   return (
-    <section className="relative bg-cream-light py-20 sm:py-24 px-6 sm:px-10 lg:px-16 text-ink border-y border-ink/10">
+    <section className="relative bg-cream py-20 sm:py-24 px-6 sm:px-10 lg:px-16 text-ink border-y border-ink/10">
       <div className="relative mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="flex flex-col items-center gap-3 text-center">

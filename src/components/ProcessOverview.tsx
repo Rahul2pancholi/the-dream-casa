@@ -31,7 +31,7 @@ const phases = [
 
 export default function ProcessOverview() {
   return (
-    <section className="bg-cream-light px-6 py-24 sm:px-10 lg:px-16">
+    <section className="bg-cream px-6 py-24 sm:px-10 lg:px-16 border-y border-ink/10">
       <div className="mx-auto max-w-7xl">
         <div className="flex max-w-2xl flex-col items-start gap-3 text-left">
           <div className="flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-gold uppercase">
