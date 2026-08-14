@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import SiteHeader from "@/components/SiteHeader";
+import PageHero from "@/components/PageHero";
 import StatsBar from "@/components/StatsBar";
 import SiteFooter from "@/components/SiteFooter";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, Sparkles, Building2, User, ChevronDown, Navigation } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, Building2, User, ChevronDown, Navigation } from "lucide-react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -121,57 +122,29 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="flex flex-1 flex-col bg-white">
+    <div className="flex flex-1 flex-col bg-cream-light">
       <SiteHeader />
       <main className="flex flex-1 flex-col">
         {/* Contact Hero Section */}
-        <section className="relative overflow-hidden bg-[#161412] py-20 text-white sm:py-24 lg:py-28 px-6 sm:px-10 lg:px-16">
-          <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-gold/15 blur-3xl" />
-          <div className="pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
-
-          <div className="relative mx-auto max-w-7xl">
-            <div className="flex max-w-3xl flex-col gap-5">
-              <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-gold uppercase">
-                <span className="h-px w-8 bg-gold" />
-                Contact The Dream Casa
-              </div>
-              <h1 className="font-serif text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-                Let&apos;s Create Your Dream Space
-              </h1>
-              <p className="text-base leading-relaxed text-neutral-300 sm:text-lg">
-                Visit our Head Office in Indore or our Regional Studio in Ahmedabad, or schedule a personal design consultation with Founder Poorti Jain.
-              </p>
-
-              <div className="mt-4 flex flex-wrap items-center gap-6 border-t border-white/10 pt-6 text-xs font-semibold text-neutral-200">
-                <div className="flex items-center gap-2">
-                  <User className="h-4 w-4 text-gold" />
-                  <span>Poorti Jain, Founder</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Building2 className="h-4 w-4 text-gold" />
-                  <span>Indore &amp; Ahmedabad Studios</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-gold" />
-                  <span>100% Turnkey Delivery</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="Contact The Dream Casa"
+          title="Let's Create Your Dream Space"
+          description="Visit our Head Office in Indore or our Regional Studio in Ahmedabad, or schedule a personal design consultation with Founder Poorti Jain."
+          meta={["Poorti Jain, Founder", "Indore & Ahmedabad Studios", "100% Turnkey Delivery"]}
+        />
 
         {/* Form & Studio Locations Section */}
-        <section className="bg-[#faf8f5] py-20 sm:py-24 px-6 sm:px-10 lg:px-16">
+        <section className="bg-cream-light py-20 sm:py-24 px-6 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-12 lg:grid-cols-12">
               {/* Left Column: Contact Form */}
               <div className="lg:col-span-7">
-                <div className="rounded-2xl border border-gold/20 bg-white p-8 shadow-xl sm:p-10">
+                <div className="border border-ink/10 bg-card p-8 sm:p-10">
                   <div className="flex flex-col gap-2">
                     <span className="text-xs font-semibold tracking-widest text-gold uppercase">
                       Direct Inquiry Form
                     </span>
-                    <h2 className="font-serif text-2xl font-bold text-ink sm:text-3xl">
+                    <h2 className="font-serif text-2xl text-ink sm:text-3xl">
                       Book a Design Consultation
                     </h2>
                     <p className="text-xs text-muted">
@@ -222,7 +195,7 @@ export default function ContactPage() {
                             placeholder="e.g. Anand Sharma"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="rounded-lg border border-gold/20 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                            className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                           />
                         </div>
 
@@ -236,7 +209,7 @@ export default function ContactPage() {
                             placeholder="+91 7490 932 661"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            className="rounded-lg border border-gold/20 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                            className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                           />
                         </div>
                       </div>
@@ -251,7 +224,7 @@ export default function ContactPage() {
                             placeholder="name@domain.com"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="rounded-lg border border-gold/20 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                            className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                           />
                         </div>
 
@@ -262,7 +235,7 @@ export default function ContactPage() {
                           <select
                             value={formData.projectType}
                             onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                            className="rounded-lg border border-gold/20 bg-cream-light/50 px-4 py-3 text-sm text-ink focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                            className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                           >
                             <option value="Residential Interior">Residential Interior (Apartment / Villa)</option>
                             <option value="Commercial Interior">Commercial Office / Workspaces</option>
@@ -282,7 +255,7 @@ export default function ContactPage() {
                             placeholder="e.g. Indore / Ahmedabad"
                             value={formData.location}
                             onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                            className="rounded-lg border border-gold/20 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                            className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                           />
                         </div>
 
@@ -293,7 +266,7 @@ export default function ContactPage() {
                           <select
                             value={formData.budget}
                             onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                            className="rounded-lg border border-gold/20 bg-cream-light/50 px-4 py-3 text-sm text-ink focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                            className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                           >
                             <option value="5 - 15 Lakhs">₹5 Lakhs - ₹15 Lakhs</option>
                             <option value="15 - 30 Lakhs">₹15 Lakhs - ₹30 Lakhs</option>
@@ -312,7 +285,7 @@ export default function ContactPage() {
                           placeholder="Tell us about your space (carpet area, room count, design style preferences)..."
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          className="rounded-lg border border-gold/20 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                          className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                         />
                       </div>
 
@@ -330,19 +303,19 @@ export default function ContactPage() {
 
               {/* Right Column: Dual Studio Contact Info & Maps */}
               <div className="flex flex-col gap-8 lg:col-span-5">
-                <div className="flex flex-col gap-4 rounded-2xl border border-gold/20 bg-white p-8 shadow-xl">
+                <div className="flex flex-col gap-4 border border-ink/10 bg-card p-8">
                   <div className="flex items-center justify-between">
-                    <h3 className="font-serif text-xl font-bold text-ink">
+                    <h3 className="font-serif text-xl text-ink">
                       Our Studio Locations
                     </h3>
-                    <span className="rounded-full bg-gold/15 px-3 py-1 text-[10px] font-bold text-gold uppercase tracking-wider">
+                    <span className="text-[10px] font-bold text-gold uppercase tracking-wider">
                       Indore &amp; Ahmedabad
                     </span>
                   </div>
                   <span className="h-px w-12 bg-gold" />
 
                   {/* Location Selector Tabs */}
-                  <div className="flex items-center rounded-xl bg-cream-light p-1 border border-gold/20">
+                  <div className="flex items-center rounded-xl bg-cream-light p-1 border border-ink/10">
                     <button
                       type="button"
                       onClick={() => setActiveTab("indore")}
@@ -383,7 +356,7 @@ export default function ContactPage() {
                         href={offices[activeTab].directionsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[11px] font-semibold text-gold hover:bg-gold hover:text-white transition-colors"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[11px] font-semibold text-gold hover:bg-gold hover:text-ink transition-colors"
                       >
                         <Navigation className="h-3 w-3" /> Map
                       </a>
@@ -401,7 +374,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-4 border-t border-gold/10 pt-3">
+                    <div className="flex items-center gap-4 border-t border-ink/10 pt-3">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold">
                         <User className="h-5 w-5" />
                       </div>
@@ -415,7 +388,7 @@ export default function ContactPage() {
                       href="tel:+917490932661"
                       className="group flex items-center gap-4 transition-colors hover:text-gold"
                     >
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold group-hover:bg-gold group-hover:text-white transition-colors">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold group-hover:bg-gold group-hover:text-ink transition-colors">
                         <Phone className="h-5 w-5" />
                       </div>
                       <div className="flex flex-col gap-0.5">
@@ -428,7 +401,7 @@ export default function ContactPage() {
                       href="mailto:thedreamcasastudio@gmail.com"
                       className="group flex items-center gap-4 transition-colors hover:text-gold"
                     >
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold group-hover:bg-gold group-hover:text-white transition-colors">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold group-hover:bg-gold group-hover:text-ink transition-colors">
                         <Mail className="h-5 w-5" />
                       </div>
                       <div className="flex flex-col gap-0.5">
@@ -451,7 +424,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Google Maps Embed Card matching selected tab */}
-                <div className="overflow-hidden rounded-2xl border border-gold/20 bg-white p-2 shadow-xl">
+                <div className="overflow-hidden border border-ink/10 bg-card p-2">
                   <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-neutral-100">
                     <iframe
                       key={activeTab}
@@ -470,10 +443,10 @@ export default function ContactPage() {
             </div>
 
             {/* Client FAQ Section */}
-            <div className="mt-20 flex flex-col gap-8 rounded-2xl border border-gold/15 bg-white p-8 shadow-lg sm:p-12">
+            <div className="mt-20 flex flex-col gap-8 border border-ink/10 bg-card p-8 sm:p-12">
               <div className="flex flex-col items-center text-center gap-2">
                 <span className="text-xs font-semibold tracking-widest text-gold uppercase">Got Questions?</span>
-                <h3 className="font-serif text-2xl font-bold text-ink sm:text-3xl">
+                <h3 className="font-serif text-2xl text-ink sm:text-3xl">
                   Frequently Asked Questions
                 </h3>
               </div>
@@ -484,18 +457,18 @@ export default function ContactPage() {
                   return (
                     <div
                       key={faq.q}
-                      className="rounded-xl border border-gold/15 bg-cream-light/40 overflow-hidden transition-colors"
+                      className="border border-ink/10 bg-cream-light/40 overflow-hidden transition-colors"
                     >
                       <button
                         type="button"
                         onClick={() => setOpenFaq(isOpen ? null : index)}
-                        className="flex w-full items-center justify-between gap-4 p-5 text-left font-serif text-base font-bold text-ink"
+                        className="flex w-full items-center justify-between gap-4 p-5 text-left font-serif text-base text-ink"
                       >
                         <span>{faq.q}</span>
                         <ChevronDown className={`h-5 w-5 text-gold transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
                       </button>
                       {isOpen && (
-                        <div className="border-t border-gold/10 px-5 pb-5 pt-3 text-xs leading-relaxed text-muted">
+                        <div className="border-t border-ink/10 px-5 pb-5 pt-3 text-xs leading-relaxed text-muted">
                           {faq.a}
                         </div>
                       )}

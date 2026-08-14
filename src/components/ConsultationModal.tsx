@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { X, Sparkles, CheckCircle2, Phone, User, MapPin, Send, MessageSquare } from "lucide-react";
+import { X, CheckCircle2, Phone, User, MapPin, Send, MessageSquare } from "lucide-react";
 
 export default function ConsultationModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -103,16 +103,12 @@ export default function ConsultationModal() {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 animate-fade-in">
       {/* Backdrop Overlay */}
       <div
-        className="fixed inset-0 bg-black/75 backdrop-blur-md transition-opacity"
+        className="fixed inset-0 bg-charcoal/75 backdrop-blur-md transition-opacity"
         onClick={handleClose}
       />
 
       {/* Modal Dialog Card */}
-      <div className="relative z-10 w-full max-w-lg overflow-hidden rounded-2xl border border-gold/30 bg-[#161412] p-6 text-white shadow-2xl sm:p-8">
-        {/* Decorative Gold Glow */}
-        <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gold/15 blur-2xl" />
-        <div className="pointer-events-none absolute -left-16 -bottom-16 h-48 w-48 rounded-full bg-gold/10 blur-2xl" />
-
+      <div className="relative z-10 w-full max-w-lg overflow-hidden border border-white/15 bg-ink p-6 text-white shadow-2xl sm:p-8">
         {/* Close Button */}
         <button
           type="button"
@@ -125,10 +121,10 @@ export default function ConsultationModal() {
 
         {submitted ? (
           <div className="flex flex-col items-center text-center py-6 gap-4">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gold/20 text-gold border border-gold/40 shadow-lg">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/40 text-gold">
               <CheckCircle2 className="h-10 w-10 text-gold" />
             </div>
-            <h3 className="font-serif text-2xl font-bold text-white">
+            <h3 className="font-serif text-2xl text-white">
               Consultation Requested!
             </h3>
             <p className="text-sm text-neutral-300 max-w-xs leading-relaxed">
@@ -155,14 +151,14 @@ export default function ConsultationModal() {
         ) : (
           <div className="flex flex-col gap-5">
             {/* Header Badge */}
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-gold uppercase">
-              <Sparkles className="h-4 w-4" />
+            <div className="flex items-center gap-3 text-xs font-semibold tracking-wider text-gold uppercase">
+              <span className="h-px w-6 bg-gold/70" />
               <span>Complimentary Consultation</span>
             </div>
 
             {/* Title & Subtitle */}
             <div className="flex flex-col gap-1.5">
-              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white leading-tight">
+              <h2 className="font-serif text-2xl sm:text-3xl text-white leading-tight">
                 Plan Your Dream Space with Founder Poorti Jain
               </h2>
               <p className="text-xs sm:text-sm text-neutral-300">
@@ -219,7 +215,7 @@ export default function ConsultationModal() {
                       id="modal-city"
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      className="w-full rounded-xl border border-white/15 bg-[#1f1c19] pl-9 pr-3 py-2.5 text-xs text-white focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                      className="w-full rounded-xl border border-white/15 bg-charcoal-light pl-9 pr-3 py-2.5 text-xs text-white focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                     >
                       <option value="Indore">Indore</option>
                       <option value="Ahmedabad">Ahmedabad</option>
@@ -236,7 +232,7 @@ export default function ConsultationModal() {
                     id="modal-type"
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full rounded-xl border border-white/15 bg-[#1f1c19] px-3 py-2.5 text-xs text-white focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                    className="w-full rounded-xl border border-white/15 bg-charcoal-light px-3 py-2.5 text-xs text-white focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                   >
                     <option value="Residential Interior">Residential Interior</option>
                     <option value="Luxury Villa / Bungalow">Villa / Bungalow</option>
@@ -249,7 +245,7 @@ export default function ConsultationModal() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-6 py-3.5 text-xs font-bold text-ink uppercase tracking-wider shadow-lg hover:bg-gold-light transition-all disabled:opacity-50"
+                className="mt-2 inline-flex items-center justify-center gap-2 bg-gold px-6 py-3.5 text-xs font-bold text-ink uppercase tracking-wider shadow-lg hover:bg-gold-light transition-all disabled:opacity-50"
               >
                 {isSubmitting ? (
                   "Submitting..."

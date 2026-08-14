@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, ArrowRight, Award } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const slides = [
   {
@@ -34,7 +34,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[540px] overflow-hidden bg-[#161412] sm:min-h-[600px] lg:h-[640px] lg:bg-cream px-6 sm:px-10 lg:px-16 flex items-center">
+    <section className="relative min-h-[540px] overflow-hidden bg-charcoal sm:min-h-[600px] lg:h-[640px] lg:bg-cream px-6 sm:px-10 lg:px-16 flex items-center">
       {/* Background Slideshow */}
       <div className="absolute inset-0 lg:left-[38%]">
         {slides.map((slide, index) => (
@@ -57,53 +57,54 @@ export default function Hero() {
         className="absolute inset-0 hidden lg:block pointer-events-none"
         style={{
           background:
-            "linear-gradient(to right, var(--color-cream) 0%, var(--color-cream) 45%, rgba(250, 248, 245, 0.8) 55%, transparent 75%)",
+            "linear-gradient(to right, var(--color-cream) 0%, var(--color-cream) 45%, rgba(var(--color-cream-glow-rgb), 0.8) 55%, transparent 75%)",
         }}
       />
       <div
         className="absolute inset-0 block lg:hidden pointer-events-none"
         style={{
           background:
-            "linear-gradient(to top, rgba(22, 20, 18, 0.95) 0%, rgba(22, 20, 18, 0.75) 50%, rgba(22, 20, 18, 0.4) 100%)",
+            "linear-gradient(to top, rgba(var(--color-charcoal-rgb), 0.95) 0%, rgba(var(--color-charcoal-rgb), 0.75) 50%, rgba(var(--color-charcoal-rgb), 0.4) 100%)",
         }}
       />
 
       {/* Hero Content Container */}
       <div className="relative z-10 mx-auto w-full max-w-7xl py-12 lg:py-0">
-        <div className="flex max-w-xl flex-col justify-center gap-5 sm:gap-6 text-left">
-          {/* Location & Studio Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-xs font-semibold tracking-wider text-gold uppercase backdrop-blur w-fit">
-            <Award className="h-4 w-4" /> Luxury Interior Studio • Indore &amp; Ahmedabad
+        <div className="flex max-w-lg flex-col justify-center gap-6 sm:gap-7 text-left">
+          {/* Eyebrow Label */}
+          <div className="flex items-center gap-3 text-xs font-semibold tracking-[0.25em] text-gold uppercase">
+            <span className="h-px w-8 bg-gold/70" />
+            The Dream Casa
           </div>
 
           {/* Primary H1 Heading */}
-          <h1 className="font-serif text-3xl font-bold leading-tight text-white lg:text-ink sm:text-5xl lg:text-6xl">
-            Crafting Timeless <span className="text-gold italic font-normal block sm:inline">Luxury Spaces.</span>
+          <h1 className="font-serif text-4xl leading-[1.1] text-white lg:text-ink sm:text-5xl lg:text-6xl">
+            Interiors, Designed With Intent.
           </h1>
 
           {/* Clean Subheading Description */}
           <p className="max-w-md text-sm leading-relaxed text-neutral-200 lg:text-muted sm:text-base">
-            Bespoke residential interiors, 3D architectural renders &amp; 100% turnkey execution by Founder Poorti Jain.
+            Bespoke interiors, thoughtfully designed and meticulously executed.
           </p>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center gap-3.5 pt-2">
+          <div className="flex flex-wrap items-center gap-4 pt-2">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 rounded-full bg-gold px-6 sm:px-8 py-3.5 text-xs font-semibold tracking-[0.15em] text-white uppercase transition-all shadow-xl hover:bg-gold-dark hover:shadow-gold/25 hover:scale-105"
+              className="inline-flex items-center gap-2 border border-white/70 lg:border-ink px-6 sm:px-8 py-3.5 text-xs font-semibold tracking-[0.15em] text-white lg:text-ink uppercase transition-all hover:bg-cream-light hover:text-ink lg:hover:bg-ink lg:hover:text-cream-light"
             >
-              <Sparkles className="h-4 w-4" /> Explore Portfolio
+              View Our Work
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-white/30 lg:border-ink/20 bg-white/10 lg:bg-white/60 px-6 sm:px-8 py-3.5 text-xs font-semibold tracking-[0.15em] text-white lg:text-ink uppercase backdrop-blur transition-all hover:border-gold hover:text-gold hover:bg-white"
+              className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.15em] text-white lg:text-ink uppercase transition-all hover:text-gold"
             >
-              Book Consultation <ArrowRight className="h-4 w-4" />
+              Enquire Now <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
           {/* Slide Navigation Dots */}
-          <div className="flex items-center gap-2.5 pt-3 sm:pt-4">
+          <div className="flex items-center gap-2.5 pt-4 sm:pt-6">
             {slides.map((_, index) => (
               <button
                 key={index}

@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Newsreader, Roboto_Flex } from "next/font/google";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ConsultationModal from "@/components/ConsultationModal";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const playfair = Newsreader({
   variable: "--font-playfair",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const inter = Inter({
+const inter = Roboto_Flex({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
@@ -244,7 +246,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white">
+      <body className="min-h-full flex flex-col bg-cream-light">
         {children}
         <WhatsAppButton />
         <ConsultationModal />

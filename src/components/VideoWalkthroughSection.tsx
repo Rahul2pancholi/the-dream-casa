@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
-import { Play, X, Volume2, VolumeX, Maximize, MapPin, Sparkles, Film, ArrowRight } from "lucide-react";
+import { Play, X, Volume2, VolumeX, MapPin, ArrowRight } from "lucide-react";
 import { videoWalkthroughs } from "@/data/projects";
 
 export default function VideoWalkthroughSection() {
@@ -30,11 +30,7 @@ export default function VideoWalkthroughSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#12100e] px-6 py-24 text-white sm:px-10 lg:px-16">
-      {/* Subtle Background Glow Elements */}
-      <div className="pointer-events-none absolute -left-40 -top-40 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
-      <div className="pointer-events-none absolute -right-40 -bottom-40 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
-
+    <section className="relative overflow-hidden bg-ink px-6 py-24 text-white sm:px-10 lg:px-16">
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="flex max-w-2xl flex-col items-start gap-3 text-left">
@@ -42,7 +38,7 @@ export default function VideoWalkthroughSection() {
             <span className="h-px w-8 bg-gold" />
             Live Site Execution Reels
           </div>
-          <h2 className="font-serif text-3xl font-bold leading-tight text-cream-light sm:text-4xl lg:text-5xl">
+          <h2 className="font-serif text-3xl leading-tight text-cream-light sm:text-4xl lg:text-5xl">
             Watch Real Site Walkthroughs
           </h2>
           <p className="text-sm leading-relaxed text-muted/90 sm:text-base">
@@ -51,7 +47,7 @@ export default function VideoWalkthroughSection() {
         </div>
 
         {/* Featured Main Video Banner */}
-        <div className="mt-14 relative overflow-hidden rounded-2xl border border-gold/25 bg-neutral-900 shadow-2xl">
+        <div className="mt-14 relative overflow-hidden border border-white/10 bg-charcoal">
           <div className="grid lg:grid-cols-12 lg:items-center">
             {/* Left Video Teaser */}
             <div
@@ -69,16 +65,16 @@ export default function VideoWalkthroughSection() {
 
               {/* Centered Play Button */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gold/90 text-ink shadow-xl shadow-gold/30 backdrop-blur transition-all duration-300 group-hover:scale-110 group-hover:bg-gold">
-                  <Play className="h-8 w-8 translate-x-0.5 fill-ink text-ink" />
+                <div className="flex h-20 w-20 items-center justify-center rounded-full border border-white/40 bg-charcoal/40 text-white backdrop-blur transition-all duration-300 group-hover:scale-110 group-hover:bg-gold group-hover:border-gold group-hover:text-ink">
+                  <Play className="h-8 w-8 translate-x-0.5 fill-current" />
                 </div>
               </div>
 
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-white/90">
-                <span className="flex items-center gap-1.5 rounded-md bg-black/60 px-2.5 py-1 backdrop-blur">
+                <span className="flex items-center gap-1.5 rounded-md bg-charcoal/60 px-2.5 py-1 backdrop-blur">
                   <MapPin className="h-3.5 w-3.5 text-gold" /> {videoWalkthroughs[0].location}
                 </span>
-                <span className="rounded-md bg-black/60 px-2.5 py-1 backdrop-blur">
+                <span className="rounded-md bg-charcoal/60 px-2.5 py-1 backdrop-blur">
                   {videoWalkthroughs[0].duration}
                 </span>
               </div>
@@ -86,10 +82,11 @@ export default function VideoWalkthroughSection() {
 
             {/* Right Text Details */}
             <div className="flex flex-col gap-5 p-8 lg:col-span-5 lg:p-10">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-gold uppercase">
-                <Sparkles className="h-4 w-4" /> Featured Site Video
+              <div className="flex items-center gap-3 text-xs font-semibold tracking-widest text-gold uppercase">
+                <span className="h-px w-8 bg-gold/70" />
+                Featured Site Video
               </div>
-              <h3 className="font-serif text-2xl font-bold text-white sm:text-3xl">
+              <h3 className="font-serif text-2xl text-white sm:text-3xl">
                 {videoWalkthroughs[0].title}
               </h3>
               <p className="text-sm leading-relaxed text-neutral-300">
@@ -98,7 +95,7 @@ export default function VideoWalkthroughSection() {
               <button
                 type="button"
                 onClick={() => setActiveVideo(videoWalkthroughs[0])}
-                className="mt-2 inline-flex items-center justify-center gap-3 rounded-full bg-gold px-8 py-3.5 text-xs font-semibold tracking-widest text-ink uppercase transition-all hover:bg-gold-dark hover:text-white"
+                className="mt-2 inline-flex items-center justify-center gap-3 border border-white/70 px-8 py-3.5 text-xs font-semibold tracking-widest text-white uppercase transition-all hover:bg-cream-light hover:text-ink"
               >
                 <Play className="h-4 w-4 fill-current" /> Watch Full HD Walkthrough
               </button>
@@ -114,10 +111,10 @@ export default function VideoWalkthroughSection() {
               onClick={() => setActiveVideo(item)}
               onMouseEnter={() => handleMouseEnter(item.id)}
               onMouseLeave={() => handleMouseLeave(item.id)}
-              className="group relative flex flex-col overflow-hidden rounded-xl border border-white/10 bg-neutral-900/80 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/50 hover:shadow-xl hover:shadow-gold/10 cursor-pointer"
+              className="group relative flex flex-col overflow-hidden border border-white/10 bg-charcoal/80 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 cursor-pointer"
             >
               {/* Video Preview Container */}
-              <div className="relative aspect-[9/16] w-full overflow-hidden bg-black sm:aspect-[4/3]">
+              <div className="relative aspect-[9/16] w-full overflow-hidden bg-charcoal sm:aspect-[4/3]">
                 {/* Fallback Poster Image */}
                 <Image
                   src={item.poster}
@@ -145,18 +142,18 @@ export default function VideoWalkthroughSection() {
                 />
 
                 {/* Video Duration Badge */}
-                <div className="absolute right-3 top-3 rounded-md bg-black/70 px-2 py-1 text-[11px] font-medium text-white backdrop-blur">
+                <div className="absolute right-3 top-3 rounded-md bg-charcoal/70 px-2 py-1 text-[11px] font-medium text-white backdrop-blur">
                   {item.duration}
                 </div>
 
                 {/* Centered Play Button */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur border border-white/20 transition-all duration-300 group-hover:scale-110 group-hover:bg-gold group-hover:border-gold group-hover:text-ink">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-charcoal/60 text-white backdrop-blur border border-white/20 transition-all duration-300 group-hover:scale-110 group-hover:bg-gold group-hover:border-gold group-hover:text-ink">
                     <Play className="h-6 w-6 translate-x-0.5 fill-current" />
                   </div>
                 </div>
 
-                <div className="absolute bottom-3 left-3 text-[11px] font-medium text-gold bg-black/70 px-2.5 py-1 rounded-md backdrop-blur">
+                <div className="absolute bottom-3 left-3 text-[11px] font-medium text-gold bg-charcoal/70 px-2.5 py-1 rounded-md backdrop-blur">
                   Video Walkthrough
                 </div>
               </div>
@@ -164,7 +161,7 @@ export default function VideoWalkthroughSection() {
               {/* Text Info */}
               <div className="flex flex-1 flex-col justify-between p-5">
                 <div className="flex flex-col gap-1.5">
-                  <h4 className="font-serif text-base font-bold text-white group-hover:text-gold transition-colors line-clamp-1">
+                  <h4 className="font-serif text-base text-white group-hover:text-gold transition-colors line-clamp-1">
                     {item.title}
                   </h4>
                   <p className="text-xs text-neutral-400 line-clamp-2">
@@ -190,17 +187,17 @@ export default function VideoWalkthroughSection() {
         <div
           aria-modal="true"
           role="dialog"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-lg sm:p-8"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-charcoal/90 p-4 backdrop-blur-lg sm:p-8"
           onClick={() => setActiveVideo(null)}
         >
           <div
-            className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl bg-neutral-950 border border-white/15 shadow-2xl"
+            className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl bg-charcoal border border-white/15 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
             <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
               <div className="flex flex-col">
-                <h3 className="font-serif text-lg font-bold text-white">
+                <h3 className="font-serif text-lg text-white">
                   {activeVideo.title}
                 </h3>
                 <span className="text-xs text-gold">{activeVideo.subtitle}</span>
@@ -225,7 +222,7 @@ export default function VideoWalkthroughSection() {
             </div>
 
             {/* Video Player */}
-            <div className="relative flex-1 bg-black">
+            <div className="relative flex-1 bg-charcoal">
               <video
                 src={activeVideo.videoUrl}
                 controls
@@ -236,13 +233,13 @@ export default function VideoWalkthroughSection() {
             </div>
 
             {/* Modal Footer Info */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-white/10 px-6 py-4 bg-neutral-900/60">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-white/10 px-6 py-4 bg-charcoal/60">
               <p className="text-xs text-neutral-300 max-w-xl">
                 {activeVideo.description}
               </p>
               <a
                 href="/contact"
-                className="shrink-0 rounded-full bg-gold px-6 py-2.5 text-center text-xs font-semibold tracking-wider text-ink uppercase hover:bg-gold-dark hover:text-white transition-colors"
+                className="shrink-0 border border-white/40 px-6 py-2.5 text-center text-xs font-semibold tracking-wider text-white uppercase hover:bg-cream-light hover:text-ink transition-colors"
               >
                 Book Site Consultation
               </a>

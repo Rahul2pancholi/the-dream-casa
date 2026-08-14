@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { X, ChevronLeft, ChevronRight, MapPin, Calendar, Maximize2, Layers, Play, Film, Share2, Check } from "lucide-react";
 import { ProjectItem } from "@/data/projects";
 
@@ -77,11 +78,11 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
     <div
       aria-modal="true"
       role="dialog"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-md sm:p-6 lg:p-10"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-charcoal/85 p-4 backdrop-blur-md sm:p-6 lg:p-10"
       onClick={onClose}
     >
       <div
-        className={`relative flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden rounded-2xl bg-neutral-900 border border-gold/20 shadow-2xl transition-all duration-200 ease-out lg:flex-row lg:max-h-[85vh] ${
+        className={`relative flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden bg-charcoal border border-white/10 shadow-2xl transition-all duration-200 ease-out lg:flex-row lg:max-h-[85vh] ${
           entered ? "scale-100 opacity-100" : "scale-[0.96] opacity-0"
         }`}
         onClick={(e) => e.stopPropagation()}
@@ -94,12 +95,12 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
               type="button"
               onClick={handleShare}
               aria-label="Copy share link"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-white transition-all hover:bg-gold hover:text-ink"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-charcoal/70 text-white transition-all hover:bg-gold hover:text-ink"
             >
               {copied ? <Check className="h-5 w-5" /> : <Share2 className="h-5 w-5" />}
             </button>
             {copied && (
-              <span className="absolute right-0 top-12 whitespace-nowrap rounded-md bg-black/85 px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+              <span className="absolute right-0 top-12 whitespace-nowrap rounded-md bg-charcoal/85 px-3 py-1.5 text-xs font-medium text-white shadow-lg">
                 Link copied!
               </span>
             )}
@@ -110,14 +111,14 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
             type="button"
             onClick={onClose}
             aria-label="Close Lightbox"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-white transition-all hover:bg-gold hover:text-ink"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-charcoal/70 text-white transition-all hover:bg-gold hover:text-ink"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
         {/* Main Viewport */}
-        <div className="relative flex min-w-0 flex-1 flex-col justify-between bg-black/95 p-4 lg:p-6">
+        <div className="relative flex min-w-0 flex-1 flex-col justify-between bg-charcoal/95 p-4 lg:p-6">
           <div className="relative flex flex-1 items-center justify-center min-h-[320px] sm:min-h-[460px]">
             {showVideo && project.videoUrl ? (
               <video
@@ -208,23 +209,15 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
         {/* Side Detail Sidebar */}
         <div className="flex w-full shrink-0 flex-col justify-between overflow-y-auto bg-cream-light p-6 pt-8 lg:w-96 lg:p-8 lg:pt-12">
           <div className="flex flex-col gap-5">
-            <div className="flex items-center gap-2">
-              <span className="rounded-full bg-gold/15 px-3 py-1 text-[11px] font-semibold tracking-wider text-gold uppercase">
-                {project.typeLabel}
-              </span>
-              <span className="text-[11px] font-medium text-muted uppercase">
-                {project.category}
-              </span>
+            <div className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-wider text-gold">
+              <span>{project.typeLabel}</span>
+              <span className="text-gold/50">/</span>
+              <span className="text-muted">{project.category}</span>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2.5">
-              <h3 className="font-serif text-2xl font-bold text-ink leading-tight">
-                {project.title}
-              </h3>
-              <span className="rounded-full bg-gold px-2.5 py-1 text-[10px] font-semibold tracking-wider text-white uppercase">
-                {project.category}
-              </span>
-            </div>
+            <h3 className="font-serif text-2xl text-ink leading-tight">
+              {project.title}
+            </h3>
             <p className="text-xs font-medium tracking-wide text-gold">
               {project.subtitle}
             </p>
@@ -236,7 +229,7 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
             </p>
 
             {/* Specs Grid */}
-            <div className="mt-4 grid grid-cols-2 gap-4 rounded-xl border border-gold/15 bg-white p-4 shadow-sm">
+            <div className="mt-4 grid grid-cols-2 gap-4 border border-ink/10 bg-card p-4">
               {project.specs.location && (
                 <div className="flex flex-col gap-0.5">
                   <span className="flex items-center gap-1.5 text-[11px] font-semibold text-muted uppercase">
@@ -282,7 +275,7 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
             {/* Scope of Work */}
             {project.scopeOfWork && project.scopeOfWork.length > 0 && (
               <div className="mt-2 flex flex-col gap-3">
-                <h4 className="font-serif text-base font-bold text-ink">
+                <h4 className="font-serif text-base text-ink">
                   Scope of Work
                 </h4>
                 <ul className="flex flex-col gap-2">
@@ -299,7 +292,7 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
             {/* Challenge & Solution */}
             {project.challenge && project.solution && (
               <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <div className="flex flex-col gap-1.5 rounded-xl border border-gold/15 bg-white p-4 shadow-sm">
+                <div className="flex flex-col gap-1.5 border border-ink/10 bg-card p-4">
                   <h5 className="text-[11px] font-semibold tracking-wider text-gold uppercase">
                     The Challenge
                   </h5>
@@ -307,7 +300,7 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
                     {project.challenge}
                   </p>
                 </div>
-                <div className="flex flex-col gap-1.5 rounded-xl border border-gold/15 bg-white p-4 shadow-sm">
+                <div className="flex flex-col gap-1.5 border border-ink/10 bg-card p-4">
                   <h5 className="text-[11px] font-semibold tracking-wider text-gold uppercase">
                     Our Approach
                   </h5>
@@ -320,9 +313,15 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
           </div>
 
           <div className="mt-8 flex flex-col gap-3">
+            <Link
+              href={`/projects/${project.id}`}
+              className="flex w-full items-center justify-center border border-ink py-3 text-center text-xs font-semibold tracking-widest text-ink uppercase transition-colors hover:bg-ink hover:text-cream-light"
+            >
+              View Full Project
+            </Link>
             <a
               href="/contact"
-              className="flex w-full items-center justify-center rounded-md bg-gold py-3 text-center text-xs font-semibold tracking-widest text-white uppercase transition-colors hover:bg-gold-dark"
+              className="flex w-full items-center justify-center border border-ink/20 py-3 text-center text-xs font-semibold tracking-widest text-ink uppercase transition-colors hover:bg-cream-dark"
             >
               Request Similar Design
             </a>

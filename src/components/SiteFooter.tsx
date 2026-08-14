@@ -4,19 +4,18 @@ import { Phone, Mail, Globe, MapPin, User } from "lucide-react";
 
 const quickLinks = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
+  { label: "Studio", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
+  { label: "Residences", href: "/projects" },
   { label: "Process", href: "/process" },
-  { label: "Design Journal", href: "/blog" },
+  { label: "Journal", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
 const services = [
-  "Residential Interiors",
-  "Commercial Interiors",
-  "Turnkey Projects",
-  "Hospitality Interiors",
+  "Residences",
+  "Premium Offices",
+  "Boutique Hospitality",
 ];
 
 const socialLinks = [
@@ -44,29 +43,29 @@ const socialLinks = [
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-ink text-white/70 px-6 sm:px-10 lg:px-16">
-      <div className="mx-auto max-w-7xl py-14">
+    <footer className="bg-charcoal text-dark-body px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-7xl py-16 sm:py-20">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="/images/logo-icon.png"
+                src="/images/dream-casa-icon-light.svg"
                 alt="The Dream Casa"
                 width={44}
                 height={44}
                 className="h-11 w-11 object-contain"
               />
               <span className="flex flex-col leading-tight">
-                <span className="font-serif text-lg text-white">
+                <span className="font-serif text-lg text-cream-light">
                   The Dream Casa
                 </span>
-                <span className="text-[9px] font-medium tracking-[0.15em] text-white/40">
+                <span className="text-[9px] font-medium tracking-[0.15em] text-dark-secondary">
                   INTERIOR DESIGN &middot; TURNKEY PROJECTS
                 </span>
               </span>
             </Link>
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
-              Designing aesthetic, functional and timeless spaces in Indore &amp; beyond. Founded by Poorti Jain.
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-dark-body">
+              A founder-led design studio in Indore &amp; Ahmedabad, est. 2025. Founded by Poorti Jain.
             </p>
             <div className="mt-6 flex items-center gap-3">
               {socialLinks.map((social) => (
@@ -76,7 +75,7 @@ export default function SiteFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 text-white/60 transition-colors hover:border-gold hover:text-gold"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-border-dark text-secondary transition-colors hover:border-gold/60 hover:text-gold"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
                     <path d={social.path} />
@@ -87,7 +86,7 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="mb-5 text-[11px] font-semibold tracking-[0.24em] text-white/40 uppercase">
+            <h4 className="mb-5 text-[11px] font-semibold tracking-[0.24em] text-gold uppercase">
               Quick Links
             </h4>
             <nav className="flex flex-col gap-3">
@@ -95,7 +94,7 @@ export default function SiteFooter() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-white/55 transition-colors hover:text-gold"
+                  className="text-sm text-dark-body transition-colors hover:text-cream-light"
                 >
                   {link.label}
                 </Link>
@@ -104,12 +103,12 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="mb-5 text-[11px] font-semibold tracking-[0.24em] text-white/40 uppercase">
+            <h4 className="mb-5 text-[11px] font-semibold tracking-[0.24em] text-gold uppercase">
               Services
             </h4>
             <div className="flex flex-col gap-3">
               {services.map((service) => (
-                <span key={service} className="text-sm text-white/55">
+                <span key={service} className="text-sm text-dark-body">
                   {service}
                 </span>
               ))}
@@ -117,24 +116,24 @@ export default function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="mb-5 text-[11px] font-semibold tracking-[0.24em] text-white/40 uppercase">
+            <h4 className="mb-5 text-[11px] font-semibold tracking-[0.24em] text-gold uppercase">
               Contact Info
             </h4>
-            <div className="flex flex-col gap-4 text-sm text-white/55">
+            <div className="flex flex-col gap-4 text-sm text-dark-body">
               <div className="flex items-center gap-3">
                 <User className="h-4 w-4 shrink-0 text-gold" />
                 <span>Poorti Jain (Founder)</span>
               </div>
               <a
                 href="tel:+917490932661"
-                className="flex items-center gap-3 hover:text-gold"
+                className="flex items-center gap-3 hover:text-cream-light"
               >
                 <Phone className="h-4 w-4 shrink-0 text-gold" />
                 +91 7490 932 661
               </a>
               <a
                 href="mailto:thedreamcasastudio@gmail.com"
-                className="flex items-center gap-3 hover:text-gold"
+                className="flex items-center gap-3 hover:text-cream-light"
               >
                 <Mail className="h-4 w-4 shrink-0 text-gold" />
                 thedreamcasastudio@gmail.com
@@ -143,7 +142,7 @@ export default function SiteFooter() {
                 href="https://thedreamcasa.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 hover:text-gold"
+                className="flex items-center gap-3 hover:text-cream-light"
               >
                 <Globe className="h-4 w-4 shrink-0 text-gold" />
                 thedreamcasa.in
@@ -151,23 +150,23 @@ export default function SiteFooter() {
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <div className="flex flex-col gap-1 text-xs">
-                  <span><strong className="text-white">Indore:</strong> The View, 305, Yeshwant Niwas Rd, Nehru Park 2, MP 452003</span>
-                  <span><strong className="text-white">Ahmedabad:</strong> The Dream Casa Studio, Bodakdev, SG Highway, GJ 380054</span>
+                  <span><strong className="text-cream-light">Indore:</strong> The View, 305, Yeshwant Niwas Rd, Nehru Park 2, MP 452003</span>
+                  <span><strong className="text-cream-light">Ahmedabad:</strong> The Dream Casa Studio, Bodakdev, SG Highway, GJ 380054</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 text-center sm:flex-row sm:text-left">
-          <p className="text-[11px] tracking-[0.2em] text-white/30 uppercase">
+        <div className="mt-16 flex flex-col items-center justify-between gap-3 border-t border-border-dark pt-8 text-center sm:flex-row sm:text-left">
+          <p className="text-[11px] tracking-[0.2em] text-footer-muted uppercase">
             &copy; {new Date().getFullYear()} The Dream Casa. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-[11px] tracking-[0.2em] text-white/30 uppercase">
+          <div className="flex items-center gap-4 text-[11px] tracking-[0.2em] text-footer-muted uppercase">
             <Link href="/privacy-policy" className="hover:text-gold">
               Privacy Policy
             </Link>
-            <span className="text-white/20">|</span>
+            <span className="text-dark-secondary/50">|</span>
             <Link href="/terms-conditions" className="hover:text-gold">
               Terms &amp; Conditions
             </Link>

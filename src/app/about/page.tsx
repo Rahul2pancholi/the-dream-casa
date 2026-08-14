@@ -2,22 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
+import PageHero from "@/components/PageHero";
 import StatsBar from "@/components/StatsBar";
 import CtaBanner from "@/components/CtaBanner";
 import SiteFooter from "@/components/SiteFooter";
-import { Sparkles, Award, ShieldCheck, HeartHandshake, CheckCircle2, ArrowRight } from "lucide-react";
+import { ShieldCheck, HeartHandshake, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Founder Poorti Jain & Studio | The Dream Casa Indore",
   description:
-    "Learn about Founder Poorti Jain and The Dream Casa studio based on Yeshwant Niwas Rd, Indore. 100+ luxury residential and commercial turnkey interior projects delivered.",
+    "Learn about Founder Poorti Jain and The Dream Casa studio based on Yeshwant Niwas Rd, Indore. A founder-led studio delivering luxury residential and commercial turnkey interior projects.",
   alternates: {
     canonical: "https://thedreamcasa.in/about",
   },
   openGraph: {
     title: "About Founder Poorti Jain & Studio | The Dream Casa Indore",
     description:
-      "Learn about Founder Poorti Jain and The Dream Casa studio based on Yeshwant Niwas Rd, Indore. 100+ luxury residential and commercial turnkey interior projects delivered.",
+      "Learn about Founder Poorti Jain and The Dream Casa studio based on Yeshwant Niwas Rd, Indore. A founder-led studio delivering luxury residential and commercial turnkey interior projects.",
     url: "https://thedreamcasa.in/about",
   },
 };
@@ -51,51 +52,23 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-1 flex-col bg-white">
+    <div className="flex flex-1 flex-col bg-cream-light">
       <SiteHeader />
       <main className="flex flex-1 flex-col">
         {/* About Hero Section */}
-        <section className="relative overflow-hidden bg-[#161412] py-20 text-white sm:py-24 lg:py-28 px-6 sm:px-10 lg:px-16">
-          <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-gold/15 blur-3xl" />
-          <div className="pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
-
-          <div className="relative mx-auto max-w-7xl">
-            <div className="flex max-w-3xl flex-col gap-5">
-              <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-gold uppercase">
-                <span className="h-px w-8 bg-gold" />
-                About The Dream Casa
-              </div>
-              <h1 className="font-serif text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-                Designing Spaces, Delivering Dreams
-              </h1>
-              <p className="text-base leading-relaxed text-neutral-300 sm:text-lg">
-                Founded by Poorti Jain in Indore, The Dream Casa is a premier interior architecture studio specializing in high-end residential, commercial, and turnkey executions.
-              </p>
-
-              <div className="mt-4 flex flex-wrap items-center gap-6 border-t border-white/10 pt-6 text-xs font-semibold text-neutral-200">
-                <div className="flex items-center gap-2">
-                  <Award className="h-4 w-4 text-gold" />
-                  <span>Poorti Jain, Founder</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Sparkles className="h-4 w-4 text-gold" />
-                  <span>100+ Projects Completed</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-gold" />
-                  <span>Indore Studio Location</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="About The Dream Casa"
+          title="Designing Spaces, Delivering Dreams"
+          description="Founded by Poorti Jain in Indore, The Dream Casa is a premier interior architecture studio specializing in high-end residential, commercial, and turnkey executions."
+          meta={["Poorti Jain, Founder", "Est. 2025", "Indore Studio Location"]}
+        />
 
         {/* Founder Spotlight & Story */}
-        <section className="bg-white py-20 sm:py-24 px-6 sm:px-10 lg:px-16">
+        <section className="bg-cream-light py-20 sm:py-24 px-6 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
               <div className="relative lg:col-span-5">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-gold/20 shadow-2xl">
+                <div className="relative aspect-[4/5] overflow-hidden border border-ink/10">
                   <Image
                     src="/images/projects/living-kitchen-01.jpg"
                     alt="The Dream Casa Design Studio"
@@ -104,8 +77,8 @@ export default function AboutPage() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 rounded-xl border border-white/20 bg-white/90 p-5 backdrop-blur-md">
-                    <p className="font-serif text-sm font-semibold italic text-ink">
+                  <div className="absolute bottom-6 left-6 right-6 bg-white/95 p-5 backdrop-blur-md">
+                    <p className="font-serif text-sm italic text-ink">
                       &ldquo;Interior design is not just about how a space looks, but how it makes you feel every single day.&rdquo;
                     </p>
                     <span className="mt-2 block text-xs font-bold tracking-wider text-gold uppercase">
@@ -120,7 +93,7 @@ export default function AboutPage() {
                   <span className="h-px w-8 bg-gold" />
                   Our Legacy & Vision
                 </div>
-                <h2 className="font-serif text-3xl font-bold leading-tight text-ink sm:text-4xl">
+                <h2 className="font-serif text-3xl leading-tight text-ink sm:text-4xl">
                   We Don&apos;t Just Design Spaces, We Craft Timeless Sanctuaries.
                 </h2>
                 <p className="text-sm leading-relaxed text-muted sm:text-base">
@@ -130,21 +103,21 @@ export default function AboutPage() {
                   From initial 3D visualization to final soft furnishing placement, Founder Poorti Jain and our team oversee every detail to ensure seamless execution without stress or delays.
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gold/15">
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-ink/10">
                   <div className="flex flex-col gap-1">
-                    <span className="font-serif text-3xl font-bold text-gold">100+</span>
-                    <span className="text-xs font-semibold text-ink uppercase tracking-wider">Homes Delivered</span>
+                    <span className="font-serif text-2xl text-gold">Founder-Led</span>
+                    <span className="text-xs font-semibold text-ink uppercase tracking-wider">Hands-On Delivery</span>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <span className="font-serif text-3xl font-bold text-gold">100%</span>
-                    <span className="text-xs font-semibold text-ink uppercase tracking-wider">Turnkey Guarantee</span>
+                    <span className="font-serif text-2xl text-gold">Est. 2025</span>
+                    <span className="text-xs font-semibold text-ink uppercase tracking-wider">Indore &amp; Ahmedabad</span>
                   </div>
                 </div>
 
                 <div className="pt-2">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-xs font-semibold tracking-widest text-white uppercase transition-all shadow-md hover:bg-gold-dark"
+                    className="inline-flex items-center gap-2 border border-ink px-7 py-3.5 text-xs font-semibold tracking-widest text-ink uppercase hover:bg-ink hover:text-cream-light transition-all"
                   >
                     Connect With Poorti Jain <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -163,7 +136,7 @@ export default function AboutPage() {
                 Why Choose Us
                 <span className="h-px w-8 bg-gold" />
               </div>
-              <h2 className="font-serif text-3xl font-bold text-ink sm:text-4xl">
+              <h2 className="font-serif text-3xl text-ink sm:text-4xl">
                 Our Core Principles
               </h2>
               <p className="max-w-xl text-sm leading-relaxed text-muted">
@@ -171,16 +144,14 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-14 grid gap-px bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
               {values.map(({ title, description, Icon }) => (
                 <div
                   key={title}
-                  className="flex flex-col gap-4 rounded-2xl border border-gold/15 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-gold/30 hover:shadow-lg"
+                  className="flex flex-col gap-4 bg-cream-light p-6"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/15 text-gold">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="font-serif text-lg font-bold text-ink">{title}</h3>
+                  <Icon strokeWidth={1.25} className="h-8 w-8 text-gold" />
+                  <h3 className="font-serif text-lg text-ink">{title}</h3>
                   <p className="text-xs leading-relaxed text-muted">{description}</p>
                 </div>
               ))}

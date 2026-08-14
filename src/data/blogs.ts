@@ -93,7 +93,7 @@ At **The Dream Casa**, led by Founder **Poorti Jain**, every project begins with
     },
     publishDate: "2026-08-01",
     readTime: "5 min read",
-    image: "/images/eklavya/image-29-1.png",
+    image: "/images/eklavya/image-14-1.jpg",
     locality: "Saket & Race Course Rd, Indore",
     keywords: [
       "Turnkey Interior Execution Indore",

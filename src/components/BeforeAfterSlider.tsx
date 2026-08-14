@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect, ReactNode } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface BeforeAfterItem {
   id: string;
@@ -96,7 +96,7 @@ export default function BeforeAfterSlider() {
             <span className="h-px w-8 bg-gold" />
             3D vs Real Execution
           </div>
-          <h2 className="font-serif text-3xl font-bold leading-tight text-ink sm:text-4xl">
+          <h2 className="font-serif text-3xl leading-tight text-ink sm:text-4xl">
             What We Promise Is What We Deliver
           </h2>
           <p className="text-sm leading-relaxed text-muted">
@@ -105,7 +105,7 @@ export default function BeforeAfterSlider() {
         </div>
 
         {/* Room Switcher Tabs */}
-        <div className="mt-8 flex justify-start gap-3">
+        <div className="mt-8 flex flex-wrap justify-start gap-x-6 gap-y-2 border-b border-ink/10 pb-4">
           {comparisons.map((item) => (
             <button
               key={item.id}
@@ -114,10 +114,8 @@ export default function BeforeAfterSlider() {
                 setActiveItem(item);
                 setSliderPosition(50);
               }}
-              className={`rounded-full px-6 py-2 text-xs font-semibold tracking-wider uppercase transition-all ${
-                activeItem.id === item.id
-                  ? "bg-gold text-white shadow-md"
-                  : "bg-white text-ink/70 hover:text-ink border border-gold/20"
+              className={`text-xs font-semibold tracking-wider uppercase transition-colors ${
+                activeItem.id === item.id ? "text-gold" : "text-ink/60 hover:text-ink"
               }`}
             >
               {item.room}
@@ -126,7 +124,7 @@ export default function BeforeAfterSlider() {
         </div>
 
         {/* Interactive Comparison Container */}
-        <div className="mt-10 overflow-hidden rounded-2xl border border-gold/20 bg-white p-4 shadow-xl sm:p-6 lg:p-8">
+        <div className="mt-10 overflow-hidden border border-ink/10 bg-card p-4 sm:p-6 lg:p-8">
           <div
             ref={containerRef}
             className="relative aspect-[16/10] w-full overflow-hidden rounded-xl select-none touch-none cursor-ew-resize min-h-[320px] sm:min-h-[480px]"
@@ -203,7 +201,7 @@ export default function BeforeAfterSlider() {
 
           <div className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-center sm:text-left">
             <div>
-              <h3 className="font-serif text-xl font-bold text-ink">
+              <h3 className="font-serif text-xl text-ink">
                 {activeItem.title}
               </h3>
               <p className="mt-1 text-xs text-muted">
@@ -211,7 +209,7 @@ export default function BeforeAfterSlider() {
               </p>
             </div>
             <div className="inline-flex items-center justify-center gap-2 text-xs font-semibold text-gold tracking-widest uppercase">
-              <Sparkles className="h-4 w-4" /> 100% Execution Fidelity
+              100% Execution Fidelity
             </div>
           </div>
         </div>

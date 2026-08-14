@@ -10,9 +10,8 @@ const desktopNavLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
-  { label: "Process", href: "/process" },
-  { label: "Journal", href: "/blog" },
+  { label: "Portfolio", href: "/projects" },
+  { label: "Blogs", href: "/blog" },
 ];
 
 const mobileNavLinks = [
@@ -26,11 +25,11 @@ export default function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b border-gold/15 transition-all duration-300 ${
-        mobileMenuOpen ? "bg-white" : "bg-white/95 backdrop-blur-md"
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        mobileMenuOpen ? "bg-cream-light" : "bg-cream-light/95 backdrop-blur-md"
       }`}
     >
-      <div className="w-full px-6 sm:px-10 lg:px-16">
+      <div className="relative w-full border-b border-ink/10 px-6 sm:px-10 lg:px-16">
         <div className="mx-auto flex max-w-7xl items-center justify-between py-3.5">
         {/* Brand Logo */}
         <Link
@@ -39,7 +38,7 @@ export default function SiteHeader() {
         >
           <div className="relative h-10 w-10 shrink-0">
             <Image
-              src="/images/logo-icon.png"
+              src="/images/dream-casa-icon.svg"
               alt="The Dream Casa Studio Indore"
               fill
               priority
@@ -66,8 +65,10 @@ export default function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-xs font-semibold tracking-widest uppercase transition-colors hover:text-gold whitespace-nowrap ${
-                  isActive ? "text-gold font-bold" : "text-ink/80"
+                className={`relative py-1 text-xs font-semibold tracking-widest uppercase transition-colors hover:text-ink whitespace-nowrap after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:bg-gold after:transition-all after:duration-300 ${
+                  isActive
+                    ? "text-gold font-bold after:w-full"
+                    : "text-nav after:w-0 hover:after:w-full"
                 }`}
               >
                 {link.label}
@@ -84,12 +85,12 @@ export default function SiteHeader() {
           >
             <Phone className="h-3.5 w-3.5 text-gold shrink-0" /> +91 7490 932 661
           </a>
-          <span className="h-4 w-px bg-gold/20" />
+          <span className="h-4 w-px bg-ink/15" />
           <Link
             href="/contact"
-            className="inline-flex items-center gap-1.5 rounded-full bg-gold px-5 py-2.5 text-xs font-semibold tracking-widest text-white uppercase transition-all shadow-md hover:bg-gold-dark hover:shadow-gold/20 whitespace-nowrap"
+            className="inline-flex items-center gap-1.5 border border-ink px-5 py-2.5 text-xs font-semibold tracking-widest text-ink uppercase transition-all hover:bg-ink hover:text-cream-light whitespace-nowrap"
           >
-            Let&apos;s Connect <ArrowRight className="h-3.5 w-3.5" />
+            Enquire Now <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
 
@@ -98,7 +99,7 @@ export default function SiteHeader() {
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle Navigation Menu"
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-gold/20 text-ink transition-colors hover:bg-cream lg:hidden"
+          className="flex h-10 w-10 items-center justify-center border border-ink/15 text-ink transition-colors hover:bg-cream lg:hidden"
         >
           {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -107,7 +108,7 @@ export default function SiteHeader() {
 
       {/* Mobile Drawer Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-x-0 top-[65px] bottom-0 z-50 flex flex-col justify-between bg-white px-6 py-6 shadow-2xl overflow-y-auto lg:hidden border-t border-gold/10">
+        <div className="fixed inset-x-0 top-[65px] bottom-0 z-50 flex flex-col justify-between bg-cream-light px-6 py-6 shadow-2xl overflow-y-auto lg:hidden border-t border-ink/10">
           <nav className="flex flex-col gap-5 pt-2">
             {mobileNavLinks.map((link) => {
               const isActive =
@@ -118,7 +119,7 @@ export default function SiteHeader() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between border-b border-gold/10 pb-3 text-sm font-semibold tracking-[0.15em] uppercase ${
+                  className={`flex items-center justify-between border-b border-ink/10 pb-3 text-sm font-semibold tracking-[0.15em] uppercase ${
                     isActive ? "text-gold font-bold" : "text-ink/90"
                   }`}
                 >
@@ -129,7 +130,7 @@ export default function SiteHeader() {
             })}
           </nav>
 
-          <div className="flex flex-col gap-4 border-t border-gold/20 pt-6 pb-6 mt-6">
+          <div className="flex flex-col gap-4 border-t border-ink/10 pt-6 pb-6 mt-6">
             <a
               href="tel:+917490932661"
               className="flex items-center justify-center gap-2 text-sm font-bold text-ink py-2"
@@ -139,9 +140,9 @@ export default function SiteHeader() {
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-gold py-3.5 text-center text-xs font-bold tracking-widest text-white uppercase shadow-lg hover:bg-gold-dark"
+              className="flex w-full items-center justify-center gap-2 border border-ink py-3.5 text-center text-xs font-bold tracking-widest text-ink uppercase hover:bg-ink hover:text-cream-light"
             >
-              Let&apos;s Connect <ArrowRight className="h-4 w-4" />
+              Enquire Now <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

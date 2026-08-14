@@ -6,7 +6,7 @@ import StatsBar from "@/components/StatsBar";
 import CtaBanner from "@/components/CtaBanner";
 import SiteFooter from "@/components/SiteFooter";
 import { BLOG_POSTS } from "@/data/blogs";
-import { ArrowLeft, Calendar, Clock, MapPin, CheckCircle2, Phone, MessageSquare, Sparkles } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, MapPin, Phone, MessageSquare } from "lucide-react";
 import { Metadata } from "next";
 
 interface BlogSlugProps {
@@ -52,11 +52,11 @@ function renderMarkdownContent(content: string): string {
   let html = content;
 
   // Headers
-  html = html.replace(/^## (.*$)/gim, '<h2 class="font-serif text-2xl sm:text-3xl font-bold mt-10 mb-4 text-ink border-b border-gold/20 pb-3">$1</h2>');
-  html = html.replace(/^### (.*$)/gim, '<h3 class="font-serif text-xl font-bold mt-8 mb-3 text-gold">$1</h3>');
+  html = html.replace(/^## (.*$)/gim, '<h2 class="font-serif text-2xl sm:text-3xl mt-10 mb-4 text-ink border-b border-ink/10 pb-3">$1</h2>');
+  html = html.replace(/^### (.*$)/gim, '<h3 class="font-serif text-xl mt-8 mb-3 text-gold">$1</h3>');
 
   // Horizontal Rule
-  html = html.replace(/^---$/gim, '<hr class="my-8 border-gold/20" />');
+  html = html.replace(/^---$/gim, '<hr class="my-8 border-ink/10" />');
 
   // Bold text
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-ink">$1</strong>');
@@ -74,7 +74,7 @@ function renderMarkdownContent(content: string): string {
     if (/^[\d]+\.\s+(.*$)/.test(trimmed) || /^-\s+(.*$)/.test(trimmed) || /^\*\s+(.*$)/.test(trimmed)) {
       if (!inList) {
         inList = true;
-        processedLines.push('<ul class="my-6 space-y-3 bg-cream/40 p-5 sm:p-6 rounded-2xl border border-gold/15">');
+        processedLines.push('<ul class="my-6 space-y-3 bg-cream/40 p-5 sm:p-6 border-l-2 border-gold/40">');
       }
       const itemText = trimmed.replace(/^[\d]+\.\s+/, "").replace(/^-\s+/, "").replace(/^\*\s+/, "");
       processedLines.push(
@@ -138,7 +138,7 @@ export default async function BlogPostDetailPage({ params }: BlogSlugProps) {
   };
 
   return (
-    <div className="flex flex-1 flex-col bg-white">
+    <div className="flex flex-1 flex-col bg-cream-light">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -147,37 +147,35 @@ export default async function BlogPostDetailPage({ params }: BlogSlugProps) {
 
       <main className="flex flex-1 flex-col">
         {/* Article Header Hero */}
-        <section className="relative overflow-hidden bg-[#161412] py-16 text-white sm:py-20 lg:py-24 px-6 sm:px-10 lg:px-16">
+        <section className="relative overflow-hidden bg-ink py-16 text-white sm:py-20 lg:py-24 px-6 sm:px-10 lg:px-16">
           <div className="relative mx-auto max-w-4xl">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-gold uppercase tracking-widest transition-colors hover:text-white"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-gold uppercase tracking-widest transition-colors hover:text-cream-light"
             >
               <ArrowLeft className="h-4 w-4" /> Back to Design Journal
             </Link>
 
-            <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-medium text-gold">
-              <span className="rounded-full bg-gold/15 px-3.5 py-1 text-gold uppercase tracking-wider font-semibold border border-gold/30">
-                {post.category}
-              </span>
-              <span>•</span>
-              <span className="flex items-center gap-1.5 text-neutral-300">
+            <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-medium tracking-wide text-white/50 uppercase">
+              <span className="text-gold">{post.category}</span>
+              <span className="text-gold/50">/</span>
+              <span className="flex items-center gap-1.5">
                 <Calendar className="h-3.5 w-3.5" />
                 {post.publishDate}
               </span>
-              <span>•</span>
-              <span className="flex items-center gap-1.5 text-neutral-300">
+              <span className="text-gold/50">/</span>
+              <span className="flex items-center gap-1.5">
                 <Clock className="h-3.5 w-3.5" />
                 {post.readTime}
               </span>
-              <span>•</span>
-              <span className="flex items-center gap-1.5 text-neutral-300">
+              <span className="text-gold/50">/</span>
+              <span className="flex items-center gap-1.5">
                 <MapPin className="h-3.5 w-3.5" />
                 {post.locality}
               </span>
             </div>
 
-            <h1 className="mt-6 font-serif text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+            <h1 className="mt-6 font-serif text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
               {post.title}
             </h1>
 
@@ -207,9 +205,9 @@ export default async function BlogPostDetailPage({ params }: BlogSlugProps) {
         </section>
 
         {/* Featured Image & Article Body */}
-        <section className="bg-[#faf8f5] px-6 py-12 sm:px-10 lg:px-16">
+        <section className="bg-cream-light px-6 py-12 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-4xl">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-gold/20 shadow-2xl">
+            <div className="relative aspect-[16/9] w-full overflow-hidden border border-ink/10">
               <Image
                 src={post.image}
                 alt={post.title}
@@ -221,22 +219,22 @@ export default async function BlogPostDetailPage({ params }: BlogSlugProps) {
             </div>
 
             {/* Article Content Box */}
-            <article className="mt-10 rounded-3xl border border-gold/15 bg-white p-8 sm:p-14 shadow-sm">
+            <article className="mt-10 border border-ink/10 bg-card p-8 sm:p-14">
               <div
                 className="article-content font-sans"
                 dangerouslySetInnerHTML={{ __html: renderedHtml }}
               />
 
               {/* Founder Spotlight Box */}
-              <div className="mt-14 rounded-2xl border border-gold/25 bg-cream/70 p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 shadow-sm">
+              <div className="mt-14 border border-ink/10 bg-cream/70 p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
                 <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-gold text-white font-serif text-2xl font-bold shadow-md">
                   PJ
                 </div>
                 <div className="flex flex-col text-center sm:text-left gap-2">
                   <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-bold tracking-wider text-gold uppercase">
-                    <Sparkles className="h-4 w-4" /> Interior Guidance &bull; Indore
+                    Interior Guidance &bull; Indore
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-ink">
+                  <h3 className="font-serif text-xl text-ink">
                     Consultation with Founder Poorti Jain
                   </h3>
                   <p className="text-xs sm:text-sm text-muted leading-relaxed">
@@ -245,13 +243,13 @@ export default async function BlogPostDetailPage({ params }: BlogSlugProps) {
                   <div className="mt-3 flex flex-wrap justify-center sm:justify-start gap-3">
                     <a
                       href="tel:+917490932661"
-                      className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-xs font-semibold text-white uppercase tracking-wider shadow-md hover:bg-gold-dark"
+                      className="inline-flex items-center gap-2 border border-ink px-5 py-2.5 text-xs font-semibold text-ink uppercase tracking-wider hover:bg-ink hover:text-cream-light transition-all"
                     >
                       <Phone className="h-3.5 w-3.5" /> Call +91 7490 932 661
                     </a>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-white px-5 py-2.5 text-xs font-semibold text-ink uppercase tracking-wider hover:bg-cream-dark shadow-sm"
+                      className="inline-flex items-center gap-2 border border-ink/20 bg-card px-5 py-2.5 text-xs font-semibold text-ink uppercase tracking-wider hover:bg-cream-dark"
                     >
                       Book Studio Visit
                     </Link>
