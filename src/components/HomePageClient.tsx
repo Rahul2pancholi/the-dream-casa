@@ -98,7 +98,7 @@ export default function HomePageClient() {
         </section>
 
         {/* Process Overview */}
-        <ProcessOverview />
+        <ProcessOverview onOpenInquiryModal={handleOpenModal} />
 
         {/* Materiality Strip */}
         <MaterialityStrip />

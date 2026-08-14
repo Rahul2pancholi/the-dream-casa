@@ -82,7 +82,11 @@ const phases = [
   },
 ];
 
-export default function ProcessOverview() {
+interface ProcessOverviewProps {
+  onOpenInquiryModal?: () => void;
+}
+
+export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewProps) {
   const [activePhaseIndex, setActivePhaseIndex] = useState<number>(0);
   const activePhase = phases[activePhaseIndex];
 
@@ -263,6 +267,42 @@ export default function ProcessOverview() {
                 className="object-cover transition-all duration-700 ease-out group-hover/img:scale-105"
               />
             </div>
+          </div>
+        </div>
+
+        {/* Section Bottom CTA Bar */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-[#E8E2D8] bg-white p-4 sm:p-5 shadow-sm">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#a46f47]/15 text-[#a46f47]">
+              <Sparkles className="h-5 w-5" />
+            </div>
+            <div>
+              <h4 className="font-serif text-base sm:text-lg font-medium text-[#0F1A24] leading-snug">
+                Ready to transform your home?
+              </h4>
+              <p className="text-xs text-[#6B7280]">
+                Schedule a free design consultation with Founder Poorti Jain &amp; team.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
+            {onOpenInquiryModal ? (
+              <button
+                type="button"
+                onClick={onOpenInquiryModal}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#a46f47] px-6 py-3 text-xs font-semibold text-white uppercase tracking-wider shadow-md hover:bg-[#8e5c36] transition-all w-full sm:w-auto"
+              >
+                Book Free Consultation <ArrowRight className="h-3.5 w-3.5" />
+              </button>
+            ) : (
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#a46f47] px-6 py-3 text-xs font-semibold text-white uppercase tracking-wider shadow-md hover:bg-[#8e5c36] transition-all w-full sm:w-auto"
+              >
+                Book Free Consultation <ArrowRight className="h-3.5 w-3.5" />
+              </a>
+            )}
           </div>
         </div>
       </div>
