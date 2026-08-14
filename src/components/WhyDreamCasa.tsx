@@ -75,16 +75,16 @@ export default function WhyDreamCasa() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#FAF7F2] py-20 sm:py-28 px-6 sm:px-10 lg:px-16 text-[#1C2630] border-y border-[#E8E2D8] overflow-hidden"
+      className="relative bg-[#FAF7F2] py-14 sm:py-20 px-6 sm:px-10 lg:px-16 text-[#1C2630] border-y border-[#E8E2D8] overflow-hidden"
     >
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="flex max-w-3xl flex-col items-center gap-2.5 text-center mx-auto">
+        <div className="flex max-w-3xl flex-col items-center gap-2 text-center mx-auto">
           {/* Top Flourish Label */}
           <div className="flex items-center justify-center gap-3 text-xs font-semibold tracking-[0.25em] text-[#a46f47] uppercase">
-            <span className="h-px w-10 bg-[#a46f47]/40" />
+            <span className="h-px w-8 bg-[#a46f47]/40" />
             OUR PROCESS
-            <span className="h-px w-10 bg-[#a46f47]/40" />
+            <span className="h-px w-8 bg-[#a46f47]/40" />
           </div>
 
           {/* Main Title */}
@@ -93,31 +93,31 @@ export default function WhyDreamCasa() {
           </h2>
 
           {/* Diamond Accent Divider */}
-          <div className="flex items-center justify-center gap-3 text-[#a46f47]/50 my-1">
-            <span className="h-px w-12 bg-[#a46f47]/30" />
+          <div className="flex items-center justify-center gap-3 text-[#a46f47]/50 my-0.5">
+            <span className="h-px w-10 bg-[#a46f47]/30" />
             <span className="text-xs font-serif rotate-45 border border-[#a46f47]/50 h-2 w-2 block" />
-            <span className="h-px w-12 bg-[#a46f47]/30" />
+            <span className="h-px w-10 bg-[#a46f47]/30" />
           </div>
 
           {/* Subtitle */}
-          <p className="text-sm leading-relaxed text-[#6B7280] sm:text-base max-w-xl mx-auto">
+          <p className="text-xs sm:text-sm leading-relaxed text-[#6B7280] max-w-xl mx-auto">
             A seamless design journey crafted around clarity, collaboration and uncompromised quality.
           </p>
         </div>
 
         {/* Wavy Timeline Section */}
-        <div className="relative mt-16 sm:mt-24">
+        <div className="relative mt-10 sm:mt-14">
           {/* Desktop SVG Wave Path & Watermark Numbers */}
-          <div className="relative hidden lg:block h-36">
-            {/* Watermark Giant Numbers Row */}
-            <div className="grid grid-cols-4 gap-6 absolute inset-x-0 top-0 z-0 pointer-events-none text-center">
+          <div className="relative hidden lg:block pb-4">
+            {/* Watermark Giant Numbers Row - Positioned Above Nodes */}
+            <div className="grid grid-cols-4 gap-6 text-center select-none pointer-events-none mb-1">
               {steps.map(({ number }, idx) => {
                 const isActive = idx <= activeIndex;
                 return (
                   <span
                     key={number}
-                    className={`font-serif text-7xl font-light transition-colors duration-500 ${
-                      isActive ? "text-[#a46f47]/40" : "text-[#a46f47]/15"
+                    className={`font-serif text-6xl sm:text-7xl font-light transition-colors duration-500 ${
+                      isActive ? "text-[#a46f47]/35" : "text-[#a46f47]/15"
                     }`}
                   >
                     {number}
@@ -126,105 +126,107 @@ export default function WhyDreamCasa() {
               })}
             </div>
 
-            {/* Continuous SVG Wave Line */}
-            <svg
-              className="absolute left-0 top-16 w-full h-20 pointer-events-none z-10 overflow-visible"
-              viewBox="0 0 1200 100"
-              fill="none"
-              preserveAspectRatio="none"
-            >
-              {/* Left End Flourish Dot */}
-              <circle cx="30" cy="50" r="3.5" fill="#a46f47" opacity="0.6" />
-              <line x1="30" y1="50" x2="50" y2="50" stroke="#a46f47" strokeWidth="1.5" opacity="0.6" />
+            {/* Continuous SVG Wave Line & Node Container */}
+            <div className="relative h-20 flex items-center">
+              <svg
+                className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-16 pointer-events-none z-10 overflow-visible"
+                viewBox="0 0 1200 100"
+                fill="none"
+                preserveAspectRatio="none"
+              >
+                {/* Left End Flourish Dot */}
+                <circle cx="30" cy="50" r="3" fill="#a46f47" opacity="0.6" />
+                <line x1="30" y1="50" x2="60" y2="50" stroke="#a46f47" strokeWidth="1.5" opacity="0.6" />
 
-              {/* Right End Flourish Dot */}
-              <circle cx="1170" cy="50" r="3.5" fill="#a46f47" opacity="0.6" />
-              <line x1="1150" y1="50" x2="1170" y2="50" stroke="#a46f47" strokeWidth="1.5" opacity="0.6" />
+                {/* Right End Flourish Dot */}
+                <circle cx="1170" cy="50" r="3" fill="#a46f47" opacity="0.6" />
+                <line x1="1140" y1="50" x2="1170" y2="50" stroke="#a46f47" strokeWidth="1.5" opacity="0.6" />
 
-              {/* Base Wave Curve */}
-              <path
-                d="M 50,50 C 180,15 320,85 450,50 C 580,15 720,85 850,50 C 980,15 1100,50 1150,50"
-                stroke="#a46f47"
-                strokeWidth="1.5"
-                strokeOpacity="0.4"
-              />
+                {/* Base Wave Curve */}
+                <path
+                  d="M 60,50 C 180,20 320,80 450,50 C 580,20 720,80 850,50 C 980,20 1100,50 1140,50"
+                  stroke="#a46f47"
+                  strokeWidth="1.5"
+                  strokeOpacity="0.4"
+                />
 
-              {/* Scroll-Driven Dynamic Glow Wave Line */}
-              <path
-                d="M 50,50 C 180,15 320,85 450,50 C 580,15 720,85 850,50 C 980,15 1100,50 1150,50"
-                stroke="url(#ref-wave-gold-gradient)"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                className="transition-all duration-300"
-              />
-              <defs>
-                <linearGradient id="ref-wave-gold-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#a46f47" stopOpacity="1" />
-                  <stop offset={`${waveHighlightOffset}%`} stopColor="#a46f47" stopOpacity="1" />
-                  <stop
-                    offset={`${Math.min(100, waveHighlightOffset + 8)}%`}
-                    stopColor="#a46f47"
-                    stopOpacity="0.2"
-                  />
-                  <stop offset="100%" stopColor="#a46f47" stopOpacity="0.2" />
-                </linearGradient>
-              </defs>
-            </svg>
+                {/* Scroll-Driven Dynamic Glow Wave Line */}
+                <path
+                  d="M 60,50 C 180,20 320,80 450,50 C 580,20 720,80 850,50 C 980,20 1100,50 1140,50"
+                  stroke="url(#ref-wave-gold-gradient)"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  className="transition-all duration-300"
+                />
+                <defs>
+                  <linearGradient id="ref-wave-gold-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#a46f47" stopOpacity="1" />
+                    <stop offset={`${waveHighlightOffset}%`} stopColor="#a46f47" stopOpacity="1" />
+                    <stop
+                      offset={`${Math.min(100, waveHighlightOffset + 8)}%`}
+                      stopColor="#a46f47"
+                      stopOpacity="0.2"
+                    />
+                    <stop offset="100%" stopColor="#a46f47" stopOpacity="0.2" />
+                  </linearGradient>
+                </defs>
+              </svg>
 
-            {/* 4 Circular Nodes directly ON the Wave Line */}
-            <div className="grid grid-cols-4 gap-6 relative z-20 items-center h-full pt-6">
-              {steps.map(({ Icon }, idx) => {
-                const isActive = idx <= activeIndex;
-                const isCurrent = idx === activeIndex;
+              {/* 4 Circular Nodes directly ON the Wave Line */}
+              <div className="grid grid-cols-4 gap-6 w-full relative z-20 items-center">
+                {steps.map(({ Icon }, idx) => {
+                  const isActive = idx <= activeIndex;
+                  const isCurrent = idx === activeIndex;
 
-                return (
-                  <div key={idx} className="flex justify-center">
-                    <div
-                      className={`relative flex h-16 w-16 items-center justify-center rounded-full border-2 transition-all duration-500 ${
-                        isCurrent
-                          ? "border-[#a46f47] bg-[#FAF7F2] text-[#a46f47] shadow-xl scale-110 ring-4 ring-[#a46f47]/20"
-                          : isActive
-                          ? "border-[#a46f47] bg-[#FAF7F2] text-[#a46f47] shadow-md"
-                          : "border-[#a46f47]/40 bg-[#FAF7F2] text-[#a46f47]/60"
-                      }`}
-                    >
-                      {/* Active Ping Effect */}
-                      {isCurrent && (
-                        <span className="absolute inset-0 rounded-full bg-[#a46f47]/20 animate-ping pointer-events-none" />
-                      )}
-                      <Icon className="h-6 w-6 stroke-[1.5]" />
+                  return (
+                    <div key={idx} className="flex justify-center">
+                      <div
+                        className={`relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 transition-all duration-500 ${
+                          isCurrent
+                            ? "border-[#a46f47] bg-[#FAF7F2] text-[#a46f47] shadow-xl scale-110 ring-4 ring-[#a46f47]/20"
+                            : isActive
+                            ? "border-[#a46f47] bg-[#FAF7F2] text-[#a46f47] shadow-md"
+                            : "border-[#a46f47]/40 bg-[#FAF7F2] text-[#a46f47]/60"
+                        }`}
+                      >
+                        {/* Active Ping Effect */}
+                        {isCurrent && (
+                          <span className="absolute inset-0 rounded-full bg-[#a46f47]/20 animate-ping pointer-events-none" />
+                        )}
+                        <Icon className="h-5 w-5 sm:h-6 sm:w-6 stroke-[1.5]" />
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
 
           {/* 4-Column Content Grid with Vertical Dividers & Bottom Architectural Sketches */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#E5DFD5] border-t lg:border-t-0 border-[#E5DFD5] mt-6 lg:mt-4 pt-8 lg:pt-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#E5DFD5] border-t lg:border-t-0 border-[#E5DFD5] mt-4 pt-6 lg:pt-4">
             {steps.map(({ title, subtitle, desc, sketch }, idx) => {
               const isActive = idx <= activeIndex;
 
               return (
                 <div
                   key={title}
-                  className="flex flex-col justify-between text-center px-4 py-6 lg:py-4 transition-opacity duration-300"
+                  className="flex flex-col justify-between text-center px-3 sm:px-4 py-4 lg:py-2 transition-opacity duration-300"
                 >
                   {/* Text Content */}
                   <div>
-                    <h3 className="font-serif text-xl font-medium text-[#0F1A24]">
+                    <h3 className="font-serif text-lg sm:text-xl font-normal text-[#0F1A24]">
                       {title}
                     </h3>
-                    <p className="mt-1 text-[11px] font-semibold tracking-widest text-[#a46f47] uppercase">
+                    <p className="mt-1 text-[10px] sm:text-[11px] font-semibold tracking-widest text-[#a46f47] uppercase">
                       {subtitle}
                     </p>
-                    <p className="mt-3 text-xs leading-relaxed text-[#6B7280] max-w-xs mx-auto">
+                    <p className="mt-2 text-xs leading-relaxed text-[#6B7280] max-w-xs mx-auto">
                       {desc}
                     </p>
                   </div>
 
                   {/* Architectural Line-Art Sketch Image at Bottom */}
-                  <div className="relative mt-8 h-44 sm:h-52 w-full overflow-hidden">
+                  <div className="relative mt-6 h-36 sm:h-44 w-full overflow-hidden">
                     <Image
                       src={sketch}
                       alt={title}
@@ -241,13 +243,13 @@ export default function WhyDreamCasa() {
         </div>
 
         {/* Bottom Decorative Brand Arch Emblem Divider */}
-        <div className="mt-16 sm:mt-20 flex items-center justify-center gap-4 text-[#a46f47]">
+        <div className="mt-10 sm:mt-14 flex items-center justify-center gap-4 text-[#a46f47]">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#a46f47]/30 to-[#a46f47]/30" />
 
           {/* Arch Icon Logo Lockup */}
-          <div className="flex h-10 w-7 items-center justify-center rounded-t-full border-2 border-[#a46f47] p-1 shadow-sm bg-[#FAF7F2]">
+          <div className="flex h-9 w-6.5 items-center justify-center rounded-t-full border-2 border-[#a46f47] p-1 shadow-sm bg-[#FAF7F2]">
             <div className="flex flex-col items-center gap-0.5">
-              <div className="h-2 w-2 rounded-sm bg-[#a46f47]" />
+              <div className="h-1.5 w-1.5 rounded-sm bg-[#a46f47]" />
               <div className="flex gap-0.5">
                 <div className="h-1 w-1 bg-[#a46f47]" />
                 <div className="h-1 w-1 bg-[#a46f47]" />
