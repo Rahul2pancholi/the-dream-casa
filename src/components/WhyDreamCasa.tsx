@@ -70,18 +70,18 @@ export default function WhyDreamCasa() {
           </p>
         </div>
 
-        {/* Desktop Wave Roadmap */}
-        <div className="relative mt-28 mb-20 hidden lg:block min-h-[460px]">
+        {/* Desktop Wave Roadmap Container with ample height */}
+        <div className="relative mt-24 mb-16 hidden lg:block h-[500px]">
           {/* Continuous Gold Sine Wave SVG */}
           <svg
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-48 pointer-events-none z-0 overflow-visible"
-            viewBox="0 0 1200 200"
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-64 pointer-events-none z-0 overflow-visible"
+            viewBox="0 0 1200 300"
             fill="none"
             preserveAspectRatio="none"
           >
             {/* Soft Ambient Shadow Wave */}
             <path
-              d="M 50,100 C 180,10 320,190 450,100 C 580,10 720,190 850,100 C 980,10 1100,100 1150,100"
+              d="M 50,150 C 180,30 320,270 450,150 C 580,30 720,270 850,150 C 980,30 1100,150 1150,150"
               stroke="#a46f47"
               strokeWidth="6"
               strokeOpacity="0.15"
@@ -89,7 +89,7 @@ export default function WhyDreamCasa() {
             />
             {/* Dashed Gold Guide Curve */}
             <path
-              d="M 50,100 C 180,10 320,190 450,100 C 580,10 720,190 850,100 C 980,10 1100,100 1150,100"
+              d="M 50,150 C 180,30 320,270 450,150 C 580,30 720,270 850,150 C 980,30 1100,150 1150,150"
               stroke="#a46f47"
               strokeWidth="2.5"
               strokeDasharray="8 8"
@@ -97,13 +97,13 @@ export default function WhyDreamCasa() {
             />
             {/* Glowing Gradient Wave Stroke */}
             <path
-              d="M 50,100 C 180,10 320,190 450,100 C 580,10 720,190 850,100 C 980,10 1100,100 1150,100"
-              stroke="url(#luxury-wave-gradient)"
+              d="M 50,150 C 180,30 320,270 450,150 C 580,30 720,270 850,150 C 980,30 1100,150 1150,150"
+              stroke="url(#luxury-wave-gradient-fixed)"
               strokeWidth="3"
               strokeLinecap="round"
             />
             <defs>
-              <linearGradient id="luxury-wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient id="luxury-wave-gradient-fixed" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#a46f47" stopOpacity="0.2" />
                 <stop offset="25%" stopColor="#a46f47" stopOpacity="1" />
                 <stop offset="50%" stopColor="#bf9c82" stopOpacity="1" />
@@ -113,18 +113,16 @@ export default function WhyDreamCasa() {
             </defs>
           </svg>
 
-          {/* 4 Cards Positioned Above and Below the Wave */}
+          {/* 4 Cards Positioned Above and Below the Wave Node */}
           <div className="grid grid-cols-4 gap-6 relative z-10 items-center h-full">
-            {steps.map(({ number, Icon, title, subtitle, desc, tag, position }, idx) => (
+            {steps.map(({ number, Icon, title, subtitle, desc, tag, position }) => (
               <div
                 key={title}
-                className={`flex flex-col items-center text-center ${
-                  position === "top" ? "-translate-y-28" : "translate-y-28"
-                }`}
+                className="relative flex flex-col items-center text-center h-full justify-center"
               >
                 {/* Step Card (Top Position) */}
                 {position === "top" && (
-                  <div className="group relative mb-6 w-full rounded-2xl border border-ink/10 bg-card p-6 shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-gold/60 hover:shadow-2xl">
+                  <div className="group absolute bottom-1/2 mb-10 w-full rounded-2xl border border-ink/10 bg-card p-5 shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-gold/60 hover:shadow-2xl">
                     {/* Top Gold Hairline */}
                     <div className="absolute top-0 left-0 h-1 w-10 bg-gold transition-all duration-500 group-hover:w-full" />
 
@@ -132,12 +130,7 @@ export default function WhyDreamCasa() {
                       Step {number}
                     </span>
 
-                    {/* Vector Icon Badge */}
-                    <div className="mx-auto my-3 flex h-14 w-14 items-center justify-center rounded-2xl border border-gold/30 bg-gold/10 text-gold group-hover:bg-gold group-hover:text-white transition-all duration-300 shadow-sm">
-                      <Icon className="h-7 w-7" strokeWidth={1.5} />
-                    </div>
-
-                    <h3 className="font-serif text-lg font-bold text-ink transition-colors group-hover:text-gold">
+                    <h3 className="font-serif text-lg font-bold text-ink transition-colors group-hover:text-gold mt-2">
                       {title}
                     </h3>
                     <p className="mt-0.5 text-[11px] font-semibold tracking-wide text-gold uppercase">
@@ -152,27 +145,27 @@ export default function WhyDreamCasa() {
                       {tag}
                     </div>
 
-                    {/* Arrow Pointer to Wave Node */}
+                    {/* Pointer Arrow */}
                     <div className="absolute -bottom-2 left-1/2 h-3.5 w-3.5 -translate-x-1/2 rotate-45 border-b border-r border-ink/10 bg-card group-hover:border-gold/60" />
                   </div>
                 )}
 
-                {/* Node Circle directly on Wave Curve */}
-                <div className="relative flex h-16 w-16 items-center justify-center rounded-full border-2 border-gold bg-cream shadow-xl transition-all duration-300 hover:scale-110 group cursor-pointer">
-                  {/* Glowing Outer Ring */}
+                {/* Single Node Icon Circle directly on Wave Curve */}
+                <div className="relative z-20 flex h-16 w-16 items-center justify-center rounded-full border-2 border-gold bg-cream shadow-xl transition-all duration-300 hover:scale-110 group cursor-pointer">
+                  {/* Glowing Ring */}
                   <span className="absolute inset-0 rounded-full bg-gold/20 animate-ping opacity-75 pointer-events-none" />
                   <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gold text-white shadow-inner group-hover:bg-gold-dark transition-colors">
-                    <Icon className="h-5 w-5" />
+                    <Icon className="h-5.5 w-5.5" strokeWidth={1.75} />
                   </div>
                   <span className="absolute -bottom-6 text-[11px] font-bold tracking-wider text-gold uppercase">
-                    0{idx + 1}
+                    0{number}
                   </span>
                 </div>
 
                 {/* Step Card (Bottom Position) */}
                 {position === "bottom" && (
-                  <div className="group relative mt-6 w-full rounded-2xl border border-ink/10 bg-card p-6 shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-gold/60 hover:shadow-2xl">
-                    {/* Arrow Pointer to Wave Node */}
+                  <div className="group absolute top-1/2 mt-10 w-full rounded-2xl border border-ink/10 bg-card p-5 shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-gold/60 hover:shadow-2xl">
+                    {/* Pointer Arrow */}
                     <div className="absolute -top-2 left-1/2 h-3.5 w-3.5 -translate-x-1/2 rotate-45 border-l border-t border-ink/10 bg-card group-hover:border-gold/60" />
 
                     {/* Top Gold Hairline */}
@@ -182,12 +175,7 @@ export default function WhyDreamCasa() {
                       Step {number}
                     </span>
 
-                    {/* Vector Icon Badge */}
-                    <div className="mx-auto my-3 flex h-14 w-14 items-center justify-center rounded-2xl border border-gold/30 bg-gold/10 text-gold group-hover:bg-gold group-hover:text-white transition-all duration-300 shadow-sm">
-                      <Icon className="h-7 w-7" strokeWidth={1.5} />
-                    </div>
-
-                    <h3 className="font-serif text-lg font-bold text-ink transition-colors group-hover:text-gold">
+                    <h3 className="font-serif text-lg font-bold text-ink transition-colors group-hover:text-gold mt-2">
                       {title}
                     </h3>
                     <p className="mt-0.5 text-[11px] font-semibold tracking-wide text-gold uppercase">
