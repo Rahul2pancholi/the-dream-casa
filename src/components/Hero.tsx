@@ -88,7 +88,7 @@ export default function Hero({ onOpenInquiryModal }: HeroProps) {
 
           {/* Clean Subheading Description */}
           <p className="max-w-md text-sm leading-relaxed text-neutral-200 lg:text-muted sm:text-base">
-            Bespoke interiors, thoughtfully designed and meticulously executed.
+            Beautiful luxury home interiors, custom designed and built to perfection.
           </p>
 
           {/* Action CTAs */}
