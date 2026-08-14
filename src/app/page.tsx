@@ -5,7 +5,6 @@ import { Metadata } from "next";
 import { projectsData } from "@/data/projects";
 import SiteHeader from "@/components/SiteHeader";
 import Hero from "@/components/Hero";
-import ServicesSection from "@/components/ServicesSection";
 import WhyDreamCasa from "@/components/WhyDreamCasa";
 import ProjectsSection from "@/components/ProjectsSection";
 import ProcessOverview from "@/components/ProcessOverview";
@@ -62,7 +61,6 @@ export default function Home() {
         </section>
 
         <WhyDreamCasa />
-        <ServicesSection />
 
         {/* Featured Case Study */}
         <section className="bg-primary px-6 py-24 text-white sm:px-10 lg:px-16 border-y border-gold/20">
