@@ -34,18 +34,18 @@ export default function BrandLogo({ variant = "dark", className = "" }: BrandLog
       </svg>
 
       {/* Vertical Hairline Separator */}
-      <div className={`h-8 w-px transition-colors ${isLight ? "bg-white/25" : "bg-[#E8E2D8]"}`} />
+      <div className={`h-9 w-px shrink-0 transition-colors ${isLight ? "bg-white/20" : "bg-[#E8E2D8]"}`} />
 
-      {/* Wide-Spaced Architectural Typography */}
-      <div className="flex flex-col text-left justify-center">
+      {/* Clean Non-Wrapping Typography */}
+      <div className="flex flex-col text-left justify-center shrink-0">
         <span
-          className="font-serif text-lg sm:text-xl font-medium tracking-[0.12em] uppercase leading-tight"
+          className="font-serif text-xl sm:text-2xl font-medium leading-none tracking-tight whitespace-nowrap"
           style={{ color: textColor }}
         >
-          THE DREAM CASA
+          The Dream Casa
         </span>
         <span
-          className="text-[9px] sm:text-[10px] font-semibold tracking-[0.25em] uppercase mt-0.5 leading-none"
+          className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] uppercase mt-1.5 leading-none whitespace-nowrap"
           style={{ color: goldColor }}
         >
           INTERIOR DESIGN STUDIO
