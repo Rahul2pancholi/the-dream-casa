@@ -122,46 +122,76 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="flex flex-1 flex-col bg-cream-light">
+    <div className="flex flex-1 flex-col bg-[#FAF7F2]">
       <SiteHeader />
       <main className="flex flex-1 flex-col">
-        {/* Contact Hero Section */}
-        <PageHero
-          eyebrow="Contact The Dream Casa"
-          title="Let's Create Your Dream Space"
-          description="Visit our Head Office in Indore or our Regional Studio in Ahmedabad, or schedule a personal design consultation with Founder Poorti Jain."
-          meta={["Poorti Jain, Founder", "Indore & Ahmedabad Studios", "100% Turnkey Delivery"]}
-        />
+        {/* Compact Header & Quick Inquiry Bar (Above the Fold) */}
+        <section className="bg-[#FAF7F2] pt-8 sm:pt-12 pb-4 px-6 sm:px-10 lg:px-16 border-b border-[#E8E2D8]">
+          <div className="mx-auto max-w-7xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2.5 text-xs font-semibold tracking-[0.2em] text-[#a46f47] uppercase">
+                <span className="h-px w-6 bg-[#a46f47]" />
+                CONTACT THE DREAM CASA
+              </div>
+              <h1 className="font-serif text-3xl sm:text-4xl text-[#0F1A24] font-normal leading-tight">
+                Let's Create Your Dream Space
+              </h1>
+              <p className="text-xs sm:text-sm text-[#6B7280]">
+                Schedule a consultation with Founder Poorti Jain &amp; team. Response within 2 hours.
+              </p>
+            </div>
+
+            {/* Quick 1-Tap CTA Bar for Instant Inquiries */}
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <a
+                href={`https://wa.me/917490932661?text=${encodeURIComponent("Hi Poorti, I want to inquire about interior design for my home.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-semibold text-white uppercase tracking-wider shadow-md hover:bg-emerald-700 transition-all"
+              >
+                💬 Quick WhatsApp Chat
+              </a>
+              <a
+                href="tel:+917490932661"
+                className="inline-flex items-center gap-2 rounded-full border border-[#a46f47] bg-[#a46f47]/10 px-4 py-2.5 text-xs font-semibold text-[#a46f47] uppercase tracking-wider hover:bg-[#a46f47] hover:text-white transition-all"
+              >
+                <Phone className="h-3.5 w-3.5" /> Call +91 7490 932 661
+              </a>
+            </div>
+          </div>
+        </section>
 
         {/* Form & Studio Locations Section */}
-        <section className="bg-cream-light py-20 sm:py-24 px-6 sm:px-10 lg:px-16">
+        <section className="bg-[#FAF7F2] py-8 sm:py-12 px-6 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-7xl">
-            <div className="grid gap-12 lg:grid-cols-12">
-              {/* Left Column: Contact Form */}
+            <div className="grid gap-8 lg:grid-cols-12 items-start">
+              {/* Left Column: Compact Screen-Fitting Contact Form */}
               <div className="lg:col-span-7">
-                <div className="border border-ink/10 bg-card p-8 sm:p-10">
-                  <div className="flex flex-col gap-2">
-                    <span className="text-xs font-semibold tracking-widest text-gold uppercase">
-                      Direct Inquiry Form
+                <div className="border border-[#E8E2D8] bg-white p-6 sm:p-8 rounded-2xl shadow-sm">
+                  <div className="flex items-center justify-between border-b border-[#E8E2D8] pb-4">
+                    <div>
+                      <span className="text-[10px] font-semibold tracking-widest text-[#a46f47] uppercase">
+                        Direct Inquiry Form
+                      </span>
+                      <h2 className="font-serif text-xl sm:text-2xl text-[#0F1A24] font-normal">
+                        Book a Design Consultation
+                      </h2>
+                    </div>
+                    <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-[#a46f47]/10 px-3 py-1 text-[10px] font-semibold text-[#a46f47] uppercase">
+                      ⚡ Quick Response
                     </span>
-                    <h2 className="font-serif text-2xl text-ink sm:text-3xl">
-                      Book a Design Consultation
-                    </h2>
-                    <p className="text-xs text-muted">
-                      Fill in your details below and Founder Poorti Jain &amp; team will reach out within 2 hours.
-                    </p>
                   </div>
 
                   {submitted ? (
-                    <div className="mt-8 flex flex-col items-center gap-4 rounded-xl border border-emerald-200 bg-emerald-50/90 p-8 text-center shadow-md">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg">
-                        <CheckCircle2 className="h-8 w-8" />
+                    <div className="mt-6 flex flex-col items-center gap-4 rounded-xl border border-emerald-200 bg-emerald-50/90 p-6 text-center shadow-sm">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-white shadow-md">
+                        <CheckCircle2 className="h-7 w-7" />
                       </div>
-                      <h3 className="font-serif text-xl font-bold text-emerald-950">
-                        Inquiry Delivered Successfully!
+                      <h3 className="font-serif text-lg font-bold text-emerald-950">
+                        Inquiry Sent Successfully!
                       </h3>
                       <p className="text-xs leading-relaxed text-emerald-800 max-w-md">
-                        Thank you <span className="font-bold">{formData.name}</span>. An email notification has been dispatched to <span className="font-bold">thedreamcasastudio@gmail.com</span>.
+                        Thank you <span className="font-bold">{formData.name}</span>. Our team will reach out to you on <span className="font-bold">{formData.phone}</span> shortly.
                       </p>
                       
                       <div className="mt-2 flex flex-col sm:flex-row items-center gap-3 w-full justify-center">
@@ -169,104 +199,94 @@ export default function ContactPage() {
                           href={`https://wa.me/917490932661?text=${whatsappMessage}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3 text-xs font-bold text-white uppercase tracking-wider shadow-lg hover:bg-emerald-700 transition-all w-full sm:w-auto"
+                          className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-2.5 text-xs font-bold text-white uppercase tracking-wider shadow-md hover:bg-emerald-700 transition-all w-full sm:w-auto"
                         >
-                          💬 Connect Live on WhatsApp
+                          💬 Open WhatsApp Conversation
                         </a>
                         <button
                           type="button"
                           onClick={() => setSubmitted(false)}
-                          className="inline-flex items-center justify-center rounded-full border border-emerald-300 bg-white px-5 py-3 text-xs font-semibold text-emerald-900 uppercase tracking-wider hover:bg-emerald-100 transition-all w-full sm:w-auto"
+                          className="inline-flex items-center justify-center rounded-full border border-emerald-300 bg-white px-4 py-2.5 text-xs font-semibold text-emerald-900 uppercase tracking-wider hover:bg-emerald-100 transition-all w-full sm:w-auto"
                         >
                           Submit Another Inquiry
                         </button>
                       </div>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5">
-                      <div className="grid gap-5 sm:grid-cols-2">
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-semibold text-ink uppercase tracking-wider">
+                    <form onSubmit={handleSubmit} className="mt-5 flex flex-col gap-4">
+                      {/* Name & Phone in 1 Row */}
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <div className="flex flex-col gap-1">
+                          <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
                             Full Name *
                           </label>
                           <input
                             type="text"
                             required
-                            placeholder="e.g. Anand Sharma"
+                            placeholder="Your Name"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                           />
                         </div>
 
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-semibold text-ink uppercase tracking-wider">
+                        <div className="flex flex-col gap-1">
+                          <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
                             Phone Number (+91) *
                           </label>
                           <input
                             type="tel"
                             required
-                            placeholder="+91 7490 932 661"
+                            placeholder="Mobile Number"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                           />
                         </div>
                       </div>
 
-                      <div className="grid gap-5 sm:grid-cols-2">
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-semibold text-ink uppercase tracking-wider">
-                            Email Address
-                          </label>
-                          <input
-                            type="email"
-                            placeholder="name@domain.com"
-                            value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
-                          />
-                        </div>
-
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-semibold text-ink uppercase tracking-wider">
-                            Project Type
-                          </label>
-                          <select
-                            value={formData.projectType}
-                            onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                            className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
-                          >
-                            <option value="Residential Interior">Residential Interior (Apartment / Villa)</option>
-                            <option value="Commercial Interior">Commercial Office / Workspaces</option>
-                            <option value="Complete Turnkey Execution">Complete Turnkey Execution</option>
-                            <option value="Hospitality & Boutique">Hospitality & Boutique Interiors</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div className="grid gap-5 sm:grid-cols-2">
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-semibold text-ink uppercase tracking-wider">
-                            Project Location
+                      {/* Location & Project Type in 1 Row */}
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <div className="flex flex-col gap-1">
+                          <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                            City / Location
                           </label>
                           <input
                             type="text"
                             placeholder="e.g. Indore / Ahmedabad"
                             value={formData.location}
                             onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                            className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                           />
                         </div>
 
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-xs font-semibold text-ink uppercase tracking-wider">
+                        <div className="flex flex-col gap-1">
+                          <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                            Project Type
+                          </label>
+                          <select
+                            value={formData.projectType}
+                            onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#0F1A24] rounded-lg focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                          >
+                            <option value="Residential Interior">Residential Interior (Apartment / Villa)</option>
+                            <option value="Commercial Interior">Commercial Office / Workspace</option>
+                            <option value="Complete Turnkey Execution">Complete Turnkey Execution</option>
+                            <option value="Hospitality & Boutique">Hospitality & Boutique Interiors</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      {/* Estimated Budget & Email in 1 Row */}
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <div className="flex flex-col gap-1">
+                          <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
                             Estimated Budget
                           </label>
                           <select
                             value={formData.budget}
                             onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                            className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#0F1A24] rounded-lg focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                           >
                             <option value="5 - 15 Lakhs">₹5 Lakhs - ₹15 Lakhs</option>
                             <option value="15 - 30 Lakhs">₹15 Lakhs - ₹30 Lakhs</option>
@@ -274,27 +294,41 @@ export default function ContactPage() {
                             <option value="50+ Lakhs">₹50+ Lakhs (Luxury Penthouse/Villa)</option>
                           </select>
                         </div>
+
+                        <div className="flex flex-col gap-1">
+                          <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                            Email (Optional)
+                          </label>
+                          <input
+                            type="email"
+                            placeholder="name@domain.com"
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                          />
+                        </div>
                       </div>
 
-                      <div className="flex flex-col gap-1.5">
-                        <label className="text-xs font-semibold text-ink uppercase tracking-wider">
-                          Message / Requirements
+                      {/* Short Requirements Note */}
+                      <div className="flex flex-col gap-1">
+                        <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                          Notes / Requirements (Optional)
                         </label>
                         <textarea
-                          rows={4}
-                          placeholder="Tell us about your space (carpet area, room count, design style preferences)..."
+                          rows={2}
+                          placeholder="Tell us briefly about your space (bhk count, carpet area, style preferences)..."
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          className="border border-ink/15 bg-cream-light/50 px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                          className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2 text-xs sm:text-sm text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                         />
                       </div>
 
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="mt-2 flex w-full items-center justify-center gap-3 rounded-full bg-gold py-4 text-xs font-semibold tracking-widest text-white uppercase transition-all shadow-lg hover:bg-gold-dark hover:shadow-gold/25 disabled:opacity-50"
+                        className="mt-1 flex w-full items-center justify-center gap-2 rounded-full bg-[#a46f47] py-3.5 text-xs font-semibold tracking-widest text-white uppercase transition-all shadow-md hover:bg-[#8e5c36] disabled:opacity-50"
                       >
-                        <Send className="h-4 w-4" /> {isSubmitting ? "Sending Inquiry..." : "Schedule Free Consultation"}
+                        <Send className="h-4 w-4" /> {isSubmitting ? "Sending Inquiry..." : "Submit Inquiry"}
                       </button>
                     </form>
                   )}
