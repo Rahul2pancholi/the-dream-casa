@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, Globe, MapPin, User } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -47,23 +48,7 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-7xl py-16 sm:py-20">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3">
-              <Image
-                src="/images/dream-casa-icon-light.svg"
-                alt="The Dream Casa"
-                width={44}
-                height={44}
-                className="h-11 w-11 object-contain"
-              />
-              <span className="flex flex-col leading-tight">
-                <span className="font-serif text-lg text-cream-light">
-                  The Dream Casa
-                </span>
-                <span className="text-[9px] font-medium tracking-[0.15em] text-dark-secondary">
-                  INTERIOR DESIGN &middot; TURNKEY PROJECTS
-                </span>
-              </span>
-            </Link>
+            <BrandLogo variant="light" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-dark-body">
               A founder-led design studio in Indore &amp; Ahmedabad, est. 2025. Founded by Poorti Jain.
             </p>

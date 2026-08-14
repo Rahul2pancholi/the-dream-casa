@@ -6,6 +6,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, Phone } from "lucide-react";
 
+import BrandLogo from "@/components/BrandLogo";
+
 const desktopNavLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
@@ -34,30 +36,9 @@ export default function SiteHeader({ onOpenInquiryModal }: SiteHeaderProps) {
       }`}
     >
       <div className="relative w-full border-b border-ink/10 px-6 sm:px-10 lg:px-16">
-        <div className="mx-auto flex max-w-7xl items-center justify-between py-3.5">
+        <div className="mx-auto flex max-w-7xl items-center justify-between py-3">
         {/* Brand Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-3 transition-opacity hover:opacity-90 shrink-0"
-        >
-          <div className="relative h-10 w-10 shrink-0">
-            <Image
-              src="/images/dream-casa-icon.svg"
-              alt="The Dream Casa Studio Indore"
-              fill
-              priority
-              className="object-contain"
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-serif text-lg font-bold tracking-tight text-ink leading-none">
-              The Dream Casa
-            </span>
-            <span className="text-[10px] font-semibold tracking-widest text-gold uppercase mt-1">
-              Interior Design &bull; Turnkey Projects
-            </span>
-          </div>
-        </Link>
+        <BrandLogo variant="dark" />
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 xl:gap-8 lg:flex">
