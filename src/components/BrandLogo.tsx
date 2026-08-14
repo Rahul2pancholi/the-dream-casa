@@ -19,8 +19,8 @@ export default function BrandLogo({ variant = "dark", className = "" }: BrandLog
         viewBox="378 201 150 157"
         className="h-10 w-10 sm:h-11 sm:w-11 shrink-0 transition-transform duration-300 group-hover:scale-105"
       >
-        {/* 4-Pane Grid Window */}
-        <g fill={isLight ? "#ffffff" : "#0F1A24"}>
+        {/* 4-Pane Grid Window (Golden Color) */}
+        <g fill={goldColor}>
           <path d="M430.01,246.17v4.04h8.69v-8.69h-4.04c-2.57,0-4.65,2.08-4.65,4.65Z" />
           <path d="M430.01,232.07v4.22c0,2.47,2,4.47,4.47,4.47h4.22v-8.69h-8.69Z" />
           <path d="M420.55,240.76h4.04c2.57,0,4.65-2.08,4.65-4.65v-4.04h-8.69v8.69Z" />
