@@ -62,7 +62,7 @@ export default function WhyDreamCasa() {
         </div>
 
         {/* Wavy Path Roadmap (Desktop) */}
-        <div className="relative mt-24 mb-16 hidden lg:block min-h-[480px]">
+        <div className="relative mt-28 mb-20 hidden lg:block min-h-[560px]">
           {/* SVG Sine Wave Path Background */}
           <svg
             className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-44 pointer-events-none z-0"
@@ -99,23 +99,26 @@ export default function WhyDreamCasa() {
               <div
                 key={title}
                 className={`flex flex-col items-center text-center ${
-                  position === "top" ? "-translate-y-24" : "translate-y-24"
+                  position === "top" ? "-translate-y-32" : "translate-y-32"
                 }`}
               >
                 {/* Step Card (Top Position) */}
                 {position === "top" && (
-                  <div className="group relative mb-6 w-full rounded-2xl border border-ink/10 bg-card p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-xl">
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full border border-gold/40 bg-gold px-3 py-0.5 text-[10px] font-bold text-white uppercase tracking-widest shadow-sm">
+                  <div className="group relative mb-6 w-full rounded-2xl border border-ink/10 bg-card p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-2xl">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full border border-gold/40 bg-gold px-3.5 py-0.5 text-[10px] font-bold text-white uppercase tracking-widest shadow-sm">
                       Step {number}
                     </span>
-                    <div className="relative mb-3 mt-1 h-14 w-full overflow-hidden rounded-lg bg-cream-light p-1">
+
+                    {/* High-Visibility Crisp Image Container */}
+                    <div className="relative mb-3 mt-1 h-28 sm:h-32 w-full overflow-hidden rounded-xl bg-white p-2 border border-gold/20 shadow-inner group-hover:border-gold/40 transition-colors">
                       <Image
                         src={sketch}
                         alt={title}
                         fill
-                        className="object-contain opacity-80 transition-all group-hover:scale-105 group-hover:opacity-100"
+                        className="object-contain p-1.5 opacity-100 transition-all duration-300 group-hover:scale-105"
                       />
                     </div>
+
                     <h3 className="font-serif text-base font-bold text-ink transition-colors group-hover:text-gold">
                       {title}
                     </h3>
@@ -142,20 +145,23 @@ export default function WhyDreamCasa() {
 
                 {/* Step Card (Bottom Position) */}
                 {position === "bottom" && (
-                  <div className="group relative mt-6 w-full rounded-2xl border border-ink/10 bg-card p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-xl">
+                  <div className="group relative mt-6 w-full rounded-2xl border border-ink/10 bg-card p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-2xl">
                     {/* Arrow Pointer */}
                     <div className="absolute -top-2 left-1/2 h-3.5 w-3.5 -translate-x-1/2 rotate-45 border-l border-t border-ink/10 bg-card" />
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full border border-gold/40 bg-gold px-3 py-0.5 text-[10px] font-bold text-white uppercase tracking-widest shadow-sm">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full border border-gold/40 bg-gold px-3.5 py-0.5 text-[10px] font-bold text-white uppercase tracking-widest shadow-sm">
                       Step {number}
                     </span>
-                    <div className="relative mb-3 mt-1 h-14 w-full overflow-hidden rounded-lg bg-cream-light p-1">
+
+                    {/* High-Visibility Crisp Image Container */}
+                    <div className="relative mb-3 mt-1 h-28 sm:h-32 w-full overflow-hidden rounded-xl bg-white p-2 border border-gold/20 shadow-inner group-hover:border-gold/40 transition-colors">
                       <Image
                         src={sketch}
                         alt={title}
                         fill
-                        className="object-contain opacity-80 transition-all group-hover:scale-105 group-hover:opacity-100"
+                        className="object-contain p-1.5 opacity-100 transition-all duration-300 group-hover:scale-105"
                       />
                     </div>
+
                     <h3 className="font-serif text-base font-bold text-ink transition-colors group-hover:text-gold">
                       {title}
                     </h3>
@@ -195,14 +201,17 @@ export default function WhyDreamCasa() {
                       {subtitle}
                     </span>
                   </div>
-                  <div className="relative my-3 h-16 w-full overflow-hidden rounded bg-cream-light p-1">
+
+                  {/* High-Visibility Mobile Image Container */}
+                  <div className="relative my-3 h-28 w-full overflow-hidden rounded-xl bg-white p-2 border border-gold/20 shadow-inner">
                     <Image
                       src={sketch}
                       alt={title}
                       fill
-                      className="object-contain"
+                      className="object-contain p-1 opacity-100"
                     />
                   </div>
+
                   <h3 className="font-serif text-base font-bold text-ink">
                     {title}
                   </h3>
