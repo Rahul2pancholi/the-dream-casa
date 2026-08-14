@@ -23,7 +23,11 @@ const slides = [
   },
 ];
 
-export default function Hero() {
+interface HeroProps {
+  onOpenInquiryModal?: () => void;
+}
+
+export default function Hero({ onOpenInquiryModal }: HeroProps) {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
@@ -89,17 +93,27 @@ export default function Hero() {
 
           {/* Action CTAs */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
+            {onOpenInquiryModal ? (
+              <button
+                type="button"
+                onClick={onOpenInquiryModal}
+                className="inline-flex items-center gap-2 bg-[#a46f47] border border-[#a46f47] px-6 sm:px-8 py-3.5 text-xs font-semibold tracking-[0.15em] text-white uppercase transition-all hover:bg-[#8e5c36] shadow-lg"
+              >
+                Book Design Consultation <ArrowRight className="h-4 w-4" />
+              </button>
+            ) : (
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 border border-white/70 lg:border-ink px-6 sm:px-8 py-3.5 text-xs font-semibold tracking-[0.15em] text-white lg:text-ink uppercase transition-all hover:bg-cream-light hover:text-ink lg:hover:bg-ink lg:hover:text-cream-light"
+              >
+                Book Design Consultation
+              </Link>
+            )}
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 border border-white/70 lg:border-ink px-6 sm:px-8 py-3.5 text-xs font-semibold tracking-[0.15em] text-white lg:text-ink uppercase transition-all hover:bg-cream-light hover:text-ink lg:hover:bg-ink lg:hover:text-cream-light"
+              className="inline-flex items-center gap-2 border border-white/40 lg:border-ink/30 px-6 py-3.5 text-xs font-semibold tracking-[0.15em] text-white lg:text-ink uppercase transition-all hover:border-gold hover:text-gold"
             >
-              View Our Work
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.15em] text-white lg:text-ink uppercase transition-all hover:text-gold"
-            >
-              Enquire Now <ArrowRight className="h-4 w-4" />
+              View Our Portfolio
             </Link>
           </div>
 

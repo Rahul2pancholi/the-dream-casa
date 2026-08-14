@@ -19,7 +19,11 @@ const mobileNavLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-export default function SiteHeader() {
+interface SiteHeaderProps {
+  onOpenInquiryModal?: () => void;
+}
+
+export default function SiteHeader({ onOpenInquiryModal }: SiteHeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -86,12 +90,22 @@ export default function SiteHeader() {
             <Phone className="h-3.5 w-3.5 text-gold shrink-0" /> +91 7490 932 661
           </a>
           <span className="h-4 w-px bg-ink/15" />
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-1.5 border border-ink px-5 py-2.5 text-xs font-semibold tracking-widest text-ink uppercase transition-all hover:bg-ink hover:text-cream-light whitespace-nowrap"
-          >
-            Enquire Now <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
+          {onOpenInquiryModal ? (
+            <button
+              type="button"
+              onClick={onOpenInquiryModal}
+              className="inline-flex items-center gap-1.5 border border-ink bg-[#0F1A24] text-white px-5 py-2.5 text-xs font-semibold tracking-widest uppercase transition-all hover:bg-[#a46f47] hover:border-[#a46f47] whitespace-nowrap shadow-sm"
+            >
+              Book Consultation <ArrowRight className="h-3.5 w-3.5 text-[#a46f47]" />
+            </button>
+          ) : (
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 border border-ink px-5 py-2.5 text-xs font-semibold tracking-widest text-ink uppercase transition-all hover:bg-ink hover:text-cream-light whitespace-nowrap"
+            >
+              Enquire Now <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          )}
         </div>
 
         {/* Mobile Hamburger Toggle */}

@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function CtaBanner() {
+interface CtaBannerProps {
+  onOpenInquiryModal?: () => void;
+}
+
+export default function CtaBanner({ onOpenInquiryModal }: CtaBannerProps) {
   return (
     <section className="relative overflow-hidden py-20 sm:py-24 px-6 sm:px-10 lg:px-16">
       <Image
@@ -27,12 +31,23 @@ export default function CtaBanner() {
             Begin a conversation about your home, your vision and how we can bring it to life.
           </p>
           <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="border border-white px-8 py-4 text-xs font-semibold tracking-[0.15em] text-white uppercase transition-all hover:bg-cream-light hover:text-ink"
-            >
-              Enquire Now
-            </Link>
+            {onOpenInquiryModal ? (
+              <button
+                type="button"
+                onClick={onOpenInquiryModal}
+                className="bg-[#a46f47] border border-[#a46f47] px-8 py-4 text-xs font-semibold tracking-[0.15em] text-white uppercase transition-all hover:bg-[#8e5c36] shadow-lg"
+              >
+                Book Free Consultation
+              </button>
+            ) : (
+              <Link
+                href="/contact"
+                className="border border-white px-8 py-4 text-xs font-semibold tracking-[0.15em] text-white uppercase transition-all hover:bg-cream-light hover:text-ink"
+              >
+                Enquire Now
+              </Link>
+            )}
+
             <Link
               href="/projects"
               className="px-2 py-4 text-xs font-semibold tracking-[0.15em] text-white uppercase transition-colors hover:text-gold"
