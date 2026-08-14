@@ -2,106 +2,106 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Play, Eye, Sparkles, CheckCircle2, X, ArrowRight, Video } from "lucide-react";
+import { Play, Eye, Sparkles, CheckCircle2, X, ArrowRight } from "lucide-react";
 
-interface CollageItem {
+interface MosaicTile {
   id: string;
   type: "photo" | "video";
   title: string;
   location: string;
-  category: string;
+  category: "living" | "bedroom" | "kitchen" | "video";
   image: string;
-  spanClass: string; // e.g. "col-span-1 md:col-span-2 row-span-2", etc.
+  gridSpan: string; // Tailwind grid span classes
   tag: string;
   status: "Completed Residence" | "3D Concept Render" | "On-Site Video";
 }
 
-const collageItems: CollageItem[] = [
+const mosaicTiles: MosaicTile[] = [
   {
-    id: "c1",
+    id: "m1",
     type: "video",
-    title: "4BHK Luxury Duplex Walkthrough",
+    title: "4BHK Luxury Duplex Site Walkthrough",
     location: "Yeshwant Niwas Rd, Indore",
-    category: "Video Walkthrough",
+    category: "video",
     image: "/images/projects/living-kitchen-01.jpg",
-    spanClass: "col-span-1 md:col-span-2 row-span-2 min-h-[320px] md:min-h-[420px]",
+    gridSpan: "col-span-1 md:col-span-2 row-span-2 min-h-[360px] md:min-h-[460px]",
     tag: "Site Walkthrough",
     status: "On-Site Video",
   },
   {
-    id: "c2",
+    id: "m2",
     type: "photo",
-    title: "Minimalist Italian Living & Dining",
+    title: "Minimalist Italian Living Room",
     location: "Vijay Nagar, Indore",
-    category: "Living Room",
+    category: "living",
     image: "/images/projects/living-kitchen-02.jpg",
-    spanClass: "col-span-1 row-span-1 min-h-[200px] md:min-h-[240px]",
+    gridSpan: "col-span-1 row-span-1 min-h-[180px] md:min-h-[230px]",
     tag: "Living Suite",
     status: "Completed Residence",
   },
   {
-    id: "c3",
+    id: "m3",
     type: "photo",
     title: "Fluted Brass Master Suite",
     location: "Super Corridor, Indore",
-    category: "Bedroom",
+    category: "bedroom",
     image: "/images/projects/master-bedroom-01.jpg",
-    spanClass: "col-span-1 row-span-2 min-h-[320px] md:min-h-[420px]",
+    gridSpan: "col-span-1 row-span-2 min-h-[360px] md:min-h-[460px]",
     tag: "Master Suite",
     status: "3D Concept Render",
   },
   {
-    id: "c4",
+    id: "m4",
     type: "photo",
     title: "Handleless Quartz Modular Kitchen",
     location: "Bicholi Mardana, Indore",
-    category: "Kitchen",
+    category: "kitchen",
     image: "/images/projects/living-kitchen-04.jpg",
-    spanClass: "col-span-1 md:col-span-2 row-span-1 min-h-[200px] md:min-h-[240px]",
+    gridSpan: "col-span-1 md:col-span-2 row-span-1 min-h-[180px] md:min-h-[230px]",
     tag: "Modular Kitchen",
     status: "Completed Residence",
   },
   {
-    id: "c5",
+    id: "m5",
     type: "photo",
     title: "Velvet Lounge & False Ceiling Details",
     location: "AB Road, Indore",
-    category: "Living Room",
+    category: "living",
     image: "/images/projects/living-kitchen-05.jpg",
-    spanClass: "col-span-1 row-span-1 min-h-[200px] md:min-h-[240px]",
-    tag: "Lounge Area",
+    gridSpan: "col-span-1 row-span-1 min-h-[180px] md:min-h-[230px]",
+    tag: "Lounge Suite",
     status: "Completed Residence",
   },
   {
-    id: "c6",
+    id: "m6",
     type: "photo",
-    title: "Contemporary Open Dining",
+    title: "Contemporary Open Dining Area",
     location: "Palasia, Indore",
-    category: "Dining",
+    category: "kitchen",
     image: "/images/projects/living-kitchen-07.jpg",
-    spanClass: "col-span-1 md:col-span-2 row-span-1 min-h-[200px] md:min-h-[240px]",
+    gridSpan: "col-span-1 md:col-span-2 row-span-1 min-h-[180px] md:min-h-[230px]",
     tag: "Dining Suite",
     status: "Completed Residence",
   },
   {
-    id: "c7",
+    id: "m7",
     type: "photo",
     title: "Warm Oak & Cane Guest Suite",
     location: "Saket Nagar, Indore",
-    category: "Bedroom",
+    category: "bedroom",
     image: "/images/projects/master-bedroom-02.jpg",
-    spanClass: "col-span-1 row-span-1 min-h-[200px] md:min-h-[240px]",
-    tag: "Guest Room",
+    gridSpan: "col-span-1 row-span-1 min-h-[180px] md:min-h-[230px]",
+    tag: "Guest Suite",
     status: "3D Concept Render",
   },
   {
-    id: "c8",
+    id: "m8",
     type: "photo",
     title: "Bespoke Walnut Foyer Lounge",
     location: "Bodakdev, Ahmedabad",
-    category: "Foyer",
+    category: "living",
     image: "/images/projects/present-room-01.jpg",
-    spanClass: "col-span-1 row-span-1 min-h-[200px] md:min-h-[240px]",
+    gridSpan: "col-span-1 row-span-1 min-h-[180px] md:min-h-[230px]",
     tag: "Foyer Design",
     status: "Completed Residence",
   },
@@ -112,34 +112,34 @@ interface UnevenCollageHeroProps {
 }
 
 export default function UnevenCollageHero({ onOpenInquiryModal }: UnevenCollageHeroProps) {
-  const [selectedItem, setSelectedItem] = useState<CollageItem | null>(null);
-  const [filterCategory, setFilterCategory] = useState<string>("all");
+  const [selectedTile, setSelectedTile] = useState<MosaicTile | null>(null);
+  const [activeTab, setActiveTab] = useState<string>("all");
 
-  const filteredItems = filterCategory === "all"
-    ? collageItems
-    : filterCategory === "video"
-    ? collageItems.filter(item => item.type === "video")
-    : collageItems.filter(item => item.category.toLowerCase().includes(filterCategory));
+  const filteredTiles = activeTab === "all"
+    ? mosaicTiles
+    : activeTab === "video"
+    ? mosaicTiles.filter(t => t.type === "video")
+    : mosaicTiles.filter(t => t.category === activeTab);
 
   return (
-    <section className="bg-[#FAF7F2] py-8 sm:py-12 px-4 sm:px-8 lg:px-12 border-b border-[#E8E2D8]">
+    <section className="bg-[#FAF7F2] py-6 sm:py-8 px-4 sm:px-8 lg:px-12 border-b border-[#E8E2D8]">
       <div className="mx-auto max-w-7xl">
         {/* Compact Header & Category Bar */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.25em] text-[#a46f47] uppercase">
               <span className="h-px w-6 bg-[#a46f47]" />
-              SELECTED PORTFOLIO &amp; LIVE SITES
+              ARCHITECTURAL PORTFOLIO MOSAIC
             </div>
-            <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal text-[#0F1A24] leading-tight mt-1">
-              Explore Real Residences &amp; Video Walkthroughs
+            <h1 className="font-serif text-2xl sm:text-3xl font-normal text-[#0F1A24] leading-tight mt-0.5">
+              Selected Works, 3D Renders &amp; Video Walkthroughs
             </h1>
           </div>
 
-          {/* Quick Filter Pill Buttons */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar shrink-0">
+          {/* Sharp Tab Filter Buttons */}
+          <div className="flex items-center gap-1 overflow-x-auto pb-1 no-scrollbar shrink-0">
             {[
-              { id: "all", label: "All Work" },
+              { id: "all", label: "All Works" },
               { id: "video", label: "🎬 Live Videos" },
               { id: "living", label: "Living" },
               { id: "bedroom", label: "Bedrooms" },
@@ -148,11 +148,11 @@ export default function UnevenCollageHero({ onOpenInquiryModal }: UnevenCollageH
               <button
                 key={tab.id}
                 type="button"
-                onClick={() => setFilterCategory(tab.id)}
-                className={`rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all ${
-                  filterCategory === tab.id
-                    ? "bg-[#0F1A24] text-white shadow-sm"
-                    : "bg-white border border-[#E8E2D8] text-[#4B5563] hover:border-[#a46f47] hover:text-[#0F1A24]"
+                onClick={() => setActiveTab(tab.id)}
+                className={`rounded-none px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider transition-all border ${
+                  activeTab === tab.id
+                    ? "bg-[#0F1A24] border-[#0F1A24] text-white"
+                    : "bg-white border-[#E8E2D8] text-[#4B5563] hover:border-[#a46f47] hover:text-[#0F1A24]"
                 }`}
               >
                 {tab.label}
@@ -161,17 +161,17 @@ export default function UnevenCollageHero({ onOpenInquiryModal }: UnevenCollageH
           </div>
         </div>
 
-        {/* Asymmetrical / Uneven Masonry Collage Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5 auto-rows-[200px] md:auto-rows-[220px]">
-          {filteredItems.map((item) => (
+        {/* Seamless Edge-to-Edge Architectural Mosaic Grid (Sharp Corners & Tight Hairline Fits) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1 bg-[#0F1A24] p-1 border border-[#0F1A24] shadow-md">
+          {filteredTiles.map((tile) => (
             <div
-              key={item.id}
-              onClick={() => setSelectedItem(item)}
-              className={`relative ${item.spanClass} group overflow-hidden rounded-2xl border border-[#E8E2D8] bg-white shadow-xs hover:shadow-xl transition-all duration-500 cursor-pointer`}
+              key={tile.id}
+              onClick={() => setSelectedTile(tile)}
+              className={`relative ${tile.gridSpan} group overflow-hidden rounded-none bg-[#0F1A24] cursor-pointer transition-all duration-300 hover:z-20 hover:scale-[1.01]`}
             >
               <Image
-                src={item.image}
-                alt={item.title}
+                src={tile.image}
+                alt={tile.title}
                 fill
                 priority
                 sizes="(min-width: 768px) 33vw, 100vw"
@@ -179,53 +179,53 @@ export default function UnevenCollageHero({ onOpenInquiryModal }: UnevenCollageH
               />
 
               {/* Dark Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
 
-              {/* Status Badge */}
-              <div className="absolute top-3 left-3 flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1 text-[10px] font-semibold text-white backdrop-blur-md border border-white/10">
-                {item.type === "video" ? (
+              {/* Sharp Status Tag */}
+              <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-black/80 px-2.5 py-1 text-[10px] font-semibold text-white border border-white/10 rounded-none backdrop-blur-xs">
+                {tile.type === "video" ? (
                   <>
                     <span className="flex h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-                    <span className="text-red-400 font-bold uppercase">{item.status}</span>
+                    <span className="text-red-400 font-bold uppercase">{tile.status}</span>
                   </>
-                ) : item.status === "Completed Residence" ? (
+                ) : tile.status === "Completed Residence" ? (
                   <>
                     <CheckCircle2 className="h-3 w-3 text-emerald-400" />
-                    <span>{item.status}</span>
+                    <span>{tile.status}</span>
                   </>
                 ) : (
                   <>
                     <Sparkles className="h-3 w-3 text-[#d4af37]" />
-                    <span>{item.status}</span>
+                    <span>{tile.status}</span>
                   </>
                 )}
               </div>
 
-              {/* Play Button Overlay for Video */}
-              {item.type === "video" && (
+              {/* Video Play Overlay */}
+              {tile.type === "video" && (
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-white shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-none bg-red-600 text-white shadow-2xl transition-transform duration-300 group-hover:scale-110 border border-white/20">
                     <Play className="h-6 w-6 ml-1 fill-current" />
                   </div>
                 </div>
               )}
 
-              {/* Hover Eye Icon for Photos */}
-              {item.type === "photo" && (
+              {/* Sharp Hover Eye Icon */}
+              {tile.type === "photo" && (
                 <div className="absolute top-3 right-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-[#0F1A24] shadow-md backdrop-blur-xs">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-none bg-white text-[#0F1A24] shadow-md">
                     <Eye className="h-4 w-4" />
                   </div>
                 </div>
               )}
 
-              {/* Card Footer Text */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 text-white">
-                <span className="text-[10px] font-semibold tracking-widest text-[#d4af37] uppercase">
-                  {item.tag} &bull; {item.location}
+              {/* Tile Footer Details */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <span className="text-[10px] font-semibold tracking-widest text-[#d4af37] uppercase block">
+                  {tile.tag} &bull; {tile.location}
                 </span>
                 <h3 className="font-serif text-base sm:text-lg font-normal leading-snug text-white mt-0.5 group-hover:text-[#d4af37] transition-colors">
-                  {item.title}
+                  {tile.title}
                 </h3>
               </div>
             </div>
@@ -233,23 +233,23 @@ export default function UnevenCollageHero({ onOpenInquiryModal }: UnevenCollageH
         </div>
       </div>
 
-      {/* Lightbox / Video Walkthrough Preview Modal */}
-      {selectedItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 sm:p-6 backdrop-blur-md animate-fade-in">
-          <div className="relative w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-[#0F1A24] shadow-2xl text-white">
+      {/* Lightbox / Video Modal */}
+      {selectedTile && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-6 backdrop-blur-md animate-fade-in">
+          <div className="relative w-full max-w-4xl overflow-hidden rounded-none border border-white/10 bg-[#0F1A24] shadow-2xl text-white">
             {/* Modal Header */}
             <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-semibold tracking-widest text-[#a46f47] uppercase">
-                  {selectedItem.tag}
+                  {selectedTile.tag}
                 </span>
                 <span className="text-white/40">&bull;</span>
-                <span className="text-xs text-white/70">{selectedItem.location}</span>
+                <span className="text-xs text-white/70">{selectedTile.location}</span>
               </div>
               <button
                 type="button"
-                onClick={() => setSelectedItem(null)}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-all"
+                onClick={() => setSelectedTile(null)}
+                className="flex h-9 w-9 items-center justify-center rounded-none bg-white/10 text-white hover:bg-white/20 transition-all"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -258,8 +258,8 @@ export default function UnevenCollageHero({ onOpenInquiryModal }: UnevenCollageH
             {/* Modal Media Display */}
             <div className="relative aspect-[16/9] w-full bg-black">
               <Image
-                src={selectedItem.image}
-                alt={selectedItem.title}
+                src={selectedTile.image}
+                alt={selectedTile.title}
                 fill
                 priority
                 className="object-contain"
@@ -270,20 +270,20 @@ export default function UnevenCollageHero({ onOpenInquiryModal }: UnevenCollageH
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 p-6 bg-[#0F1A24]">
               <div>
                 <h3 className="font-serif text-xl font-normal text-white">
-                  {selectedItem.title}
+                  {selectedTile.title}
                 </h3>
                 <p className="text-xs text-white/70 mt-0.5">
-                  Want a similar bespoke interior execution for your home?
+                  Want a similar bespoke interior execution for your residence?
                 </p>
               </div>
 
               <button
                 type="button"
                 onClick={() => {
-                  setSelectedItem(null);
+                  setSelectedTile(null);
                   onOpenInquiryModal?.();
                 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#a46f47] px-6 py-3 text-xs font-semibold tracking-wider text-white uppercase hover:bg-[#8e5c36] transition-all shadow-md shrink-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-none bg-[#a46f47] px-6 py-3 text-xs font-semibold tracking-wider text-white uppercase hover:bg-[#8e5c36] transition-all shadow-md shrink-0"
               >
                 Inquire This Design <ArrowRight className="h-4 w-4" />
               </button>
