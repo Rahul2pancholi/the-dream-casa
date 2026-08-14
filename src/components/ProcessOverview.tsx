@@ -119,7 +119,7 @@ export default function ProcessOverview() {
         {/* 2-Column Split Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
           {/* Left Column Navigation List */}
-          <div className="lg:col-span-4 flex flex-col justify-between rounded-2xl border border-[#E5DFD5] bg-[#FAF7F2] p-1.5 shadow-sm divide-y divide-[#E5DFD5]">
+          <div className="lg:col-span-4 flex flex-col rounded-[24px] border border-[#E8E2D8] bg-[#FAF7F2] p-1.5 shadow-sm divide-y divide-[#E8E2D8]/80 relative z-10">
             {phases.map(({ number, title, subtitle }, idx) => {
               const isActive = idx === activePhaseIndex;
 
@@ -127,31 +127,35 @@ export default function ProcessOverview() {
                 <button
                   key={number}
                   onClick={() => setActivePhaseIndex(idx)}
-                  className={`group relative flex items-center justify-between p-3 sm:p-3.5 text-left rounded-xl transition-all duration-300 ${
+                  className={`group relative flex items-center justify-between p-4 sm:p-5 text-left transition-all duration-300 ${
                     isActive
-                      ? "bg-[#0F1A24] text-white shadow-md"
-                      : "bg-transparent text-[#0F1A24] hover:bg-white/60"
+                      ? "bg-[#0F1A24] text-white shadow-2xl rounded-[18px] z-20 scale-[1.02] border border-[#0F1A24]"
+                      : "bg-transparent text-[#0F1A24] hover:bg-white/50"
                   }`}
                 >
-                  <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="flex items-center gap-4 sm:gap-5">
                     {/* Number */}
-                    <span className="font-serif text-2xl sm:text-3xl font-normal text-[#a46f47]">
+                    <span className="font-serif text-3xl sm:text-4xl font-normal text-[#a46f47] shrink-0">
                       {number}
                     </span>
 
                     {/* Vertical Hairline Divider */}
                     <div
-                      className={`h-7 w-px transition-colors ${
-                        isActive ? "bg-white/20" : "bg-[#E5DFD5]"
+                      className={`h-9 w-px shrink-0 transition-colors ${
+                        isActive ? "bg-[#a46f47]/50" : "bg-[#a46f47]/30"
                       }`}
                     />
 
                     {/* Title & Subtitle */}
                     <div>
-                      <h3 className="font-serif text-base sm:text-lg font-medium leading-none">
+                      <h3
+                        className={`font-serif text-lg sm:text-xl font-normal leading-tight transition-colors ${
+                          isActive ? "text-white" : "text-[#0F1A24]"
+                        }`}
+                      >
                         {title}
                       </h3>
-                      <p className="text-[10px] font-semibold tracking-wider text-[#a46f47] uppercase mt-0.5">
+                      <p className="text-[10px] sm:text-[11px] font-semibold tracking-widest text-[#a46f47] uppercase mt-0.5">
                         {subtitle}
                       </p>
                     </div>
@@ -159,10 +163,10 @@ export default function ProcessOverview() {
 
                   {/* Right Arrow */}
                   <ArrowRight
-                    className={`h-4 w-4 shrink-0 transition-transform duration-300 ${
+                    className={`h-4.5 w-4.5 shrink-0 transition-transform duration-300 ${
                       isActive
                         ? "text-[#a46f47] translate-x-1"
-                        : "text-gray-400 group-hover:translate-x-1 group-hover:text-[#a46f47]"
+                        : "text-[#9CA3AF] group-hover:translate-x-1 group-hover:text-[#a46f47]"
                     }`}
                   />
                 </button>
