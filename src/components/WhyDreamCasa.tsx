@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Compass,
   Receipt,
@@ -50,23 +50,44 @@ const steps = [
 ];
 
 export default function WhyDreamCasa() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [scrollProgress, setScrollProgress] = useState<number>(0);
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [isHovered, setIsHovered] = useState<boolean>(false);
 
-  // Auto-advance highlight sequentially every 2.5s if user is not hovering
   useEffect(() => {
-    if (isHovered) return;
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % steps.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, [isHovered]);
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Start highlighting when top of section reaches 75% down viewport
+      const startPoint = windowHeight * 0.75;
+      const endPoint = -rect.height * 0.25;
+
+      const progress = (startPoint - rect.top) / (startPoint - endPoint);
+      const clampedProgress = Math.min(Math.max(progress, 0), 1);
+      setScrollProgress(clampedProgress);
+
+      // Determine active step index (0, 1, 2, 3)
+      const currentStep = Math.min(
+        Math.floor(clampedProgress * steps.length),
+        steps.length - 1
+      );
+      setActiveIndex(Math.max(0, currentStep));
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial check
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Calculate SVG gradient highlight offset based on smooth scroll progress
+  const waveHighlightOffset = Math.max(12, Math.round(scrollProgress * 100));
 
   return (
     <section
+      ref={sectionRef}
       className="relative bg-cream py-24 sm:py-32 px-6 sm:px-10 lg:px-16 text-ink border-y border-ink/10 overflow-hidden"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Ambient Decorative Gold Glows */}
       <div className="absolute -left-20 top-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-gold/10 blur-3xl pointer-events-none" />
@@ -85,7 +106,7 @@ export default function WhyDreamCasa() {
           </h2>
 
           <p className="text-sm leading-relaxed text-muted sm:text-base max-w-xl">
-            Hover over any step to experience the sequential 4-stage execution journey.
+            Scroll down to watch our 4-stage execution journey illuminate step by step.
           </p>
         </div>
 
@@ -107,24 +128,20 @@ export default function WhyDreamCasa() {
               strokeOpacity="0.25"
             />
 
-            {/* Dynamic Active Sequential Wave Glow Line */}
+            {/* Dynamic Scroll-Driven Wave Glow Line */}
             <path
               d="M 50,150 C 180,30 320,270 450,150 C 580,30 720,270 850,150 C 980,30 1100,150 1150,150"
-              stroke="url(#sequential-gold-gradient)"
+              stroke="url(#scroll-gold-gradient)"
               strokeWidth="4.5"
               strokeLinecap="round"
-              className="transition-all duration-700"
+              className="transition-all duration-300"
             />
             <defs>
-              <linearGradient id="sequential-gold-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient id="scroll-gold-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#a46f47" stopOpacity="1" />
+                <stop offset={`${waveHighlightOffset}%`} stopColor="#ad8a55" stopOpacity="1" />
                 <stop
-                  offset={`${((activeIndex + 1) / steps.length) * 100}%`}
-                  stopColor="#ad8a55"
-                  stopOpacity="1"
-                />
-                <stop
-                  offset={`${Math.min(100, ((activeIndex + 1) / steps.length) * 100 + 10)}%`}
+                  offset={`${Math.min(100, waveHighlightOffset + 8)}%`}
                   stopColor="#a46f47"
                   stopOpacity="0.15"
                 />
@@ -143,23 +160,22 @@ export default function WhyDreamCasa() {
                 <div
                   key={title}
                   className="relative flex flex-col items-center text-center h-full justify-center"
-                  onMouseEnter={() => setActiveIndex(idx)}
                 >
                   {/* Step Card (Top Position) */}
                   {position === "top" && (
                     <div
-                      className={`group absolute bottom-1/2 mb-10 w-full rounded-2xl border p-5 shadow-md transition-all duration-500 cursor-pointer ${
+                      className={`group absolute bottom-1/2 mb-10 w-full rounded-2xl border p-5 shadow-md transition-all duration-500 ${
                         isCurrent
                           ? "border-gold bg-card shadow-2xl -translate-y-2 ring-2 ring-gold/20"
                           : isActive
                           ? "border-gold/50 bg-card shadow-lg"
-                          : "border-ink/10 bg-card/80 opacity-70 hover:opacity-100"
+                          : "border-ink/10 bg-card/80 opacity-60"
                       }`}
                     >
                       {/* Top Gold Hairline */}
                       <div
                         className={`absolute top-0 left-0 h-1 bg-gold transition-all duration-500 ${
-                          isActive ? "w-full" : "w-10 group-hover:w-full"
+                          isActive ? "w-full" : "w-10"
                         }`}
                       />
 
@@ -209,15 +225,15 @@ export default function WhyDreamCasa() {
 
                   {/* Single Node Icon Circle directly on Wave Curve */}
                   <div
-                    className={`relative z-20 flex h-16 w-16 items-center justify-center rounded-full border-2 transition-all duration-500 cursor-pointer ${
+                    className={`relative z-20 flex h-16 w-16 items-center justify-center rounded-full border-2 transition-all duration-500 ${
                       isCurrent
                         ? "border-gold bg-gold text-white shadow-2xl scale-125 ring-4 ring-gold/30"
                         : isActive
                         ? "border-gold bg-gold text-white shadow-lg scale-110"
-                        : "border-gold/40 bg-cream text-gold shadow-md hover:scale-110"
+                        : "border-gold/40 bg-cream text-gold shadow-md"
                     }`}
                   >
-                    {/* Glowing Ping Ring on Active Node */}
+                    {/* Glowing Ping Ring on Active Scroll Node */}
                     {isCurrent && (
                       <span className="absolute inset-0 rounded-full bg-gold/30 animate-ping pointer-events-none" />
                     )}
@@ -242,12 +258,12 @@ export default function WhyDreamCasa() {
                   {/* Step Card (Bottom Position) */}
                   {position === "bottom" && (
                     <div
-                      className={`group absolute top-1/2 mt-10 w-full rounded-2xl border p-5 shadow-md transition-all duration-500 cursor-pointer ${
+                      className={`group absolute top-1/2 mt-10 w-full rounded-2xl border p-5 shadow-md transition-all duration-500 ${
                         isCurrent
                           ? "border-gold bg-card shadow-2xl -translate-y-2 ring-2 ring-gold/20"
                           : isActive
                           ? "border-gold/50 bg-card shadow-lg"
-                          : "border-ink/10 bg-card/80 opacity-70 hover:opacity-100"
+                          : "border-ink/10 bg-card/80 opacity-60"
                       }`}
                     >
                       {/* Pointer Arrow */}
@@ -260,7 +276,7 @@ export default function WhyDreamCasa() {
                       {/* Top Gold Hairline */}
                       <div
                         className={`absolute top-0 left-0 h-1 bg-gold transition-all duration-500 ${
-                          isActive ? "w-full" : "w-10 group-hover:w-full"
+                          isActive ? "w-full" : "w-10"
                         }`}
                       />
 
@@ -313,11 +329,7 @@ export default function WhyDreamCasa() {
             {steps.map(({ number, Icon, title, subtitle, desc, tag }, idx) => {
               const isActive = idx <= activeIndex;
               return (
-                <div
-                  key={title}
-                  className="relative flex items-start gap-5 pl-14 cursor-pointer"
-                  onClick={() => setActiveIndex(idx)}
-                >
+                <div key={title} className="relative flex items-start gap-5 pl-14">
                   <div
                     className={`absolute left-0 top-0 flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all ${
                       isActive
@@ -329,7 +341,7 @@ export default function WhyDreamCasa() {
                   </div>
                   <div
                     className={`w-full rounded-xl border p-5 shadow-sm transition-all ${
-                      isActive ? "border-gold bg-card shadow-md" : "border-ink/10 bg-card/80"
+                      isActive ? "border-gold bg-card shadow-md" : "border-ink/10 bg-card/80 opacity-70"
                     }`}
                   >
                     <div className="flex items-center justify-between border-b border-ink/10 pb-2.5">
