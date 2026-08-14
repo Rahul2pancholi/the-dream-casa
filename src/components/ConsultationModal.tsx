@@ -161,7 +161,7 @@ export default function ConsultationModal() {
               <h2 className="font-serif text-2xl sm:text-3xl text-white leading-tight">
                 Plan Your Dream Space with Founder Poorti Jain
               </h2>
-              <p className="text-xs sm:text-sm text-neutral-300">
+              <p className="text-xs sm:text-sm text-dark-body">
                 Get custom 3D design concepts &amp; 100% turnkey estimate for your home or office in Indore &amp; Ahmedabad.
               </p>
             </div>
@@ -169,11 +169,11 @@ export default function ConsultationModal() {
             {/* Form */}
             <form onSubmit={handleSubmit} className="flex flex-col gap-3.5 pt-1">
               <div>
-                <label htmlFor="modal-name" className="block text-xs font-medium text-neutral-300 mb-1">
+                <label htmlFor="modal-name" className="block text-xs font-medium text-dark-secondary mb-1">
                   Full Name *
                 </label>
                 <div className="relative">
-                  <User className="absolute left-3.5 top-3 h-4 w-4 text-neutral-400" />
+                  <User className="absolute left-3.5 top-3 h-4 w-4 text-dark-secondary" />
                   <input
                     id="modal-name"
                     type="text"
@@ -181,17 +181,17 @@ export default function ConsultationModal() {
                     placeholder="e.g. Rahul Sharma"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full rounded-xl border border-white/15 bg-white/5 pl-10 pr-4 py-2.5 text-xs text-white placeholder-neutral-500 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                    className="w-full rounded-xl border border-border-dark bg-white/5 pl-10 pr-4 py-2.5 text-xs text-white placeholder-dark-secondary/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="modal-phone" className="block text-xs font-medium text-neutral-300 mb-1">
+                <label htmlFor="modal-phone" className="block text-xs font-medium text-dark-secondary mb-1">
                   Phone / WhatsApp Number *
                 </label>
                 <div className="relative">
-                  <Phone className="absolute left-3.5 top-3 h-4 w-4 text-neutral-400" />
+                  <Phone className="absolute left-3.5 top-3 h-4 w-4 text-dark-secondary" />
                   <input
                     id="modal-phone"
                     type="tel"
@@ -199,23 +199,23 @@ export default function ConsultationModal() {
                     placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full rounded-xl border border-white/15 bg-white/5 pl-10 pr-4 py-2.5 text-xs text-white placeholder-neutral-500 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                    className="w-full rounded-xl border border-border-dark bg-white/5 pl-10 pr-4 py-2.5 text-xs text-white placeholder-dark-secondary/60 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label htmlFor="modal-city" className="block text-xs font-medium text-neutral-300 mb-1">
+                  <label htmlFor="modal-city" className="block text-xs font-medium text-dark-secondary mb-1">
                     City
                   </label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-3 h-4 w-4 text-neutral-400 pointer-events-none" />
+                    <MapPin className="absolute left-3 top-3 h-4 w-4 text-dark-secondary pointer-events-none" />
                     <select
                       id="modal-city"
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      className="w-full rounded-xl border border-white/15 bg-charcoal-light pl-9 pr-3 py-2.5 text-xs text-white focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                      className="w-full rounded-xl border border-border-dark bg-charcoal-light pl-9 pr-3 py-2.5 text-xs text-white focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                     >
                       <option value="Indore">Indore</option>
                       <option value="Ahmedabad">Ahmedabad</option>
@@ -225,14 +225,14 @@ export default function ConsultationModal() {
                 </div>
 
                 <div>
-                  <label htmlFor="modal-type" className="block text-xs font-medium text-neutral-300 mb-1">
+                  <label htmlFor="modal-type" className="block text-xs font-medium text-dark-secondary mb-1">
                     Property Type
                   </label>
                   <select
                     id="modal-type"
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full rounded-xl border border-white/15 bg-charcoal-light px-3 py-2.5 text-xs text-white focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                    className="w-full rounded-xl border border-border-dark bg-charcoal-light px-3 py-2.5 text-xs text-white focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                   >
                     <option value="Residential Interior">Residential Interior</option>
                     <option value="Luxury Villa / Bungalow">Villa / Bungalow</option>

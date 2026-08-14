@@ -56,10 +56,24 @@ export default function BeforeAfterSlider() {
   const [showHint, setShowHint] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const [containerWidth, setContainerWidth] = useState<number>(0);
+
   useEffect(() => {
     setMounted(true);
     const timer = setTimeout(() => setShowHint(false), 2000);
-    return () => clearTimeout(timer);
+
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.clientWidth);
+      }
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", updateWidth);
+    };
   }, []);
 
   const handleMove = (clientX: number) => {
@@ -157,7 +171,10 @@ export default function BeforeAfterSlider() {
               }`}
               style={{ width: `${sliderPosition}%` }}
             >
-              <div className="relative h-full w-full min-w-[320px] sm:min-w-[600px] lg:min-w-[1000px]">
+              <div
+                className="relative h-full"
+                style={{ width: containerWidth ? `${containerWidth}px` : "100%" }}
+              >
                 <Image
                   src={activeItem.before3d}
                   alt="3D Render Concept"
