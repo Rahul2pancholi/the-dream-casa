@@ -48,7 +48,7 @@ export default function BrandLogo({ variant = "dark", className = "" }: BrandLog
           className="text-[9px] sm:text-[10px] font-semibold tracking-[0.25em] uppercase mt-0.5 leading-none"
           style={{ color: goldColor }}
         >
-          INTERIOR STUDIO &bull; INDORE
+          INTERIOR DESIGN STUDIO
         </span>
       </div>
     </Link>
