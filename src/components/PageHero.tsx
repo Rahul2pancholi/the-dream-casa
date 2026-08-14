@@ -12,7 +12,7 @@ interface PageHeroProps {
 
 export default function PageHero({ eyebrow, title, description, meta, image, imageAlt }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-cream-light px-6 py-20 sm:py-24 lg:py-28 sm:px-10 lg:px-16">
+    <section className="relative overflow-hidden bg-cream-light px-6 py-10 sm:py-14 lg:py-16 sm:px-10 lg:px-16 border-b border-ink/10">
       {image && (
         <div className="absolute inset-0">
           <Image

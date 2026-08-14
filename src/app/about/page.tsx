@@ -64,7 +64,7 @@ export default function AboutPage() {
         />
 
         {/* Founder Spotlight & Story */}
-        <section className="bg-cream-light py-20 sm:py-24 px-6 sm:px-10 lg:px-16">
+        <section className="bg-cream-light py-12 sm:py-16 px-6 sm:px-10 lg:px-16 border-b border-ink/10">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
               <div className="relative lg:col-span-5">
@@ -128,7 +128,7 @@ export default function AboutPage() {
         </section>
 
         {/* Our Values */}
-        <section className="bg-cream-light py-20 sm:py-24 px-6 sm:px-10 lg:px-16">
+        <section className="bg-cream-light py-12 sm:py-16 px-6 sm:px-10 lg:px-16 border-b border-ink/10">
           <div className="mx-auto max-w-7xl">
             <div className="flex flex-col items-center gap-3 text-center">
               <div className="flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-gold uppercase">
