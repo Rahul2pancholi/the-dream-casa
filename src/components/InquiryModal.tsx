@@ -144,18 +144,18 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
             </div>
 
             {/* Quick WhatsApp Bar inside Modal */}
-            <div className="my-4 flex items-center justify-between gap-3 rounded-xl border border-[#a46f47]/20 bg-[#a46f47]/10 p-3">
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#a46f47]">
-                <MessageSquare className="h-4 w-4 shrink-0" />
-                <span>Prefer instant chat over form?</span>
+            <div className="my-4 flex items-center justify-between gap-3 rounded-xl border border-[#25D366]/30 bg-[#25D366]/10 p-3.5">
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-[#0F1A24]">
+                <MessageSquare className="h-5 w-5 text-[#25D366] shrink-0" />
+                <span>Prefer instant chat on WhatsApp?</span>
               </div>
               <a
                 href={`https://wa.me/917490932661?text=${encodeURIComponent("Hi Poorti, I want to book an interior design consultation.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600 px-3.5 py-1.5 text-[11px] font-semibold text-white hover:bg-emerald-700 transition-all shadow-xs shrink-0"
+                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-xs font-bold text-white hover:bg-[#1ebd59] transition-all shadow-sm shrink-0"
               >
-                WhatsApp Now →
+                Chat on WhatsApp →
               </a>
             </div>
 
