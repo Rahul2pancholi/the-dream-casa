@@ -141,7 +141,7 @@ export default function ProjectsCarouselCollage({ onOpenInquiryModal }: Projects
               <span className="h-px w-8 bg-[#a46f47]" />
               INTERACTIVE SHOWCASE CAROUSEL
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#0F1A24] leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#152741] leading-tight">
               Explore Our Real Sites &amp; 3D Walkthroughs
             </h2>
             <p className="text-xs sm:text-sm text-[#6B7280] mt-1.5 max-w-xl">
@@ -155,7 +155,7 @@ export default function ProjectsCarouselCollage({ onOpenInquiryModal }: Projects
               type="button"
               onClick={() => handleScroll("left")}
               aria-label="Scroll left"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E8E2D8] bg-white text-[#0F1A24] shadow-xs hover:border-[#a46f47] hover:bg-[#a46f47] hover:text-white transition-all"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E8E2D8] bg-white text-[#152741] shadow-xs hover:border-[#a46f47] hover:bg-[#a46f47] hover:text-white transition-all"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
@@ -163,7 +163,7 @@ export default function ProjectsCarouselCollage({ onOpenInquiryModal }: Projects
               type="button"
               onClick={() => handleScroll("right")}
               aria-label="Scroll right"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E8E2D8] bg-white text-[#0F1A24] shadow-xs hover:border-[#a46f47] hover:bg-[#a46f47] hover:text-white transition-all"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E8E2D8] bg-white text-[#152741] shadow-xs hover:border-[#a46f47] hover:bg-[#a46f47] hover:text-white transition-all"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
@@ -185,8 +185,8 @@ export default function ProjectsCarouselCollage({ onOpenInquiryModal }: Projects
               onClick={() => setActiveCategory(tab.id)}
               className={`rounded-full px-5 py-2 text-xs font-semibold tracking-wider uppercase whitespace-nowrap transition-all ${
                 activeCategory === tab.id
-                  ? "bg-[#0F1A24] text-white shadow-md"
-                  : "bg-white border border-[#E8E2D8] text-[#4B5563] hover:border-[#a46f47] hover:text-[#0F1A24]"
+                  ? "bg-[#152741] text-white shadow-md"
+                  : "bg-white border border-[#E8E2D8] text-[#4B5563] hover:border-[#a46f47] hover:text-[#152741]"
               }`}
             >
               {tab.label}
@@ -248,7 +248,7 @@ export default function ProjectsCarouselCollage({ onOpenInquiryModal }: Projects
               {/* Hover Eye Icon for Photos */}
               {item.type === "photo" && (
                 <div className="absolute top-4 right-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-[#0F1A24] shadow-md backdrop-blur-xs">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-[#152741] shadow-md backdrop-blur-xs">
                     <Eye className="h-4 w-4" />
                   </div>
                 </div>
@@ -271,7 +271,7 @@ export default function ProjectsCarouselCollage({ onOpenInquiryModal }: Projects
       {/* Lightbox / Video Preview Modal */}
       {selectedItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 sm:p-6 backdrop-blur-md animate-fade-in">
-          <div className="relative w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-[#0F1A24] shadow-2xl text-white">
+          <div className="relative w-full max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-[#152741] shadow-2xl text-white">
             {/* Modal Header */}
             <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
               <div className="flex items-center gap-2">
@@ -302,7 +302,7 @@ export default function ProjectsCarouselCollage({ onOpenInquiryModal }: Projects
             </div>
 
             {/* Modal Footer CTA */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 p-6 bg-[#0F1A24]">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 p-6 bg-[#152741]">
               <div>
                 <h3 className="font-serif text-xl font-normal text-white">
                   {selectedItem.title}

@@ -133,7 +133,7 @@ export default function ContactPage() {
                 <span className="h-px w-6 bg-[#a46f47]" />
                 CONTACT THE DREAM CASA
               </div>
-              <h1 className="font-serif text-3xl sm:text-4xl text-[#0F1A24] font-normal leading-tight">
+              <h1 className="font-serif text-3xl sm:text-4xl text-[#152741] font-normal leading-tight">
                 Let's Create Your Dream Space
               </h1>
               <p className="text-xs sm:text-sm text-[#6B7280]">
@@ -173,7 +173,7 @@ export default function ContactPage() {
                       <span className="text-[10px] font-semibold tracking-widest text-[#a46f47] uppercase">
                         Direct Inquiry Form
                       </span>
-                      <h2 className="font-serif text-xl sm:text-2xl text-[#0F1A24] font-normal">
+                      <h2 className="font-serif text-xl sm:text-2xl text-[#152741] font-normal">
                         Book a Design Consultation
                       </h2>
                     </div>
@@ -217,7 +217,7 @@ export default function ContactPage() {
                       {/* Name & Phone in 1 Row */}
                       <div className="grid gap-4 sm:grid-cols-2">
                         <div className="flex flex-col gap-1">
-                          <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                          <label className="text-[11px] font-semibold text-[#152741] uppercase tracking-wider">
                             Full Name *
                           </label>
                           <input
@@ -226,12 +226,12 @@ export default function ContactPage() {
                             placeholder="Your Name"
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#152741] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                           />
                         </div>
 
                         <div className="flex flex-col gap-1">
-                          <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                          <label className="text-[11px] font-semibold text-[#152741] uppercase tracking-wider">
                             Phone Number (+91) *
                           </label>
                           <input
@@ -240,7 +240,7 @@ export default function ContactPage() {
                             placeholder="Mobile Number"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#152741] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                           />
                         </div>
                       </div>
@@ -248,7 +248,7 @@ export default function ContactPage() {
                       {/* Location & Project Type in 1 Row */}
                       <div className="grid gap-4 sm:grid-cols-2">
                         <div className="flex flex-col gap-1">
-                          <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                          <label className="text-[11px] font-semibold text-[#152741] uppercase tracking-wider">
                             City / Location
                           </label>
                           <input
@@ -256,18 +256,18 @@ export default function ContactPage() {
                             placeholder="e.g. Indore / Ahmedabad"
                             value={formData.location}
                             onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#152741] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                           />
                         </div>
 
                         <div className="flex flex-col gap-1">
-                          <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                          <label className="text-[11px] font-semibold text-[#152741] uppercase tracking-wider">
                             Project Type
                           </label>
                           <select
                             value={formData.projectType}
                             onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#0F1A24] rounded-lg focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#152741] rounded-lg focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                           >
                             <option value="Residential Interior">Residential Interior (Apartment / Villa)</option>
                             <option value="Commercial Interior">Commercial Office / Workspace</option>
@@ -280,13 +280,13 @@ export default function ContactPage() {
                       {/* Estimated Budget & Email in 1 Row */}
                       <div className="grid gap-4 sm:grid-cols-2">
                         <div className="flex flex-col gap-1">
-                          <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                          <label className="text-[11px] font-semibold text-[#152741] uppercase tracking-wider">
                             Estimated Budget
                           </label>
                           <select
                             value={formData.budget}
                             onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#0F1A24] rounded-lg focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#152741] rounded-lg focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                           >
                             <option value="5 - 15 Lakhs">₹5 Lakhs - ₹15 Lakhs</option>
                             <option value="15 - 30 Lakhs">₹15 Lakhs - ₹30 Lakhs</option>
@@ -296,7 +296,7 @@ export default function ContactPage() {
                         </div>
 
                         <div className="flex flex-col gap-1">
-                          <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                          <label className="text-[11px] font-semibold text-[#152741] uppercase tracking-wider">
                             Email (Optional)
                           </label>
                           <input
@@ -304,14 +304,14 @@ export default function ContactPage() {
                             placeholder="name@domain.com"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                            className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2.5 text-xs sm:text-sm text-[#152741] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                           />
                         </div>
                       </div>
 
                       {/* Short Requirements Note */}
                       <div className="flex flex-col gap-1">
-                        <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                        <label className="text-[11px] font-semibold text-[#152741] uppercase tracking-wider">
                           Notes / Requirements (Optional)
                         </label>
                         <textarea
@@ -319,7 +319,7 @@ export default function ContactPage() {
                           placeholder="Tell us briefly about your space (bhk count, carpet area, style preferences)..."
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                          className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2 text-xs sm:text-sm text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                          className="border border-[#E8E2D8] bg-[#FAF7F2] px-3.5 py-2 text-xs sm:text-sm text-[#152741] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                         />
                       </div>
 

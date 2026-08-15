@@ -103,7 +103,7 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
           </div>
 
           {/* Main Title */}
-          <h2 className="font-serif text-2xl font-normal leading-tight text-[#0F1A24] sm:text-3xl lg:text-4xl">
+          <h2 className="font-serif text-2xl font-normal leading-tight text-[#152741] sm:text-3xl lg:text-4xl">
             From Vision to Reality
           </h2>
 
@@ -132,8 +132,8 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
                   key={number}
                   onClick={() => setActivePhaseIndex(idx)}
                   className={`group relative flex items-center justify-between p-4 sm:p-5 text-left transition-all duration-300 ${isActive
-                      ? "bg-[#0F1A24] text-white shadow-2xl rounded-[18px] z-20 scale-[1.02] border border-[#0F1A24]"
-                      : "bg-transparent text-[#0F1A24] hover:bg-white/50"
+                      ? "bg-[#152741] text-white shadow-2xl rounded-[18px] z-20 scale-[1.02] border border-[#152741]"
+                      : "bg-transparent text-[#152741] hover:bg-white/50"
                     }`}
                 >
                   <div className="flex items-center gap-4 sm:gap-5">
@@ -151,7 +151,7 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
                     {/* Title & Subtitle */}
                     <div>
                       <h3
-                        className={`font-serif text-lg sm:text-xl font-normal leading-tight transition-colors ${isActive ? "text-white" : "text-[#0F1A24]"
+                        className={`font-serif text-lg sm:text-xl font-normal leading-tight transition-colors ${isActive ? "text-white" : "text-[#152741]"
                           }`}
                       >
                         {title}
@@ -197,7 +197,7 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
                 </div>
 
                 {/* Main Stage Header */}
-                <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#0F1A24] leading-tight mt-1">
+                <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#152741] leading-tight mt-1">
                   {activePhase.mainHeader}
                 </h3>
 
@@ -242,7 +242,7 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
                       <FileText className="h-4 w-4 stroke-[1.5]" />
                     </div>
                     <div>
-                      <p className="font-serif text-xs sm:text-sm font-medium text-[#0F1A24] leading-snug">
+                      <p className="font-serif text-xs sm:text-sm font-medium text-[#152741] leading-snug">
                         {activePhase.output}
                       </p>
                     </div>
@@ -273,7 +273,7 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
               <Sparkles className="h-5 w-5" />
             </div>
             <div>
-              <h4 className="font-serif text-base sm:text-lg font-medium text-[#0F1A24] leading-snug">
+              <h4 className="font-serif text-base sm:text-lg font-medium text-[#152741] leading-snug">
                 Ready to transform your home?
               </h4>
               <p className="text-xs text-[#6B7280]">

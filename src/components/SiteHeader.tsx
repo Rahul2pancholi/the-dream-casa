@@ -75,7 +75,7 @@ export default function SiteHeader({ onOpenInquiryModal }: SiteHeaderProps) {
               <button
                 type="button"
                 onClick={onOpenInquiryModal}
-                className="inline-flex items-center gap-1.5 border border-ink bg-[#0F1A24] text-white px-5 py-2.5 text-xs font-semibold tracking-widest uppercase transition-all hover:bg-[#a46f47] hover:border-[#a46f47] whitespace-nowrap shadow-sm"
+                className="inline-flex items-center gap-1.5 border border-ink bg-[#152741] text-white px-5 py-2.5 text-xs font-semibold tracking-widest uppercase transition-all hover:bg-[#a46f47] hover:border-[#a46f47] whitespace-nowrap shadow-sm"
               >
                 Book Consultation <ArrowRight className="h-3.5 w-3.5 text-[#a46f47]" />
               </button>
@@ -139,7 +139,7 @@ export default function SiteHeader({ onOpenInquiryModal }: SiteHeaderProps) {
                   setMobileMenuOpen(false);
                   onOpenInquiryModal();
                 }}
-                className="flex w-full items-center justify-center gap-2 border border-ink bg-[#0F1A24] py-3.5 text-center text-xs font-bold tracking-widest text-white uppercase hover:bg-[#a46f47]"
+                className="flex w-full items-center justify-center gap-2 border border-ink bg-[#152741] py-3.5 text-center text-xs font-bold tracking-widest text-white uppercase hover:bg-[#a46f47]"
               >
                 Book Consultation <ArrowRight className="h-4 w-4" />
               </button>

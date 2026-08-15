@@ -90,7 +90,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-[#E8E2D8] bg-white text-[#0F1A24] transition-colors hover:bg-[#a46f47] hover:text-white"
+          className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-[#E8E2D8] bg-white text-[#152741] transition-colors hover:bg-[#a46f47] hover:text-white"
         >
           <X className="h-5 w-5" />
         </button>
@@ -100,11 +100,11 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg">
               <CheckCircle2 className="h-8 w-8" />
             </div>
-            <h3 className="font-serif text-2xl font-normal text-[#0F1A24]">
+            <h3 className="font-serif text-2xl font-normal text-[#152741]">
               Inquiry Sent Successfully!
             </h3>
             <p className="text-xs text-[#6B7280] leading-relaxed max-w-sm">
-              Thank you <span className="font-bold text-[#0F1A24]">{formData.name}</span>. Founder Poorti Jain &amp; team will contact you on <span className="font-bold text-[#0F1A24]">{formData.phone}</span> shortly.
+              Thank you <span className="font-bold text-[#152741]">{formData.name}</span>. Founder Poorti Jain &amp; team will contact you on <span className="font-bold text-[#152741]">{formData.phone}</span> shortly.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full mt-2">
@@ -122,7 +122,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
                   setSubmitted(false);
                   onClose();
                 }}
-                className="inline-flex items-center justify-center rounded-full border border-[#E8E2D8] bg-white px-5 py-3 text-xs font-semibold text-[#0F1A24] uppercase tracking-wider hover:bg-[#E8E2D8] transition-all w-full sm:w-auto"
+                className="inline-flex items-center justify-center rounded-full border border-[#E8E2D8] bg-white px-5 py-3 text-xs font-semibold text-[#152741] uppercase tracking-wider hover:bg-[#E8E2D8] transition-all w-full sm:w-auto"
               >
                 Close
               </button>
@@ -135,7 +135,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
               <span className="text-[10px] font-semibold tracking-widest text-[#a46f47] uppercase">
                 ⚡ INSTANT CONSULTATION
               </span>
-              <h2 className="font-serif text-2xl sm:text-3xl font-normal text-[#0F1A24] leading-tight">
+              <h2 className="font-serif text-2xl sm:text-3xl font-normal text-[#152741] leading-tight">
                 Book Design Consultation
               </h2>
               <p className="text-xs text-[#6B7280] mt-0.5">
@@ -145,7 +145,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
 
             {/* Quick WhatsApp Bar inside Modal */}
             <div className="my-4 flex items-center justify-between gap-3 rounded-xl border border-[#25D366]/30 bg-[#25D366]/10 p-3.5">
-              <div className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-[#0F1A24]">
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-[#152741]">
                 <MessageSquare className="h-5 w-5 text-[#25D366] shrink-0" />
                 <span>Prefer instant chat on WhatsApp?</span>
               </div>
@@ -164,7 +164,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
               {/* Full Name & Phone */}
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="flex flex-col gap-1">
-                  <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                  <label className="text-[11px] font-semibold text-[#152741] uppercase tracking-wider">
                     Full Name *
                   </label>
                   <input
@@ -173,12 +173,12 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="border border-[#E8E2D8] bg-white px-3.5 py-2.5 text-xs text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                    className="border border-[#E8E2D8] bg-white px-3.5 py-2.5 text-xs text-[#152741] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                   />
                 </div>
 
                 <div className="flex flex-col gap-1">
-                  <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                  <label className="text-[11px] font-semibold text-[#152741] uppercase tracking-wider">
                     Phone Number (+91) *
                   </label>
                   <input
@@ -187,7 +187,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
                     placeholder="Mobile Number"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="border border-[#E8E2D8] bg-white px-3.5 py-2.5 text-xs text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                    className="border border-[#E8E2D8] bg-white px-3.5 py-2.5 text-xs text-[#152741] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                   />
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
               {/* City & Project Type */}
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="flex flex-col gap-1">
-                  <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                  <label className="text-[11px] font-semibold text-[#152741] uppercase tracking-wider">
                     City / Location
                   </label>
                   <input
@@ -203,18 +203,18 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
                     placeholder="e.g. Indore / Ahmedabad"
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                    className="border border-[#E8E2D8] bg-white px-3.5 py-2.5 text-xs text-[#0F1A24] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                    className="border border-[#E8E2D8] bg-white px-3.5 py-2.5 text-xs text-[#152741] rounded-lg placeholder:text-gray-400 focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                   />
                 </div>
 
                 <div className="flex flex-col gap-1">
-                  <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                  <label className="text-[11px] font-semibold text-[#152741] uppercase tracking-wider">
                     Project Type
                   </label>
                   <select
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="border border-[#E8E2D8] bg-white px-3.5 py-2.5 text-xs text-[#0F1A24] rounded-lg focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                    className="border border-[#E8E2D8] bg-white px-3.5 py-2.5 text-xs text-[#152741] rounded-lg focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                   >
                     <option value="Residential Interior">Residential (Apartment / Villa)</option>
                     <option value="Commercial Interior">Commercial Office</option>
@@ -226,13 +226,13 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
 
               {/* Budget */}
               <div className="flex flex-col gap-1">
-                <label className="text-[11px] font-semibold text-[#0F1A24] uppercase tracking-wider">
+                <label className="text-[11px] font-semibold text-[#152741] uppercase tracking-wider">
                   Estimated Budget
                 </label>
                 <select
                   value={formData.budget}
                   onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                  className="border border-[#E8E2D8] bg-white px-3.5 py-2.5 text-xs text-[#0F1A24] rounded-lg focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
+                  className="border border-[#E8E2D8] bg-white px-3.5 py-2.5 text-xs text-[#152741] rounded-lg focus:border-[#a46f47] focus:outline-none focus:ring-1 focus:ring-[#a46f47]"
                 >
                   <option value="5 - 15 Lakhs">₹5 Lakhs - ₹15 Lakhs</option>
                   <option value="15 - 30 Lakhs">₹15 Lakhs - ₹30 Lakhs</option>

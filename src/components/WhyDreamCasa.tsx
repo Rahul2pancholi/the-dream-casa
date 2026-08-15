@@ -45,7 +45,7 @@ export default function WhyDreamCasa() {
           </div>
 
           {/* Main Title */}
-          <h2 className="font-serif text-3xl font-normal leading-tight text-[#0F1A24] sm:text-4xl lg:text-5xl">
+          <h2 className="font-serif text-3xl font-normal leading-tight text-[#152741] sm:text-4xl lg:text-5xl">
             Thoughtful by Design. Delivered with Precision.
           </h2>
 
@@ -90,7 +90,7 @@ export default function WhyDreamCasa() {
               >
                 {/* Text Content */}
                 <div>
-                  <h3 className="font-serif text-lg sm:text-xl font-normal text-[#0F1A24]">
+                  <h3 className="font-serif text-lg sm:text-xl font-normal text-[#152741]">
                     {title}
                   </h3>
                   <p className="mt-1 text-[10px] sm:text-[11px] font-semibold tracking-widest text-[#a46f47] uppercase">

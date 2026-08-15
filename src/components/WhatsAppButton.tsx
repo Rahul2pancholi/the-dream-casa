@@ -4,7 +4,7 @@ export default function WhatsAppButton() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 print:hidden">
       {/* Sleek Hover Tooltip Label */}
-      <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-[#0F1A24] px-3.5 py-1.5 text-xs font-semibold text-white shadow-lg border border-[#25D366]/30 backdrop-blur-md animate-fade-in">
+      <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-[#152741] px-3.5 py-1.5 text-xs font-semibold text-white shadow-lg border border-[#25D366]/30 backdrop-blur-md animate-fade-in">
         <span className="h-2 w-2 rounded-full bg-[#25D366] animate-pulse" />
         Need Quick Help? Chat on WhatsApp
       </span>
