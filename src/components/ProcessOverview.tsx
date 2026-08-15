@@ -91,57 +91,39 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
   const activePhase = phases[activePhaseIndex];
 
   return (
-    <section className="relative bg-[#FAF7F2] py-10 sm:py-16 px-4 sm:px-10 lg:px-16 text-[#1C2630] border-y border-[#E8E2D8] overflow-hidden">
+    <section className="relative bg-[#FAF7F2] py-12 sm:py-16 px-6 sm:px-10 lg:px-16 text-[#1C2630] border-y border-[#E8E2D8] overflow-hidden">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="flex max-w-3xl flex-col items-center gap-1 text-center mx-auto mb-6 sm:mb-10">
+        <div className="flex max-w-3xl flex-col items-center gap-1.5 text-center mx-auto mb-8 sm:mb-10">
+          {/* Top Flourish Label */}
           <div className="flex items-center justify-center gap-3 text-[11px] font-semibold tracking-[0.25em] text-[#a46f47] uppercase">
-            <span className="h-px w-6 sm:w-8 bg-[#a46f47]/40" />
+            <span className="h-px w-8 bg-[#a46f47]/40" />
             OUR METHODOLOGY
-            <span className="h-px w-6 sm:w-8 bg-[#a46f47]/40" />
+            <span className="h-px w-8 bg-[#a46f47]/40" />
           </div>
 
+          {/* Main Title */}
           <h2 className="font-serif text-2xl font-normal leading-tight text-[#0F1A24] sm:text-3xl lg:text-4xl">
             From Vision to Reality
           </h2>
 
+          {/* Diamond Accent Divider */}
           <div className="flex items-center justify-center gap-3 text-[#a46f47]/50 my-0.5">
-            <span className="h-px w-8 bg-[#a46f47]/30" />
+            <span className="h-px w-10 bg-[#a46f47]/30" />
             <span className="text-[10px] font-serif rotate-45 border border-[#a46f47]/50 h-1.5 w-1.5 block" />
-            <span className="h-px w-8 bg-[#a46f47]/30" />
+            <span className="h-px w-10 bg-[#a46f47]/30" />
           </div>
 
-          <p className="text-xs sm:text-sm leading-relaxed text-[#6B7280] max-w-xl mx-auto px-2">
-            A considered 5-stage process, from the first conversation to final key handover.
+          {/* Subtitle */}
+          <p className="text-xs sm:text-sm leading-relaxed text-[#6B7280] max-w-xl mx-auto">
+            A considered process, from the first conversation to the final handover.
           </p>
         </div>
 
-        {/* MOBILE VIEW NAVIGATION (Horizontal Scrollable Pill Bar on Mobile) */}
-        <div className="flex lg:hidden items-center gap-2 overflow-x-auto pb-3 mb-4 no-scrollbar">
-          {phases.map(({ number, title }, idx) => {
-            const isActive = idx === activePhaseIndex;
-            return (
-              <button
-                key={number}
-                type="button"
-                onClick={() => setActivePhaseIndex(idx)}
-                className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider shrink-0 transition-all ${
-                  isActive
-                    ? "bg-[#0F1A24] text-white shadow-md border border-[#0F1A24]"
-                    : "bg-white text-[#4B5563] border border-[#E8E2D8] hover:border-[#a46f47]"
-                }`}
-              >
-                <span className="text-[#a46f47] font-serif">{number}</span>
-                <span>{title}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* 2-Column Split Grid for Desktop / Full Mobile Detail View */}
+        {/* 2-Column Split Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
-          {/* DESKTOP LEFT COLUMN NAVIGATION LIST */}
-          <div className="hidden lg:flex lg:col-span-4 flex-col rounded-[24px] border border-[#E8E2D8] bg-[#FAF7F2] p-1.5 shadow-sm divide-y divide-[#E8E2D8]/80 relative z-10">
+          {/* Left Column Navigation List */}
+          <div className="lg:col-span-4 flex flex-col rounded-[24px] border border-[#E8E2D8] bg-[#FAF7F2] p-1.5 shadow-sm divide-y divide-[#E8E2D8]/80 relative z-10">
             {phases.map(({ number, title, subtitle }, idx) => {
               const isActive = idx === activePhaseIndex;
 
@@ -149,28 +131,28 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
                 <button
                   key={number}
                   onClick={() => setActivePhaseIndex(idx)}
-                  className={`group relative flex items-center justify-between p-4 sm:p-5 text-left transition-all duration-300 ${
-                    isActive
+                  className={`group relative flex items-center justify-between p-4 sm:p-5 text-left transition-all duration-300 ${isActive
                       ? "bg-[#0F1A24] text-white shadow-2xl rounded-[18px] z-20 scale-[1.02] border border-[#0F1A24]"
                       : "bg-transparent text-[#0F1A24] hover:bg-white/50"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-4 sm:gap-5">
+                    {/* Number */}
                     <span className="font-serif text-3xl sm:text-4xl font-normal text-[#a46f47] shrink-0">
                       {number}
                     </span>
 
+                    {/* Vertical Hairline Divider */}
                     <div
-                      className={`h-9 w-px shrink-0 transition-colors ${
-                        isActive ? "bg-[#a46f47]/50" : "bg-[#a46f47]/30"
-                      }`}
+                      className={`h-9 w-px shrink-0 transition-colors ${isActive ? "bg-[#a46f47]/50" : "bg-[#a46f47]/30"
+                        }`}
                     />
 
+                    {/* Title & Subtitle */}
                     <div>
                       <h3
-                        className={`font-serif text-lg sm:text-xl font-normal leading-tight transition-colors ${
-                          isActive ? "text-white" : "text-[#0F1A24]"
-                        }`}
+                        className={`font-serif text-lg sm:text-xl font-normal leading-tight transition-colors ${isActive ? "text-white" : "text-[#0F1A24]"
+                          }`}
                       >
                         {title}
                       </h3>
@@ -180,27 +162,27 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
                     </div>
                   </div>
 
+                  {/* Right Arrow */}
                   <ArrowRight
-                    className={`h-4.5 w-4.5 shrink-0 transition-transform duration-300 ${
-                      isActive
+                    className={`h-4.5 w-4.5 shrink-0 transition-transform duration-300 ${isActive
                         ? "text-[#a46f47] translate-x-1"
                         : "text-[#9CA3AF] group-hover:translate-x-1 group-hover:text-[#a46f47]"
-                    }`}
+                      }`}
                   />
                 </button>
               );
             })}
           </div>
 
-          {/* STAGE DETAIL SHOWCASE CARD (Responsive for Mobile & Desktop) */}
-          <div className="lg:col-span-8 flex flex-col justify-between rounded-2xl border border-[#E8E2D8] bg-white shadow-sm overflow-hidden min-h-[360px] sm:min-h-[380px]">
+          {/* Right Column Stage Detail Showcase Card */}
+          <div className="lg:col-span-8 flex flex-col justify-between rounded-2xl border border-[#E8E2D8] bg-white shadow-sm overflow-hidden min-h-[380px]">
             {/* Top Details Area */}
             <div
               key={activePhase.id}
-              className="relative p-4 sm:p-7 z-10 flex-1 flex flex-col justify-between transition-all duration-300 animate-in fade-in slide-in-from-bottom-1"
+              className="relative p-5 sm:p-7 z-10 flex-1 flex flex-col justify-between transition-all duration-500 animate-in fade-in slide-in-from-bottom-2 duration-300"
             >
-              {/* Watermark Number */}
-              <span className="absolute right-4 top-1 font-serif text-6xl sm:text-8xl font-light text-[#a46f47]/10 select-none pointer-events-none">
+              {/* Giant Background Watermark Number */}
+              <span className="absolute right-6 top-2 font-serif text-7xl sm:text-8xl font-light text-[#a46f47]/12 select-none pointer-events-none transition-transform duration-700 hover:scale-105">
                 {activePhase.number}
               </span>
 
@@ -211,15 +193,16 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
                     STAGE {activePhase.number}
                   </span>
                   <span className="h-1 w-1 rounded-full bg-[#a46f47]" />
-                  <span className="text-[10px] font-medium text-[#6B7280]">Methodology Phase</span>
+                  <span className="text-[10px] font-medium text-[#6B7280]">Phase Overview</span>
                 </div>
 
                 {/* Main Stage Header */}
-                <h3 className="font-serif text-lg sm:text-2xl font-normal text-[#0F1A24] leading-tight mt-1">
+                <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#0F1A24] leading-tight mt-1">
                   {activePhase.mainHeader}
                 </h3>
 
-                <div className="h-0.5 w-10 sm:w-12 bg-[#a46f47] mt-1.5 mb-2.5" />
+                {/* Animated Expanding Short Gold Underline */}
+                <div className="h-0.5 w-12 bg-[#a46f47] mt-2 mb-2.5 transition-all duration-500 origin-left" />
 
                 {/* Description */}
                 <p className="text-xs sm:text-sm leading-relaxed text-[#4B5563] max-w-2xl">
@@ -228,22 +211,22 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
               </div>
 
               {/* Grid with WHAT WE DO & PRIMARY OUTPUT */}
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 mt-4 pt-3.5 border-t border-[#E8E2D8] items-start">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mt-5 pt-4 border-t border-[#E8E2D8] items-start">
                 {/* Left: WHAT WE DO */}
                 <div className="md:col-span-7">
-                  <h4 className="text-[10px] font-semibold tracking-widest text-[#a46f47] uppercase mb-2">
+                  <h4 className="text-[10px] font-semibold tracking-widest text-[#a46f47] uppercase mb-2.5">
                     WHAT WE DO
                   </h4>
-                  <div className="flex flex-col gap-1.5 sm:gap-2">
+                  <div className="flex flex-col gap-2">
                     {activePhase.deliverables.map(({ text, Icon }, i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-2.5 text-xs text-[#374151]"
+                        className="flex items-center gap-2.5 text-xs text-[#374151] group/item transition-transform duration-300 hover:translate-x-1"
                       >
-                        <div className="flex h-6.5 w-6.5 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-md border border-[#E8E2D8] bg-[#FAF7F2] text-[#a46f47] shadow-xs">
+                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#E8E2D8] bg-[#FAF7F2] text-[#a46f47] transition-colors group-hover/item:border-[#a46f47] group-hover/item:bg-[#a46f47] group-hover/item:text-white shadow-xs">
                           <Icon className="h-3.5 w-3.5 stroke-[1.5]" />
                         </div>
-                        <span className="leading-snug text-xs sm:text-sm">{text}</span>
+                        <span className="leading-snug">{text}</span>
                       </div>
                     ))}
                   </div>
@@ -251,11 +234,11 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
 
                 {/* Right: PRIMARY OUTPUT */}
                 <div className="md:col-span-5 border-t md:border-t-0 md:border-l border-[#E8E2D8] pt-3 md:pt-0 md:pl-5">
-                  <h4 className="text-[10px] font-semibold tracking-widest text-[#a46f47] uppercase mb-2">
+                  <h4 className="text-[10px] font-semibold tracking-widest text-[#a46f47] uppercase mb-2.5">
                     PRIMARY OUTPUT
                   </h4>
-                  <div className="flex items-start gap-2.5">
-                    <div className="flex h-7.5 w-7.5 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-md border border-[#a46f47]/30 bg-[#a46f47]/10 text-[#a46f47] shadow-xs">
+                  <div className="flex items-start gap-2.5 group/out transition-transform duration-300 hover:translate-x-0.5">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-[#a46f47]/30 bg-[#a46f47]/10 text-[#a46f47] shadow-xs">
                       <FileText className="h-4 w-4 stroke-[1.5]" />
                     </div>
                     <div>
@@ -268,29 +251,29 @@ export default function ProcessOverview({ onOpenInquiryModal }: ProcessOverviewP
               </div>
             </div>
 
-            {/* Bottom Photo */}
+            {/* Bottom Full-Width Architectural Rendering Photograph */}
             <div
               key={`img-${activePhase.id}`}
-              className="relative w-full h-36 sm:h-52 overflow-hidden border-t border-[#E8E2D8]"
+              className="relative w-full h-44 sm:h-52 overflow-hidden border-t border-[#E8E2D8] group/img"
             >
               <Image
                 src={activePhase.image}
                 alt={activePhase.title}
                 fill
-                className="object-cover"
+                className="object-cover transition-all duration-700 ease-out group-hover/img:scale-105"
               />
             </div>
           </div>
         </div>
 
         {/* Section Bottom CTA Bar */}
-        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-[#E8E2D8] bg-white p-4 sm:p-5 shadow-sm">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-[#E8E2D8] bg-white p-4 sm:p-5 shadow-sm">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-[#a46f47]/15 text-[#a46f47]">
-              <Sparkles className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#a46f47]/15 text-[#a46f47]">
+              <Sparkles className="h-5 w-5" />
             </div>
             <div>
-              <h4 className="font-serif text-sm sm:text-lg font-medium text-[#0F1A24] leading-snug">
+              <h4 className="font-serif text-base sm:text-lg font-medium text-[#0F1A24] leading-snug">
                 Ready to transform your home?
               </h4>
               <p className="text-xs text-[#6B7280]">

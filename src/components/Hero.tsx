@@ -49,9 +49,8 @@ export default function Hero({ onOpenInquiryModal }: HeroProps) {
             fill
             priority={index === 0}
             sizes="(min-width: 1024px) 62vw, 100vw"
-            className={`object-cover object-center transition-all duration-1000 ${
-              index === active ? "opacity-100 scale-100" : "opacity-0 scale-105"
-            }`}
+            className={`object-cover object-center transition-all duration-1000 ${index === active ? "opacity-100 scale-100" : "opacity-0 scale-105"
+              }`}
           />
         ))}
       </div>
@@ -88,7 +87,7 @@ export default function Hero({ onOpenInquiryModal }: HeroProps) {
 
           {/* Clean Subheading Description */}
           <p className="max-w-md text-sm leading-relaxed text-neutral-200 lg:text-muted sm:text-base">
-            Beautiful luxury home interiors, custom designed and built to perfection.
+            Bespoke interiors, thoughtfully designed and meticulously executed.
           </p>
 
           {/* Action CTAs */}
@@ -125,9 +124,8 @@ export default function Hero({ onOpenInquiryModal }: HeroProps) {
                 type="button"
                 aria-label={`Show slide ${index + 1}`}
                 onClick={() => setActive(index)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  index === active ? "w-8 bg-gold" : "w-2.5 bg-white/40 lg:bg-ink/25 hover:bg-gold"
-                }`}
+                className={`h-2.5 rounded-full transition-all duration-300 ${index === active ? "w-8 bg-gold" : "w-2.5 bg-white/40 lg:bg-ink/25 hover:bg-gold"
+                  }`}
               />
             ))}
           </div>
