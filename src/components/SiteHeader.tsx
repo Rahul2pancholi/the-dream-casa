@@ -31,12 +31,13 @@ export default function SiteHeader({ onOpenInquiryModal }: SiteHeaderProps) {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${mobileMenuOpen ? "bg-cream-light" : "bg-cream-light/95 backdrop-blur-md"
-        }`}
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        mobileMenuOpen ? "bg-cream-light" : "bg-cream-light/95 backdrop-blur-md"
+      }`}
     >
       <div className="relative w-full border-b border-ink/10 px-6 sm:px-10 lg:px-16">
         <div className="mx-auto flex max-w-7xl items-center justify-between py-3">
-          {/* Brand Logo */}
+          {/* Brand Logo (lockup-navy-gold for light header background) */}
           <BrandLogo variant="dark" />
 
           {/* Desktop Navigation */}
@@ -49,10 +50,11 @@ export default function SiteHeader({ onOpenInquiryModal }: SiteHeaderProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative py-1 text-xs font-semibold tracking-widest uppercase transition-colors hover:text-ink whitespace-nowrap after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:bg-gold after:transition-all after:duration-300 ${isActive
+                  className={`relative py-1 text-xs font-semibold tracking-widest uppercase transition-colors hover:text-ink whitespace-nowrap after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:bg-gold after:transition-all after:duration-300 ${
+                    isActive
                       ? "text-gold font-bold after:w-full"
                       : "text-nav after:w-0 hover:after:w-full"
-                    }`}
+                  }`}
                 >
                   {link.label}
                 </Link>
@@ -112,8 +114,9 @@ export default function SiteHeader({ onOpenInquiryModal }: SiteHeaderProps) {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between border-b border-ink/10 pb-3 text-sm font-semibold tracking-[0.15em] uppercase ${isActive ? "text-gold font-bold" : "text-ink/90"
-                    }`}
+                  className={`flex items-center justify-between border-b border-ink/10 pb-3 text-sm font-semibold tracking-[0.15em] uppercase ${
+                    isActive ? "text-gold font-bold" : "text-ink/90"
+                  }`}
                 >
                   <span>{link.label}</span>
                   <ArrowRight className="h-4 w-4 text-gold" />
@@ -129,13 +132,26 @@ export default function SiteHeader({ onOpenInquiryModal }: SiteHeaderProps) {
             >
               <Phone className="h-4 w-4 text-gold" /> +91 7490 932 661
             </a>
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex w-full items-center justify-center gap-2 border border-ink py-3.5 text-center text-xs font-bold tracking-widest text-ink uppercase hover:bg-ink hover:text-cream-light"
-            >
-              Enquire Now <ArrowRight className="h-4 w-4" />
-            </Link>
+            {onOpenInquiryModal ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenInquiryModal();
+                }}
+                className="flex w-full items-center justify-center gap-2 border border-ink bg-[#0F1A24] py-3.5 text-center text-xs font-bold tracking-widest text-white uppercase hover:bg-[#a46f47]"
+              >
+                Book Consultation <ArrowRight className="h-4 w-4" />
+              </button>
+            ) : (
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex w-full items-center justify-center gap-2 border border-ink py-3.5 text-center text-xs font-bold tracking-widest text-ink uppercase hover:bg-ink hover:text-cream-light"
+              >
+                Enquire Now <ArrowRight className="h-4 w-4" />
+              </Link>
+            )}
           </div>
         </div>
       )}
