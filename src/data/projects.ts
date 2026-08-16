@@ -1,5 +1,5 @@
 export type ProjectType = "3d_render" | "completed_site" | "video_walkthrough";
-export type RoomCategory = "living_kitchen" | "master_bedroom" | "present_room" | "turnkey_site" | "walkthrough";
+export type RoomCategory = "living_kitchen" | "master_bedroom" | "present_room" | "kids_room" | "turnkey_site" | "walkthrough";
 export type ServiceCategory = "residential" | "commercial" | "turnkey" | "hospitality";
 
 export interface ProjectItem {
@@ -149,55 +149,28 @@ export const projectsData: ProjectItem[] = [
     },
   },
   {
-    id: "commercial-office-suite",
-    title: "Globex Corporate Executive Office",
-    subtitle: "Ergonomic Corporate Office & Foyer",
-    category: "Commercial Interiors",
+    id: "kids-room-3d-concept",
+    title: "Playful Kids Bedroom Suite",
+    subtitle: "3D Interior Design Concept & Storage Plan",
+    category: "Residential Interiors",
     type: "3d_render",
     typeLabel: "3D Design Concept",
-    roomCategory: "living_kitchen",
-    serviceCategory: "commercial",
-    image: "/images/services/commercial-office.png",
-    gallery: ["/images/services/commercial-office.png"],
-    description:
-      "High-impact corporate office environment featuring warm marble wall paneling, brass accent strips, fluted timber woodwork, executive desk, and reception lounge designed for productivity.",
-    specs: {
-      location: "Super Corridor, Indore",
-      style: "Corporate Luxury",
-      area: "2,500 sq.ft",
-      timeline: "Design Phase",
-    },
-    scopeOfWork: [
-      "Reception & foyer design",
-      "Executive cabin interiors",
-      "Conference room",
-      "Lighting & electrical",
-      "Flooring",
-      "Branding integration",
+    roomCategory: "kids_room",
+    serviceCategory: "residential",
+    image: "/images/kids-room/kids-room-01.png",
+    gallery: [
+      "/images/kids-room/kids-room-01.png",
+      "/images/kids-room/kids-room-02.png",
+      "/images/kids-room/kids-room-03.png",
+      "/images/kids-room/kids-room-04.png",
     ],
-    challenge:
-      "Creating a corporate environment that felt premium and professional while remaining warm and welcoming for clients visiting the office.",
-    solution:
-      "Marble wall panels paired with brass accents and warm timber woodwork created a balance between corporate authority and approachable luxury.",
-  },
-  {
-    id: "hospitality-lounge-suite",
-    title: "Boutique Hotel Suite & Lounge Bar",
-    subtitle: "Luxury Hospitality & Mood Lighting",
-    category: "Hospitality Interiors",
-    type: "3d_render",
-    typeLabel: "3D Design Concept",
-    roomCategory: "master_bedroom",
-    serviceCategory: "hospitality",
-    image: "/images/services/hospitality-lounge.png",
-    gallery: ["/images/services/hospitality-lounge.png"],
     description:
-      "Captivating boutique hotel suite and lounge bar featuring statement crystal chandeliers, plush green velvet lounge sofas, and polished brass display bar cabinets.",
+      "A cheerful, functional kids' bedroom featuring a calming blue palette, built-in study and display shelving, a comfortable daybed, and soft blackout blinds for a room that grows with the child.",
     specs: {
-      location: "Vijay Nagar, Indore",
-      style: "Boutique Hospitality",
-      area: "1,600 sq.ft",
-      timeline: "Design Phase",
+      location: "Indore",
+      style: "Playful Modern",
+      area: "180 sq.ft",
+      timeline: "Design Phase Complete",
     },
   },
   {

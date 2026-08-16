@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { X, ChevronLeft, ChevronRight, MapPin, Calendar, Maximize2, Layers, Play, Film, Share2, Check } from "lucide-react";
 import { ProjectItem } from "@/data/projects";
+import ImageWatermark from "./ImageWatermark";
 
 interface LightboxProps {
   project: ProjectItem | null;
@@ -132,11 +133,13 @@ export default function ProjectLightboxModal({ project, onClose }: LightboxProps
                 src={currentImage}
                 alt={project.title}
                 fill
+                draggable={false}
                 sizes="(min-width: 1024px) 65vw, 100vw"
                 className="object-contain transition-opacity duration-300"
                 priority
               />
             )}
+            {!showVideo && <ImageWatermark />}
 
             {/* Previous Button */}
             {!showVideo && project.gallery.length > 1 && (

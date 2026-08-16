@@ -77,3 +77,10 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* Basic deterrent against casual image copying — not foolproof, but raises
+   the effort above right-click-save / drag-out for portfolio photography. */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}

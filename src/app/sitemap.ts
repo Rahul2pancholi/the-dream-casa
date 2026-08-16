@@ -20,6 +20,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/interior-designer-indore`,
+      lastModified: new Date("2026-08-17"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/interior-designer-ahmedabad`,
+      lastModified: new Date("2026-08-17"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/services`,
       lastModified: new Date("2026-08-08"),
       changeFrequency: "weekly",

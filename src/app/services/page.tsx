@@ -5,21 +5,21 @@ import PageHero from "@/components/PageHero";
 import StatsBar from "@/components/StatsBar";
 import CtaBanner from "@/components/CtaBanner";
 import SiteFooter from "@/components/SiteFooter";
-import { Home, Building2, BedDouble, CheckCircle2, ArrowRight } from "lucide-react";
+import { Home, CheckCircle2, ArrowRight } from "lucide-react";
 
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Interior Design Services & Turnkey Fit-Outs | The Dream Casa Indore",
   description:
-    "Comprehensive interior design services in Indore: Residential homes, commercial offices, modular kitchens, boutique hospitality, and 100% turnkey site execution by Poorti Jain.",
+    "Comprehensive residential interior design services in Indore: luxury homes, modular kitchens, and 100% turnkey site execution by Poorti Jain.",
   alternates: {
     canonical: "https://thedreamcasa.in/services",
   },
   openGraph: {
     title: "Interior Design Services & Turnkey Fit-Outs | The Dream Casa Indore",
     description:
-      "Comprehensive interior design services in Indore: Residential homes, commercial offices, modular kitchens, boutique hospitality, and 100% turnkey site execution by Poorti Jain.",
+      "Comprehensive residential interior design services in Indore: luxury homes, modular kitchens, and 100% turnkey site execution by Poorti Jain.",
     url: "https://thedreamcasa.in/services",
   },
 };
@@ -41,37 +41,6 @@ const fullServices = [
       "Kid's & Parents Bedroom Zoning",
       "Ambient Cove & Accent Chandelier Lighting",
       "Turnkey Site Execution & Handover",
-    ],
-  },
-  {
-    id: "commercial",
-    title: "Premium Offices",
-    tagline: "Corporate & Executive Interiors",
-    image: "/images/services/commercial-office.png",
-    Icon: Building2,
-    description:
-      "High-impact corporate office environments and executive cabins designed to boost productivity and impress clients.",
-    deliverables: [
-      "Executive Director Cabins & Workstations",
-      "Statement Reception Foyers & Branding Walls",
-      "Conference Rooms with Acoustic Paneling",
-      "Breakout Lounges & Pantry Kitchenettes",
-      "Ergonomic Task Lighting & Cable Management",
-    ],
-  },
-  {
-    id: "hospitality",
-    title: "Boutique Hospitality & Retail",
-    tagline: "Hotels, Lounges & Retail Interiors",
-    image: "/images/services/hospitality-lounge.png",
-    Icon: BedDouble,
-    description:
-      "A select portfolio of boutique hotel suites, lounge bars, and retail spaces that create memorable guest experiences.",
-    deliverables: [
-      "Boutique Guest Suite Fit-outs",
-      "Lounge Bar & Dining Counters",
-      "Custom Statement Chandelier Lighting",
-      "Durable High-Traffic Fabrics & Finishes",
     ],
   },
 ];

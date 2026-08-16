@@ -15,8 +15,8 @@ const quickLinks = [
 
 const services = [
   "Residences",
-  "Premium Offices",
-  "Boutique Hospitality",
+  "Modular Kitchens",
+  "Turnkey Execution",
 ];
 
 const socialLinks = [
@@ -135,8 +135,18 @@ export default function SiteFooter() {
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <div className="flex flex-col gap-1 text-xs">
-                  <span><strong className="text-cream-light">Indore:</strong> The View, 305, Yeshwant Niwas Rd, Nehru Park 2, MP 452003</span>
-                  <span><strong className="text-cream-light">Ahmedabad:</strong> The Dream Casa Studio, Bodakdev, SG Highway, GJ 380054</span>
+                  <span>
+                    <strong className="text-cream-light">
+                      <Link href="/interior-designer-indore" className="hover:text-gold">Indore:</Link>
+                    </strong>{" "}
+                    The View, 305, Yeshwant Niwas Rd, Nehru Park 2, MP 452003
+                  </span>
+                  <span>
+                    <strong className="text-cream-light">
+                      <Link href="/interior-designer-ahmedabad" className="hover:text-gold">Ahmedabad:</Link>
+                    </strong>{" "}
+                    The Dream Casa Studio, Bodakdev, SG Highway, GJ 380054
+                  </span>
                 </div>
               </div>
             </div>

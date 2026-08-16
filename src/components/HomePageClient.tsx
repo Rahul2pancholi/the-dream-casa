@@ -13,7 +13,6 @@ import ProcessOverview from "@/components/ProcessOverview";
 import MaterialityStrip from "@/components/MaterialityStrip";
 import StatsBar from "@/components/StatsBar";
 import FounderSection from "@/components/FounderSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import CtaBanner from "@/components/CtaBanner";
 import SiteFooter from "@/components/SiteFooter";
 import InquiryModal from "@/components/InquiryModal";
@@ -108,9 +107,6 @@ export default function HomePageClient() {
 
         {/* Founder Section */}
         <FounderSection />
-
-        {/* Testimonials */}
-        <TestimonialsSection />
 
         {/* CTA Banner with Modal Trigger */}
         <CtaBanner onOpenInquiryModal={handleOpenModal} />

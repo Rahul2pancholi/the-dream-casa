@@ -7,6 +7,7 @@ import StatsBar from "@/components/StatsBar";
 import CtaBanner from "@/components/CtaBanner";
 import SiteFooter from "@/components/SiteFooter";
 import { projectsData } from "@/data/projects";
+import ImageWatermark from "@/components/ImageWatermark";
 import { ArrowLeft, ArrowRight, MapPin, Layers, Maximize2, Calendar, Check } from "lucide-react";
 
 interface ProjectSlugProps {
@@ -119,9 +120,11 @@ export default async function ProjectDetailPage({ params }: ProjectSlugProps) {
                 alt={project.title}
                 fill
                 priority
+                draggable={false}
                 sizes="(min-width: 1024px) 900px, 100vw"
                 className="object-contain"
               />
+              <ImageWatermark />
             </div>
 
             {/* Overview: Specs Grid */}
@@ -235,9 +238,11 @@ export default async function ProjectDetailPage({ params }: ProjectSlugProps) {
                         src={imgUrl}
                         alt={`${project.title} — image ${idx + 1}`}
                         fill
+                        draggable={false}
                         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         className="object-contain"
                       />
+                      <ImageWatermark />
                     </div>
                   ))}
                 </div>

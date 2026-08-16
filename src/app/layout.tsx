@@ -3,6 +3,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Newsreader, Roboto_Flex } from "next/font/google";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ConsultationModal from "@/components/ConsultationModal";
+import NoImageContextMenu from "@/components/NoImageContextMenu";
 import "./globals.css";
 
 const playfair = Newsreader({
@@ -103,6 +104,9 @@ export const metadata: Metadata = {
     ],
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
+  },
+  other: {
+    copyright: `© ${new Date().getFullYear()} The Dream Casa. All rights reserved. All photography, 3D renders, and content on this site are the property of The Dream Casa and may not be reproduced without permission.`,
   },
 };
 
@@ -248,6 +252,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-full flex flex-col bg-cream-light">
         {children}
+        <NoImageContextMenu />
         <WhatsAppButton />
         <ConsultationModal />
         <GoogleAnalytics gaId="G-2WBRLX5L44" />

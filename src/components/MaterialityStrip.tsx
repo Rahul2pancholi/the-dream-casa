@@ -4,16 +4,16 @@ import Image from "next/image";
 // words already used in each project's own description — no new photography.
 const materials = [
   {
-    image: "/images/services/commercial-office.png",
-    caption: "Marble & Brass",
+    image: "/images/eklavya/image-18-1.jpg",
+    caption: "Fluted Wood & Cane",
   },
   {
     image: "/images/eklavya/image-15-1.jpg",
     caption: "Imported Marble",
   },
   {
-    image: "/images/services/hospitality-lounge.png",
-    caption: "Velvet & Brass",
+    image: "/images/kids-room/kids-room-02.png",
+    caption: "Painted Cabinetry",
   },
   {
     image: "/images/projects/master-bedroom-02.jpg",

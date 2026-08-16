@@ -13,24 +13,14 @@ const residences = [
   },
 ];
 
-const commercial = [
-  {
-    number: "02",
-    title: "Premium Offices",
-    tagline: "Corporate & Executive Interiors",
-    description: "Ergonomic, inspiring corporate offices and executive cabins built for productivity.",
-    image: "/images/services/commercial-office.png",
-    href: "/projects?cat=commercial",
-  },
-  {
-    number: "03",
-    title: "Boutique Hospitality",
-    tagline: "Hotels, Lounges & Retail",
-    description: "Memorable boutique hotel suites, lounge bars, and retail spaces designed to captivate guests.",
-    image: "/images/services/hospitality-lounge.png",
-    href: "/projects?cat=hospitality",
-  },
-];
+const commercial: {
+  number: string;
+  title: string;
+  tagline: string;
+  description: string;
+  image: string;
+  href: string;
+}[] = [];
 
 export default function ServicesSection() {
   return (
@@ -46,7 +36,7 @@ export default function ServicesSection() {
             Tailored Interior Solutions
           </h2>
           <p className="text-sm leading-relaxed text-muted sm:text-base">
-            Primarily residences, with a select portfolio of commercial and hospitality interiors.
+            Founder-led residential interior design, from 3D concept to turnkey execution.
           </p>
         </div>
 
@@ -92,6 +82,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Secondary: Select Commercial */}
+        {commercial.length > 0 && (
         <div className="mt-16">
           <span className="text-[11px] font-semibold tracking-[0.2em] text-gold uppercase">
             Select Commercial
@@ -127,6 +118,7 @@ export default function ServicesSection() {
             ))}
           </div>
         </div>
+        )}
       </div>
     </section>
   );
