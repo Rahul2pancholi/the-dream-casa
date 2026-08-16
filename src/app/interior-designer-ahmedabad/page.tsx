@@ -144,7 +144,7 @@ export default function InteriorDesignerAhmedabadPage() {
               {[
                 { image: "/images/projects/living-kitchen-01.jpg", caption: "Living & Kitchen" },
                 { image: "/images/projects/master-bedroom-01.jpg", caption: "Master Bedroom" },
-                { image: "/images/kids-room/kids-room-01.png", caption: "Kids Room" },
+                { image: "/images/kids-room/kids-room-01.jpg", caption: "Kids Room" },
               ].map(({ image, caption }) => (
                 <div key={image} className="flex flex-col gap-3">
                   <div className="relative aspect-square w-full overflow-hidden border border-ink/10">

@@ -12,7 +12,7 @@ const materials = [
     caption: "Imported Marble",
   },
   {
-    image: "/images/kids-room/kids-room-02.png",
+    image: "/images/kids-room/kids-room-02.jpg",
     caption: "Painted Cabinetry",
   },
   {

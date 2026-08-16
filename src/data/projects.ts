@@ -134,8 +134,8 @@ export const projectsData: ProjectItem[] = [
     videoUrl: "/videos/site-walkthrough-6.mp4",
     isPopularVideo: true,
     gallery: [
-      "/images/eklavya/image-29-1.png",
-      "/images/eklavya/image-1-1.png",
+      "/images/eklavya/image-29-1.webp",
+      "/images/eklavya/image-1-1.webp",
       "/images/eklavya/image-11-1.jpg",
       "/images/eklavya/image-15-1.jpg",
     ],
@@ -157,12 +157,12 @@ export const projectsData: ProjectItem[] = [
     typeLabel: "3D Design Concept",
     roomCategory: "kids_room",
     serviceCategory: "residential",
-    image: "/images/kids-room/kids-room-01.png",
+    image: "/images/kids-room/kids-room-01.jpg",
     gallery: [
-      "/images/kids-room/kids-room-01.png",
-      "/images/kids-room/kids-room-02.png",
-      "/images/kids-room/kids-room-03.png",
-      "/images/kids-room/kids-room-04.png",
+      "/images/kids-room/kids-room-01.jpg",
+      "/images/kids-room/kids-room-02.jpg",
+      "/images/kids-room/kids-room-03.jpg",
+      "/images/kids-room/kids-room-04.jpg",
     ],
     description:
       "A cheerful, functional kids' bedroom featuring a calming blue palette, built-in study and display shelving, a comfortable daybed, and soft blackout blinds for a room that grows with the child.",
@@ -265,7 +265,7 @@ export const projectsData: ProjectItem[] = [
     image: "/images/eklavya/image-21-1.jpg",
     videoUrl: "/videos/site-walkthrough-4.mp4",
     gallery: [
-      "/images/eklavya/image-1-1.png",
+      "/images/eklavya/image-1-1.webp",
       "/images/eklavya/image-10-1.jpg",
       "/images/eklavya/image-10-2.jpg",
       "/images/eklavya/image-11-1.jpg",
@@ -279,7 +279,7 @@ export const projectsData: ProjectItem[] = [
       "/images/eklavya/image-23-1.jpg",
       "/images/eklavya/image-26-1.jpg",
       "/images/eklavya/image-27-1.jpg",
-      "/images/eklavya/image-29-1.png",
+      "/images/eklavya/image-29-1.webp",
     ],
     description:
       "Full turnkey execution of the Eklavya luxury apartment project. Delivered on time with custom woodwork, imported marble flooring, acoustic ceilings, and handpicked soft furnishings.",
