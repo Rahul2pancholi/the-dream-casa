@@ -9,7 +9,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { MapPin, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Best Interior Designer in Indore | The Dream Casa",
+  title: "Best Interior Designer in Indore",
   description:
     "Looking for the best interior designer in Indore? The Dream Casa, led by Founder Poorti Jain, delivers 3D photorealistic renders and 100% turnkey site execution from our studio on Yeshwant Niwas Rd, Indore.",
   alternates: {
@@ -71,6 +71,13 @@ export default function InteriorDesignerIndorePage() {
                 renders with an itemized BOQ so what you approve on screen is exactly what gets
                 built on site.
               </p>
+              <p className="text-sm leading-relaxed text-muted sm:text-base">
+                We work across Indore&rsquo;s high-rise apartment corridors — Vijay Nagar, Super
+                Corridor, Palasia — as well as independent villas in Bicholi Mardana and Saket
+                Nagar. Carcass work uses IS:710 BWP marine ply and kitchen or wardrobe hardware from
+                Blum and Hafele as standard, regardless of project size, with a site audit and
+                measurement pass preceding every 3D render.
+              </p>
               <div className="mt-2 grid gap-3 sm:grid-cols-2">
                 {[
                   "3D renders before any site work begins",
@@ -126,6 +133,36 @@ export default function InteriorDesignerIndorePage() {
 
         {/* Real Indore Portfolio */}
         <ProjectsSection limit={6} showViewAllCTA={true} hideFilters={true} />
+
+        {/* Indore-Specific FAQ */}
+        <section className="bg-cream-light py-14 sm:py-16 px-6 sm:px-10 lg:px-16 border-b border-ink/10">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-serif text-2xl leading-tight text-ink sm:text-3xl">
+              Working With Us in Indore
+            </h2>
+            <div className="mt-8 flex flex-col divide-y divide-ink/10">
+              {[
+                {
+                  q: "Which parts of Indore do you cover for site visits?",
+                  a: "Yeshwant Niwas Rd, Vijay Nagar, Palasia, Super Corridor, Bicholi Mardana, and Saket Nagar are covered directly from our studio — mention your locality when you enquire and we'll confirm timelines for your area.",
+                },
+                {
+                  q: "Do you take on both apartment and independent villa projects?",
+                  a: "Yes — the process is the same for both: site audit, 3D render, itemized BOQ, then turnkey execution. Villas typically involve more civil-work coordination, which we scope during the initial site visit.",
+                },
+                {
+                  q: "How soon can you start after the first consultation?",
+                  a: "Once the site audit is complete, the 3D render and BOQ stage typically comes first, and site work begins once you've signed off on both — exact scheduling depends on current studio capacity at the time you enquire.",
+                },
+              ].map(({ q, a }) => (
+                <div key={q} className="py-5">
+                  <h3 className="font-serif text-base text-ink">{q}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <StatsBar />
         <CtaBanner />

@@ -9,7 +9,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { MapPin, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Interior Designer in Ahmedabad | The Dream Casa",
+  title: "Interior Designer in Ahmedabad",
   description:
     "The Dream Casa is now taking interior design projects in Ahmedabad — Bodakdev, SG Highway. 3D photorealistic renders, fixed BOQs, and turnkey site execution led by Founder Poorti Jain.",
   alternates: {
@@ -69,6 +69,14 @@ export default function InteriorDesignerAhmedabadPage() {
                 projects. Founder Poorti Jain and the team run the same process here as in
                 Indore — a photorealistic 3D render and fixed, itemized BOQ before any site work
                 begins, followed by turnkey execution under one accountable project lead.
+              </p>
+              <p className="text-sm leading-relaxed text-muted sm:text-base">
+                Every Ahmedabad engagement starts with an on-site or video site audit to record
+                measurements, plumbing, and electrical points, followed by a full 3D render of the
+                proposed layout for your approval before any material is ordered. We use IS:710 BWP
+                marine ply for carcass work and Blum or Hafele hardware for kitchens and wardrobes —
+                the same specification we hold across both studios, so quality doesn&rsquo;t vary by
+                city.
               </p>
               <div className="mt-2 grid gap-3 sm:grid-cols-2">
                 {[
@@ -162,6 +170,36 @@ export default function InteriorDesignerAhmedabadPage() {
               >
                 See Our Full Portfolio <ArrowRight className="h-3.5 w-3.5" />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Ahmedabad-Specific FAQ */}
+        <section className="bg-cream-light py-14 sm:py-16 px-6 sm:px-10 lg:px-16 border-b border-ink/10">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-serif text-2xl leading-tight text-ink sm:text-3xl">
+              Working With Us in Ahmedabad
+            </h2>
+            <div className="mt-8 flex flex-col divide-y divide-ink/10">
+              {[
+                {
+                  q: "Do you handle Ahmedabad projects the same way as Indore projects?",
+                  a: "Yes — the same 3D-render-first process, itemized BOQ, and material specification apply in both cities. The only difference is which of our two studios coordinates your project.",
+                },
+                {
+                  q: "How do site visits work if I'm outside SG Highway or Bodakdev?",
+                  a: "We cover Prahlad Nagar, Satellite, Ambli, and Thaltej directly from our Bodakdev studio, and take on projects further out on a project-by-project basis — mention your location when you enquire and we'll confirm coverage.",
+                },
+                {
+                  q: "Can I see the 3D render remotely before committing?",
+                  a: "Yes — renders are shared digitally for your review and sign-off regardless of whether you visit the studio in person or coordinate the project remotely.",
+                },
+              ].map(({ q, a }) => (
+                <div key={q} className="py-5">
+                  <h3 className="font-serif text-base text-ink">{q}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

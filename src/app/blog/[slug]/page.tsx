@@ -25,12 +25,12 @@ export async function generateMetadata({ params }: BlogSlugProps): Promise<Metad
 
   if (!post) {
     return {
-      title: "Post Not Found | The Dream Casa",
+      title: "Post Not Found",
     };
   }
 
   return {
-    title: `${post.title} | The Dream Casa Indore`,
+    title: post.title,
     description: post.excerpt,
     keywords: post.keywords,
     alternates: {
@@ -113,28 +113,41 @@ export default async function BlogPostDetailPage({ params }: BlogSlugProps) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.excerpt,
-    image: `https://thedreamcasa.in${post.image}`,
-    datePublished: post.publishDate,
-    author: {
-      "@type": "Person",
-      name: post.author.name,
-      jobTitle: post.author.role,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "The Dream Casa",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://thedreamcasa.in/images/logo-icon.png",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.excerpt,
+        image: `https://thedreamcasa.in${post.image}`,
+        datePublished: post.publishDate,
+        dateModified: post.dateModified || post.publishDate,
+        author: {
+          "@type": "Person",
+          name: post.author.name,
+          jobTitle: post.author.role,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "The Dream Casa",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://thedreamcasa.in/images/logo-icon.png",
+          },
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `https://thedreamcasa.in/blog/${post.slug}`,
+        },
       },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://thedreamcasa.in/blog/${post.slug}`,
-    },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://thedreamcasa.in/" },
+          { "@type": "ListItem", position: 2, name: "Journal", item: "https://thedreamcasa.in/blog" },
+          { "@type": "ListItem", position: 3, name: post.title, item: `https://thedreamcasa.in/blog/${post.slug}` },
+        ],
+      },
+    ],
   };
 
   return (

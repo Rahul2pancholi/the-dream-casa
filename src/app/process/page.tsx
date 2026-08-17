@@ -11,7 +11,7 @@ import { MessageSquare, Sparkles, FileText, Factory, HardHat, Key, ArrowRight, C
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "6-Step Turnkey Interior Execution Process | The Dream Casa Indore",
+  title: "6-Step Turnkey Interior Execution Process",
   description:
     "Our 6-step turnkey interior design methodology: Site audit, photorealistic 3D renders, transparent BOQ, factory sourcing, on-site supervision, and final handover in Indore.",
   alternates: {
@@ -88,9 +88,22 @@ const steps = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://thedreamcasa.in/" },
+    { "@type": "ListItem", position: 2, name: "Process", item: "https://thedreamcasa.in/process" },
+  ],
+};
+
 export default function ProcessPage() {
   return (
     <div className="flex flex-1 flex-col bg-cream-light">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader />
       <main className="flex flex-1 flex-col">
         {/* Process Hero Header */}

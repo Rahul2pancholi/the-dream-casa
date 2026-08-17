@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://thedreamcasa.in"),
   title: {
     default: "Best Interior Designer in Indore & Ahmedabad | Luxury Turnkey Execution | The Dream Casa",
-    template: "%s | Best Interior Designer in Indore & Ahmedabad",
+    template: "%s | The Dream Casa",
   },
   description:
     "Looking for the best interior designer in Indore or Ahmedabad? Founder Poorti Jain & The Dream Casa deliver 3D photorealistic architectural renders & 100% turnkey site execution for luxury homes, penthouses & offices in Indore (Yeshwant Niwas Rd) & Ahmedabad (Bodakdev, SG Highway).",
@@ -220,6 +220,19 @@ const jsonLd = {
         "@type": "GeoCoordinates",
         "latitude": 23.0375,
         "longitude": 72.5085
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "10:00",
+        "closes": "19:30"
       },
       "sameAs": [
         "https://www.instagram.com/the.dream.casa"

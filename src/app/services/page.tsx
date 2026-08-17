@@ -10,7 +10,7 @@ import { Home, CheckCircle2, ArrowRight } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Interior Design Services & Turnkey Fit-Outs | The Dream Casa Indore",
+  title: "Interior Design Services & Turnkey Fit-Outs",
   description:
     "Comprehensive residential interior design services in Indore: luxury homes, modular kitchens, and 100% turnkey site execution by Poorti Jain.",
   alternates: {
@@ -32,7 +32,7 @@ const fullServices = [
     image: "/images/projects/living-kitchen-01.jpg",
     Icon: Home,
     description:
-      "We design stylish, functional, and deeply personal residential spaces for apartments, duplexes, and luxury villas across Indore — with turnkey execution managed end-to-end, from civil work and carpentry to final styling, under one accountable team.",
+      "We design stylish, functional, and deeply personal residential spaces for apartments, duplexes, and luxury villas across Indore & Ahmedabad — with turnkey execution managed end-to-end, from civil work and carpentry to final styling, under one accountable team. Every project starts with a site audit and measurement, moves into a photorealistic 3D render you approve before any material is ordered, and closes with a fixed, itemized BOQ so pricing doesn't shift mid-project. Founder Poorti Jain reviews site progress personally at each phase, from carpentry and false ceiling work through to final furnishing and styling.",
     deliverables: [
       "Living & Dining Room Spatial Layouts",
       "Modular Kitchens with Blum / Hafele Fittings",
@@ -45,9 +45,58 @@ const fullServices = [
   },
 ];
 
+const specializedServices = [
+  {
+    title: "Modular Kitchen Design",
+    description: "Layout planning, 3D renders, and fabrication with Blum & Hafele hardware.",
+    href: "/modular-kitchen-designer-indore",
+  },
+  {
+    title: "Commercial & Office Interiors",
+    description: "Workspace planning and turnkey fit-outs for offices, retail & clinics.",
+    href: "/commercial-office-interior-designer-indore",
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://thedreamcasa.in/" },
+        { "@type": "ListItem", position: 2, name: "Services", item: "https://thedreamcasa.in/services" },
+      ],
+    },
+    {
+      "@type": "Service",
+      serviceType: "Interior Design and Turnkey Execution",
+      provider: { "@id": "https://thedreamcasa.in/#studio-indore" },
+      areaServed: ["Indore", "Ahmedabad"],
+      description:
+        "End-to-end interior design services including 3D architectural rendering, complete turnkey execution, and on-time site handover for residences, apartments, villas, and penthouses.",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Interior Design Services",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "3D Architectural Rendering" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Complete Turnkey Execution" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Residential Interior Design" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Modular Kitchen Design" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commercial Office Interior Design" } },
+        ],
+      },
+    },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <div className="flex flex-1 flex-col bg-cream-light">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader />
       <main className="flex flex-1 flex-col">
         {/* Services Hero Header */}
@@ -126,6 +175,30 @@ export default function ServicesPage() {
                 </div>
               );
             })}
+          </div>
+        </section>
+
+        {/* Specialized Services Cross-Links */}
+        <section className="bg-cream-light py-14 sm:py-16 px-6 sm:px-10 lg:px-16 border-t border-ink/10">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="font-serif text-2xl text-ink sm:text-3xl">
+              Specialized Design Services
+            </h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {specializedServices.map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="group flex flex-col gap-2 border border-ink/10 p-6 transition-colors hover:border-gold/60"
+                >
+                  <h3 className="font-serif text-lg text-ink">{service.title}</h3>
+                  <p className="text-xs leading-relaxed text-muted">{service.description}</p>
+                  <span className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest text-gold uppercase">
+                    Learn More <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 

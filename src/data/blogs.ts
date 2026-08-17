@@ -11,6 +11,7 @@ export interface BlogPost {
     avatar: string;
   };
   publishDate: string;
+  dateModified?: string;
   readTime: string;
   image: string;
   locality: string;
@@ -92,7 +93,8 @@ At **The Dream Casa**, led by Founder **Poorti Jain**, every project begins with
       avatar: "/images/hero/living-room.jpg",
     },
     publishDate: "2026-08-01",
-    readTime: "5 min read",
+    dateModified: "2026-08-17",
+    readTime: "6 min read",
     image: "/images/eklavya/image-14-1.jpg",
     locality: "Saket & Race Course Rd, Indore",
     keywords: [
@@ -123,6 +125,27 @@ When you work with **The Dream Casa**, you get a single point of contact under *
 2. **Fixed Timeline & Milestone Penalty**: Guaranteed 100% on-time handover.
 3. **Factory & Material Quality Check**: Premium laminates, veneers, and marine ply pre-inspected before installation.
 4. **Live Site Supervision**: On-site project managers oversee daily progress and send raw video updates.
+
+---
+
+### How to Compare a Quote Before You Sign
+
+Ask any contractor or studio these three questions before committing:
+
+1. **Is the quote itemized by material and labor, or is it a single lump sum?** A lump-sum quote is where cost escalation usually hides.
+2. **Will I see a 3D render of my actual space, or a generic sample photo?** A render built to your exact measurements is what makes a 1:1 result possible — a sample photo is not a commitment.
+3. **Who is my single point of contact once work starts?** If the answer is "the carpenter" or "the electrician will coordinate," expect to do that coordination yourself.
+
+### Frequently Asked Questions
+
+**Is turnkey execution more expensive than hiring contractors separately?**
+Not necessarily. Contractor-led projects often look cheaper on the initial verbal estimate but escalate through unquoted materials and rework. A fixed, itemized BOQ from a turnkey studio removes that variable — you're paying for cost certainty, not just labor.
+
+**How long does a typical turnkey interior project take in Indore?**
+Timelines depend on scope, but a standard 2-3BHK turnkey fit-out generally runs on a milestone schedule agreed upfront during the BOQ stage, tracked against the 3D render sign-off.
+
+**Can I still make changes once execution has started?**
+Minor changes are possible before material ordering; once fabrication begins, changes affect both timeline and cost — which is exactly why the 3D render approval stage exists, to lock decisions before the expensive part starts.
 `,
   },
   {
@@ -138,7 +161,8 @@ When you work with **The Dream Casa**, you get a single point of contact under *
       avatar: "/images/hero/living-room.jpg",
     },
     publishDate: "2026-07-28",
-    readTime: "7 min read",
+    dateModified: "2026-08-17",
+    readTime: "8 min read",
     image: "/images/projects/living-kitchen-02.jpg",
     locality: "Vijay Nagar, Indore",
     keywords: [
@@ -166,6 +190,30 @@ The kitchen is the heart of every Indian home. In modern Indore apartments, kitc
 - Soft-close Tandem Drawers for heavy cookware.
 - Tall Pantry Units with pull-out wire baskets.
 - Under-cabinet LED sensor strip lights.
+
+---
+
+### Choosing a Kitchen Layout for Your Apartment
+
+- **Straight-line kitchens** suit compact 2BHK apartments in Vijay Nagar and Palasia where floor area is limited — every inch is claimed by counter and storage, with no wasted circulation space.
+- **L-shaped kitchens** work well for mid-size apartments, giving you a separate wash zone and cooking zone without needing a large footprint.
+- **Parallel kitchens** fit longer, narrower layouts common in older Indore constructions, putting the hob and sink on opposite counters for a natural workflow.
+- **Island kitchens** need an open-plan living-kitchen layout and are best suited to larger villas and penthouses, where the kitchen doubles as a social space.
+
+### Countertops: Quartz vs. Granite
+
+Quartz has become the default choice for Indore kitchens because it's non-porous (no sealing needed, unlike granite), resists staining from turmeric and oil, and is available in consistent, factory-controlled patterns — which matters when you're matching a countertop to a 3D render rather than picking a natural slab by eye. Granite remains a durable, lower-cost option, particularly for larger island counters where the natural stone variation is part of the appeal.
+
+### Frequently Asked Questions
+
+**How much storage should a modular kitchen have for a family of four?**
+As a starting point, plan for a mix of base cabinets, wall units, and at least one tall pantry unit — the exact configuration depends on your cooking style and existing appliance count, which is why we measure and model your specific kitchen in 3D rather than working off a standard template.
+
+**Is BWP marine ply necessary for the whole kitchen, or only near the sink?**
+IS:710 BWP marine ply is recommended for the full carcass in Indian kitchens, not just the wet zone — steam, spills, and humidity affect the whole unit over time, not only the area directly under the sink.
+
+**Can an existing kitchen be renovated without changing the plumbing?**
+In most cases yes, if the sink and hob positions stay the same — this keeps costs and timeline down. Moving plumbing points is possible but adds civil work to the scope, which we flag during the initial site audit.
 `,
   },
 ];

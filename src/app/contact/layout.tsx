@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Book Interior Consultation | The Dream Casa Indore Studio",
+  title: "Book Interior Consultation",
   description:
     "Schedule a free design consultation with Founder Poorti Jain. Visit our studio at Yeshwant Niwas Rd, Indore, MP or call +91 7490 932 661.",
   alternates: {
@@ -15,6 +15,23 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://thedreamcasa.in/" },
+    { "@type": "ListItem", position: 2, name: "Contact", item: "https://thedreamcasa.in/contact" },
+  ],
+};
+
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
+  );
 }

@@ -10,7 +10,7 @@ import { ArrowRight, Calendar, Clock, MapPin, Tag } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Interior Design Journal & Cost Guides Indore | The Dream Casa",
+  title: "Interior Design Journal & Cost Guides Indore",
   description:
     "Expert interior design insights, 3BHK cost breakdowns, turnkey execution guides, and material selection tips by Poorti Jain in Indore.",
   alternates: {
@@ -24,12 +24,25 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://thedreamcasa.in/" },
+    { "@type": "ListItem", position: 2, name: "Journal", item: "https://thedreamcasa.in/blog" },
+  ],
+};
+
 export default function BlogIndexPage() {
   const featuredPost = BLOG_POSTS[0];
   const secondaryPosts = BLOG_POSTS.slice(1);
 
   return (
     <div className="flex flex-1 flex-col bg-cream-light">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader />
       <main className="flex flex-1 flex-col">
         {/* Blog Hero Header */}

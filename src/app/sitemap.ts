@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/data/blogs";
+import { projectsData } from "@/data/projects";
 
 export const dynamic = "force-static";
 
@@ -61,6 +62,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/modular-kitchen-designer-indore`,
+      lastModified: new Date("2026-08-17"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/commercial-office-interior-designer-indore`,
+      lastModified: new Date("2026-08-17"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: new Date("2026-08-17"),
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
+    {
+      url: `${baseUrl}/terms-conditions`,
+      lastModified: new Date("2026-08-17"),
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
   ];
 
   const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
@@ -70,5 +95,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...blogPages];
+  const projectPages: MetadataRoute.Sitemap = projectsData.map((project) => ({
+    url: `${baseUrl}/projects/${project.id}`,
+    lastModified: new Date("2026-08-08"),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...blogPages, ...projectPages];
 }

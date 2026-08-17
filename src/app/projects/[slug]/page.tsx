@@ -26,12 +26,12 @@ export async function generateMetadata({ params }: ProjectSlugProps): Promise<Me
 
   if (!project) {
     return {
-      title: "Project Not Found | The Dream Casa",
+      title: "Project Not Found",
     };
   }
 
   return {
-    title: `${project.title} | The Dream Casa Indore`,
+    title: project.title,
     description: project.description,
     alternates: {
       canonical: `https://thedreamcasa.in/projects/${project.id}`,
@@ -81,8 +81,22 @@ export default async function ProjectDetailPage({ params }: ProjectSlugProps) {
   const isCompleted = project.type === "completed_site";
   const briefText = project.challenge || project.description;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://thedreamcasa.in/" },
+      { "@type": "ListItem", position: 2, name: "Selected Work", item: "https://thedreamcasa.in/projects" },
+      { "@type": "ListItem", position: 3, name: project.title, item: `https://thedreamcasa.in/projects/${project.id}` },
+    ],
+  };
+
   return (
     <div className="flex flex-1 flex-col bg-cream-light">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader />
 
       <main className="flex flex-1 flex-col">

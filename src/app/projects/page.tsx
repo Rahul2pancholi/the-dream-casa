@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ProjectsPageClient from "@/components/ProjectsPageClient";
 
 export const metadata: Metadata = {
-  title: "Selected Work | The Dream Casa Indore",
+  title: "Selected Work",
   description:
     "Explore photorealistic 3D design concepts, on-site video walkthroughs, and completed residences in Indore by Poorti Jain.",
   alternates: {
@@ -16,6 +16,23 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://thedreamcasa.in/" },
+    { "@type": "ListItem", position: 2, name: "Selected Work", item: "https://thedreamcasa.in/projects" },
+  ],
+};
+
 export default function ProjectsPage() {
-  return <ProjectsPageClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ProjectsPageClient />
+    </>
+  );
 }

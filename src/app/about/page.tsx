@@ -9,7 +9,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { ShieldCheck, HeartHandshake, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Founder Poorti Jain & Studio | The Dream Casa Indore",
+  title: "About Founder Poorti Jain & Studio",
   description:
     "Learn about Founder Poorti Jain and The Dream Casa studio based on Yeshwant Niwas Rd, Indore. A founder-led studio delivering luxury residential and commercial turnkey interior projects.",
   alternates: {
@@ -50,9 +50,22 @@ const values = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://thedreamcasa.in/" },
+    { "@type": "ListItem", position: 2, name: "About", item: "https://thedreamcasa.in/about" },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <div className="flex flex-1 flex-col bg-cream-light">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SiteHeader />
       <main className="flex flex-1 flex-col">
         {/* About Hero Section */}
