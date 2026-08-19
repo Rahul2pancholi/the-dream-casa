@@ -96,6 +96,11 @@ export default function ModularKitchenDesignerPage() {
                 points, model the layout in 3D, and only move to fabrication once you&rsquo;ve
                 approved the exact design, hardware, and finish.
               </p>
+              <p className="text-sm leading-relaxed text-muted sm:text-base">
+                Modular kitchen ka design karwane se pehle hum aapki plumbing aur electrical points
+                naap kar 3D layout dikhate hain — jab tak approval nahi milta, fabrication shuru
+                nahi hota. Yehi process Indore aur Ahmedabad dono jagah follow hota hai.
+              </p>
               <div className="mt-2 grid gap-3 sm:grid-cols-2">
                 {inclusions.map((item) => (
                   <div key={item} className="flex items-start gap-2.5 text-xs font-medium text-ink">

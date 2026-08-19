@@ -78,6 +78,12 @@ Whether you are fitting out a fresh 2BHK, a spacious 3BHK, or a luxury penthouse
 - **3D Render Alignment**: Working with a studio that provides 1:1 photorealistic 3D renders prevents costly on-site teardowns.
 
 At **The Dream Casa**, led by Founder **Poorti Jain**, every project begins with a 3D visualization and an itemized BOQ (Bill of Quantities) so there are zero budget surprises during site execution.
+
+---
+
+### Indore Me Interior Design Ka Kharcha Kitna Hota Hai?
+
+Indore me ghar ka interior design karwane ka budget aapke space aur material choice par depend karta hai — 2BHK ke liye essential package ₹8-14 lakh se shuru hota hai, aur premium finish ke saath ₹25 lakh tak jaa sakta hai. Fixed itemized BOQ lena zaroori hai, taaki site par kaam shuru hone ke baad koi surprise cost na aaye.
 `,
   },
   {
@@ -146,6 +152,9 @@ Timelines depend on scope, but a standard 2-3BHK turnkey fit-out generally runs 
 
 **Can I still make changes once execution has started?**
 Minor changes are possible before material ordering; once fabrication begins, changes affect both timeline and cost — which is exactly why the 3D render approval stage exists, to lock decisions before the expensive part starts.
+
+**Turnkey interior kya hota hai?**
+Turnkey ka matlab hai ek hi studio civil, carpentry, electrical aur finishing sab kuch handle karta hai — aapko alag-alag contractors khud coordinate nahi karne padte. Fixed BOQ aur 3D render pehle se approve hone ki wajah se final result wahi milta hai jo screen par dikhaya gaya tha.
 `,
   },
   {
@@ -214,6 +223,9 @@ IS:710 BWP marine ply is recommended for the full carcass in Indian kitchens, no
 
 **Can an existing kitchen be renovated without changing the plumbing?**
 In most cases yes, if the sink and hob positions stay the same — this keeps costs and timeline down. Moving plumbing points is possible but adds civil work to the scope, which we flag during the initial site audit.
+
+**Modular kitchen ka design karwane me kitna time lagta hai?**
+Measurement aur 3D render approve hone ke baad, fabrication aur installation typically 3-5 hafte lete hain — exact timeline kitchen ke size aur chuni hui finish (laminate, acrylic, ya PU) par depend karta hai.
 `,
   },
 ];

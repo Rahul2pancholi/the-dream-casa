@@ -96,6 +96,11 @@ export default function CommercialOfficeInteriorDesignerPage() {
                 into the plan. We map your space in 3D first, agree the BOQ and phasing with you, then
                 execute on site with one point of contact managing the full fit-out.
               </p>
+              <p className="text-sm leading-relaxed text-muted sm:text-base">
+                Office ya showroom ka interior design karwate waqt business band nahi karna padta —
+                hum phased execution plan banate hain taaki kaam chalte hue bhi site par fit-out ho
+                sake, Indore aur Ahmedabad dono studios se.
+              </p>
               <div className="mt-2 grid gap-3 sm:grid-cols-2">
                 {inclusions.map((item) => (
                   <div key={item} className="flex items-start gap-2.5 text-xs font-medium text-ink">
