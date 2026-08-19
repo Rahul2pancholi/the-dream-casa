@@ -46,7 +46,7 @@ export default function HomePageClient() {
               <span className="h-px w-8 bg-gold" />
             </div>
             <p className="font-serif text-2xl leading-snug text-white sm:text-3xl">
-              A founder-led studio, est. 2025, working across Indore &amp; Ahmedabad — deliberately selective about the projects we take on.
+              A founder-led interior design studio in Indore &amp; Ahmedabad, est. 2025 — deliberately selective about the projects we take on.
             </p>
             <Link
               href="/about"

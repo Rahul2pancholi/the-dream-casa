@@ -154,6 +154,10 @@ export default function InteriorDesignerIndorePage() {
                   q: "How soon can you start after the first consultation?",
                   a: "Once the site audit is complete, the 3D render and BOQ stage typically comes first, and site work begins once you've signed off on both — exact scheduling depends on current studio capacity at the time you enquire.",
                 },
+                {
+                  q: "Indore me sabse achha interior designer kaise choose karein?",
+                  a: "Portfolio dekhein, fixed itemized BOQ maangein taaki koi surprise cost na ho, aur ek hi accountable project lead ho jo civil, carpentry, electrical sab coordinate kare. Hum Indore me 3D render pehle dikhate hain, phir site par kaam shuru hota hai.",
+                },
               ].map(({ q, a }) => (
                 <div key={q} className="py-5">
                   <h3 className="font-serif text-base text-ink">{q}</h3>

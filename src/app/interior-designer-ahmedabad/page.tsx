@@ -9,16 +9,16 @@ import SiteFooter from "@/components/SiteFooter";
 import { MapPin, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Interior Designer in Ahmedabad",
+  title: "Best Interior Designer in Ahmedabad",
   description:
-    "The Dream Casa is now taking interior design projects in Ahmedabad — Bodakdev, SG Highway. 3D photorealistic renders, fixed BOQs, and turnkey site execution led by Founder Poorti Jain.",
+    "Looking for the best interior designer in Ahmedabad? The Dream Casa's Bodakdev, SG Highway studio delivers 3D photorealistic renders and 100% turnkey site execution led by Founder Poorti Jain.",
   alternates: {
     canonical: "https://thedreamcasa.in/interior-designer-ahmedabad",
   },
   openGraph: {
-    title: "Interior Designer in Ahmedabad | The Dream Casa",
+    title: "Best Interior Designer in Ahmedabad | The Dream Casa",
     description:
-      "Regional studio in Bodakdev, SG Highway, Ahmedabad. 3D renders, transparent BOQs, and turnkey site execution led by Founder Poorti Jain.",
+      "Bodakdev, SG Highway studio delivering 3D renders, transparent BOQs, and 100% turnkey site execution led by Founder Poorti Jain — luxury interiors across Ahmedabad.",
     url: "https://thedreamcasa.in/interior-designer-ahmedabad",
   },
 };
@@ -52,9 +52,9 @@ export default function InteriorDesignerAhmedabadPage() {
       <main className="flex flex-1 flex-col">
         <PageHero
           eyebrow="Ahmedabad Studio"
-          title="Interior Designer in Ahmedabad"
-          description="The Dream Casa's regional studio in Bodakdev, SG Highway brings the same 3D-render-first process and turnkey execution standard from our Indore studio to homes across Ahmedabad."
-          meta={["Poorti Jain, Founder", "Regional Studio", "Bodakdev, SG Highway"]}
+          title="Best Interior Designer in Ahmedabad"
+          description="The Dream Casa's Bodakdev, SG Highway studio brings the same 3D-render-first process and turnkey execution standard from our Indore studio to homes across Ahmedabad."
+          meta={["Poorti Jain, Founder", "Ahmedabad Studio", "Bodakdev, SG Highway"]}
         />
 
         {/* Local Intro & Service Area */}
@@ -193,6 +193,10 @@ export default function InteriorDesignerAhmedabadPage() {
                 {
                   q: "Can I see the 3D render remotely before committing?",
                   a: "Yes — renders are shared digitally for your review and sign-off regardless of whether you visit the studio in person or coordinate the project remotely.",
+                },
+                {
+                  q: "Ahmedabad me ghar ka interior design karwane ka process kya hai?",
+                  a: "Sabse pehle site visit aur measurement hota hai, uske baad 3D render aur fixed itemized BOQ approve karwate hain — jo screen par dikhta hai wahi site par banta hai. Turnkey execution ke baad deep-cleaned, inspected handover milta hai.",
                 },
               ].map(({ q, a }) => (
                 <div key={q} className="py-5">

@@ -12,14 +12,14 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Interior Design Services & Turnkey Fit-Outs",
   description:
-    "Comprehensive residential interior design services in Indore: luxury homes, modular kitchens, and 100% turnkey site execution by Poorti Jain.",
+    "Comprehensive residential interior design services in Indore & Ahmedabad: luxury homes, modular kitchens, and 100% turnkey site execution by Poorti Jain.",
   alternates: {
     canonical: "https://thedreamcasa.in/services",
   },
   openGraph: {
-    title: "Interior Design Services & Turnkey Fit-Outs | The Dream Casa Indore",
+    title: "Interior Design Services & Turnkey Fit-Outs | The Dream Casa Indore & Ahmedabad",
     description:
-      "Comprehensive residential interior design services in Indore: luxury homes, modular kitchens, and 100% turnkey site execution by Poorti Jain.",
+      "Comprehensive residential interior design services in Indore & Ahmedabad: luxury homes, modular kitchens, and 100% turnkey site execution by Poorti Jain.",
     url: "https://thedreamcasa.in/services",
   },
 };
@@ -102,7 +102,7 @@ export default function ServicesPage() {
         {/* Services Hero Header */}
         <PageHero
           eyebrow="Comprehensive Interior Services"
-          title="End-to-End Interior Excellence in Indore"
+          title="End-to-End Interior Excellence in Indore & Ahmedabad"
           description="From initial 3D architectural renders to complete turnkey site fit-outs, explore our tailored service offerings led by Poorti Jain."
           meta={["3D Architectural Renders", "Complete Turnkey Execution", "On-Time Site Handover"]}
         />

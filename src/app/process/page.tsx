@@ -13,14 +13,14 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "6-Step Turnkey Interior Execution Process",
   description:
-    "Our 6-step turnkey interior design methodology: Site audit, photorealistic 3D renders, transparent BOQ, factory sourcing, on-site supervision, and final handover in Indore.",
+    "Our 6-step turnkey interior design methodology: Site audit, photorealistic 3D renders, transparent BOQ, factory sourcing, on-site supervision, and final handover in Indore & Ahmedabad.",
   alternates: {
     canonical: "https://thedreamcasa.in/process",
   },
   openGraph: {
-    title: "6-Step Turnkey Interior Execution Process | The Dream Casa Indore",
+    title: "6-Step Turnkey Interior Execution Process | The Dream Casa Indore & Ahmedabad",
     description:
-      "Our 6-step turnkey interior design methodology: Site audit, photorealistic 3D renders, transparent BOQ, factory sourcing, on-site supervision, and final handover in Indore.",
+      "Our 6-step turnkey interior design methodology: Site audit, photorealistic 3D renders, transparent BOQ, factory sourcing, on-site supervision, and final handover in Indore & Ahmedabad.",
     url: "https://thedreamcasa.in/process",
   },
 };

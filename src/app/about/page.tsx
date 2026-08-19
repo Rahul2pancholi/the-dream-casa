@@ -11,14 +11,14 @@ import { ShieldCheck, HeartHandshake, CheckCircle2, ArrowRight, Sparkles } from 
 export const metadata: Metadata = {
   title: "About Founder Poorti Jain & Studio",
   description:
-    "Learn about Founder Poorti Jain and The Dream Casa studio based on Yeshwant Niwas Rd, Indore. A founder-led studio delivering luxury residential and commercial turnkey interior projects.",
+    "Learn about Founder Poorti Jain and The Dream Casa — a founder-led interior design studio with locations on Yeshwant Niwas Rd, Indore and Bodakdev, SG Highway, Ahmedabad, delivering luxury residential and commercial turnkey interior projects.",
   alternates: {
     canonical: "https://thedreamcasa.in/about",
   },
   openGraph: {
-    title: "About Founder Poorti Jain & Studio | The Dream Casa Indore",
+    title: "About Founder Poorti Jain & Studio | The Dream Casa Indore & Ahmedabad",
     description:
-      "Learn about Founder Poorti Jain and The Dream Casa studio based on Yeshwant Niwas Rd, Indore. A founder-led studio delivering luxury residential and commercial turnkey interior projects.",
+      "Learn about Founder Poorti Jain and The Dream Casa — a founder-led interior design studio with locations on Yeshwant Niwas Rd, Indore and Bodakdev, SG Highway, Ahmedabad, delivering luxury residential and commercial turnkey interior projects.",
     url: "https://thedreamcasa.in/about",
   },
 };
@@ -72,8 +72,8 @@ export default function AboutPage() {
         <PageHero
           eyebrow="About The Dream Casa"
           title="Designing Spaces, Delivering Dreams"
-          description="Founded by Poorti Jain in Indore, The Dream Casa is a premier interior architecture studio specializing in high-end residential, commercial, and turnkey executions."
-          meta={["Poorti Jain, Founder", "Est. 2025", "Indore Studio Location"]}
+          description="Founded by Poorti Jain, The Dream Casa is a premier interior architecture studio in Indore & Ahmedabad, specializing in high-end residential, commercial, and turnkey executions."
+          meta={["Poorti Jain, Founder", "Est. 2025", "Indore & Ahmedabad Studios"]}
         />
 
         {/* Founder Spotlight & Story */}
@@ -110,7 +110,7 @@ export default function AboutPage() {
                   We Don&apos;t Just Design Spaces, We Craft Timeless Sanctuaries.
                 </h2>
                 <p className="text-sm leading-relaxed text-muted sm:text-base">
-                  At <span className="font-semibold text-ink">The Dream Casa</span>, we believe your home should be an authentic extension of your personality. Based in Indore at Yeshwant Niwas Road, we bring together spatial innovation, refined aesthetics, and rigorous on-site project management.
+                  At <span className="font-semibold text-ink">The Dream Casa</span>, we believe your home should be an authentic extension of your personality. With studios in Indore at Yeshwant Niwas Road and in Ahmedabad at Bodakdev, SG Highway, we bring together spatial innovation, refined aesthetics, and rigorous on-site project management.
                 </p>
                 <p className="text-sm leading-relaxed text-muted">
                   From initial 3D visualization to final soft furnishing placement, Founder Poorti Jain and our team oversee every detail to ensure seamless execution without stress or delays.
@@ -153,7 +153,7 @@ export default function AboutPage() {
                 Our Core Principles
               </h2>
               <p className="max-w-xl text-sm leading-relaxed text-muted">
-                What sets The Dream Casa apart as Indore&apos;s leading luxury interior design studio.
+                What sets The Dream Casa apart as a leading luxury interior design studio in Indore &amp; Ahmedabad.
               </p>
             </div>
 
