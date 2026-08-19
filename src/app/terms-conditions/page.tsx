@@ -92,7 +92,7 @@ export default function TermsConditionsPage() {
                 <a href="mailto:thedreamcasastudio@gmail.com" className="text-gold underline">
                   thedreamcasastudio@gmail.com
                 </a>{" "}
-                or +91 7490 932 661.
+                or +91 93434 70377.
               </p>
             </div>
           </div>

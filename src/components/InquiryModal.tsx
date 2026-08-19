@@ -109,7 +109,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
 
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full mt-2">
               <a
-                href={`https://wa.me/917490932661?text=${whatsappText}`}
+                href={`https://wa.me/919343470377?text=${whatsappText}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-xs font-semibold text-white uppercase tracking-wider shadow-md hover:bg-emerald-700 transition-all w-full"
@@ -150,7 +150,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
                 <span>Prefer instant chat on WhatsApp?</span>
               </div>
               <a
-                href={`https://wa.me/917490932661?text=${encodeURIComponent("Hi Poorti, I want to book an interior design consultation.")}`}
+                href={`https://wa.me/919343470377?text=${encodeURIComponent("Hi Poorti, I want to book an interior design consultation.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-xs font-bold text-white hover:bg-[#1ebd59] transition-all shadow-sm shrink-0"

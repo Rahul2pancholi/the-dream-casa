@@ -11,7 +11,7 @@ export default function WhatsAppButton() {
 
       {/* Persistent Call Button — mobile/tablet only, since the header's call CTA is hidden inside the hamburger menu below lg */}
       <a
-        href="tel:+917490932661"
+        href="tel:+919343470377"
         aria-label="Call The Dream Casa"
         className="flex h-14 w-14 items-center justify-center rounded-full bg-[#152741] text-white shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 lg:hidden"
       >
@@ -27,7 +27,7 @@ export default function WhatsAppButton() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/917490932661?text=Hi%20Poorti%2C%20I%20would%20like%20to%20enquire%20about%20interior%20design%20services%20for%20my%20home."
+        href="https://wa.me/919343470377?text=Hi%20Poorti%2C%20I%20would%20like%20to%20enquire%20about%20interior%20design%20services%20for%20my%20home."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Start a instant consultation on WhatsApp with Poorti Jain"

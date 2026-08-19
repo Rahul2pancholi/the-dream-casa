@@ -65,10 +65,10 @@ export default function SiteHeader({ onOpenInquiryModal }: SiteHeaderProps) {
           {/* Desktop Action CTA */}
           <div className="hidden items-center gap-4 lg:flex shrink-0">
             <a
-              href="tel:+917490932661"
+              href="tel:+919343470377"
               className="flex items-center gap-1.5 text-xs font-semibold text-ink hover:text-gold transition-colors whitespace-nowrap"
             >
-              <Phone className="h-3.5 w-3.5 text-gold shrink-0" /> +91 7490 932 661
+              <Phone className="h-3.5 w-3.5 text-gold shrink-0" /> +91 93434 70377
             </a>
             <span className="h-4 w-px bg-ink/15" />
             {onOpenInquiryModal ? (
@@ -127,10 +127,10 @@ export default function SiteHeader({ onOpenInquiryModal }: SiteHeaderProps) {
 
           <div className="flex flex-col gap-4 border-t border-ink/10 pt-6 pb-6 mt-6">
             <a
-              href="tel:+917490932661"
+              href="tel:+919343470377"
               className="flex items-center justify-center gap-2 text-sm font-bold text-ink py-2"
             >
-              <Phone className="h-4 w-4 text-gold" /> +91 7490 932 661
+              <Phone className="h-4 w-4 text-gold" /> +91 93434 70377
             </a>
             {onOpenInquiryModal ? (
               <button

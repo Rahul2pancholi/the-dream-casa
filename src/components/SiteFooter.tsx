@@ -105,11 +105,11 @@ export default function SiteFooter() {
                 <span>Poorti Jain (Founder)</span>
               </div>
               <a
-                href="tel:+917490932661"
+                href="tel:+919343470377"
                 className="flex items-center gap-3 hover:text-cream-light"
               >
                 <Phone className="h-4 w-4 shrink-0 text-gold" />
-                +91 7490 932 661
+                +91 93434 70377
               </a>
               <a
                 href="mailto:thedreamcasastudio@gmail.com"

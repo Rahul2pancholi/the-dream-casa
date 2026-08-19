@@ -204,7 +204,7 @@ export default async function BlogPostDetailPage({ params }: BlogSlugProps) {
               </div>
 
               <a
-                href={`https://wa.me/917490932661?text=Hi%20Poorti,%20I%20read%20your%20article%20'${encodeURIComponent(
+                href={`https://wa.me/919343470377?text=Hi%20Poorti,%20I%20read%20your%20article%20'${encodeURIComponent(
                   post.title
                 )}'%20and%20want%20to%20discuss%20my%20project.`}
                 target="_blank"
@@ -255,10 +255,10 @@ export default async function BlogPostDetailPage({ params }: BlogSlugProps) {
                   </p>
                   <div className="mt-3 flex flex-wrap justify-center sm:justify-start gap-3">
                     <a
-                      href="tel:+917490932661"
+                      href="tel:+919343470377"
                       className="inline-flex items-center gap-2 border border-ink px-5 py-2.5 text-xs font-semibold text-ink uppercase tracking-wider hover:bg-ink hover:text-cream-light transition-all"
                     >
-                      <Phone className="h-3.5 w-3.5" /> Call +91 7490 932 661
+                      <Phone className="h-3.5 w-3.5" /> Call +91 93434 70377
                     </a>
                     <Link
                       href="/contact"

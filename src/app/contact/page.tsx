@@ -117,7 +117,7 @@ export default function ContactPage() {
     },
     {
       q: "How can I book a design consultation with Founder Poorti Jain?",
-      a: "You can fill in the inquiry form on this page or call/WhatsApp us directly at +91 7490 932 661.",
+      a: "You can fill in the inquiry form on this page or call/WhatsApp us directly at +91 93434 70377.",
     },
   ];
 
@@ -144,7 +144,7 @@ export default function ContactPage() {
             {/* Quick 1-Tap CTA Bar for Instant Inquiries */}
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <a
-                href={`https://wa.me/917490932661?text=${encodeURIComponent("Hi Poorti, I want to inquire about interior design for my home.")}`}
+                href={`https://wa.me/919343470377?text=${encodeURIComponent("Hi Poorti, I want to inquire about interior design for my home.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-semibold text-white uppercase tracking-wider shadow-md hover:bg-emerald-700 transition-all"
@@ -152,10 +152,10 @@ export default function ContactPage() {
                 💬 Quick WhatsApp Chat
               </a>
               <a
-                href="tel:+917490932661"
+                href="tel:+919343470377"
                 className="inline-flex items-center gap-2 rounded-full border border-[#a46f47] bg-[#a46f47]/10 px-4 py-2.5 text-xs font-semibold text-[#a46f47] uppercase tracking-wider hover:bg-[#a46f47] hover:text-white transition-all"
               >
-                <Phone className="h-3.5 w-3.5" /> Call +91 7490 932 661
+                <Phone className="h-3.5 w-3.5" /> Call +91 93434 70377
               </a>
             </div>
           </div>
@@ -196,7 +196,7 @@ export default function ContactPage() {
                       
                       <div className="mt-2 flex flex-col sm:flex-row items-center gap-3 w-full justify-center">
                         <a
-                          href={`https://wa.me/917490932661?text=${whatsappMessage}`}
+                          href={`https://wa.me/919343470377?text=${whatsappMessage}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-2.5 text-xs font-bold text-white uppercase tracking-wider shadow-md hover:bg-emerald-700 transition-all w-full sm:w-auto"
@@ -419,7 +419,7 @@ export default function ContactPage() {
                     </div>
 
                     <a
-                      href="tel:+917490932661"
+                      href="tel:+919343470377"
                       className="group flex items-center gap-4 transition-colors hover:text-gold"
                     >
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold group-hover:bg-gold group-hover:text-ink transition-colors">
@@ -427,7 +427,7 @@ export default function ContactPage() {
                       </div>
                       <div className="flex flex-col gap-0.5">
                         <span className="text-[11px] font-semibold text-muted uppercase">Phone / WhatsApp</span>
-                        <span className="text-xs font-bold text-ink group-hover:text-gold">+91 7490 932 661</span>
+                        <span className="text-xs font-bold text-ink group-hover:text-gold">+91 93434 70377</span>
                       </div>
                     </a>
 

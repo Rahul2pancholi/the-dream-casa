@@ -132,7 +132,7 @@ export default function ConsultationModal() {
             </p>
             <div className="mt-3 flex flex-col sm:flex-row gap-3 w-full">
               <a
-                href={`https://wa.me/917490932661?text=${whatsappMessage}`}
+                href={`https://wa.me/919343470377?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-xs font-bold text-ink uppercase tracking-wider shadow-lg hover:bg-gold-light transition-all flex-1"

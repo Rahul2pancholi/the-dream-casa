@@ -128,7 +128,7 @@ const jsonLd = {
       "description": "Premier interior architecture studio and best interior designer in Indore led by Founder Poorti Jain. Specializing in luxury residential interiors, 3D architectural renders, and 100% turnkey site execution.",
       "image": "https://thedreamcasa.in/images/logo-icon.png",
       "url": "https://thedreamcasa.in",
-      "telephone": "+917490932661",
+      "telephone": "+919343470377",
       "email": "thedreamcasastudio@gmail.com",
       "priceRange": "₹₹₹",
       "knowsAbout": [
@@ -192,7 +192,7 @@ const jsonLd = {
       "description": "Premier luxury interior design studio in Ahmedabad led by Founder Poorti Jain. Specializing in high-end residential interiors, 3D architectural renders, and 100% turnkey site execution in Bodakdev, SG Highway, and across Gujarat.",
       "image": "https://thedreamcasa.in/images/logo-icon.png",
       "url": "https://thedreamcasa.in",
-      "telephone": "+917490932661",
+      "telephone": "+919343470377",
       "email": "thedreamcasastudio@gmail.com",
       "priceRange": "₹₹₹",
       "knowsAbout": [

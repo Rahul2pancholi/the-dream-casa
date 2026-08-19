@@ -43,7 +43,7 @@ export default function FounderSection() {
           </div>
 
           <a
-            href="https://wa.me/917490932661"
+            href="https://wa.me/919343470377"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 inline-flex items-center gap-2 border border-ink px-8 py-3.5 text-xs font-semibold tracking-[0.15em] text-ink uppercase transition-all hover:bg-ink hover:text-cream-light shadow-sm"
